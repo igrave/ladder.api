@@ -16,8 +16,5 @@ Applies one or more updates to the presentation. Each request is validated befor
 }
 \seealso{
 \href{https://developers.google.com/slides/}{Google Documentation}
-
-Other BatchUpdatePresentationRequest functions: 
-\code{\link{BatchUpdatePresentationRequest}()}
 }
 \concept{BatchUpdatePresentationRequest functions}

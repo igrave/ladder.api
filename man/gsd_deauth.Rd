@@ -13,8 +13,8 @@ resources for which no Google sign-in is required. This is handy for using
 gslideDevice in a non-interactive setting to make requests that do not
 require a token. It will prevent the attempt to obtain a token
 interactively in the browser. The user can configure their own API key
-via [gsd_auth_configure()] and retrieve that key via
-[gsd_api_key()].
+via \code{\link[=gsd_auth_configure]{gsd_auth_configure()}} and retrieve that key via
+\code{\link[=gsd_api_key]{gsd_api_key()}}.
 In the absence of a user-configured key, a built-in default key is used.
 }
 \examples{

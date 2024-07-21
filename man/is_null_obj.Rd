@@ -2,13 +2,13 @@
 % Please edit documentation in R/utils.R
 \name{is_null_obj}
 \alias{is_null_obj}
-\title{A helper function that tests whether an object is either NULL _or_
+\title{A helper function that tests whether an object is either NULL \emph{or}
 a list of NULLs}
 \usage{
 is_null_obj(x)
 }
 \description{
-A helper function that tests whether an object is either NULL _or_
+A helper function that tests whether an object is either NULL \emph{or}
 a list of NULLs
 }
 \keyword{internal}

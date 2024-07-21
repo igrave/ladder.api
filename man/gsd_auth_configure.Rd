@@ -10,7 +10,7 @@ gsd_auth_configure(app, path)
 gsd_oauth_app()
 }
 \arguments{
-\item{app}{`r lifecycle::badge('deprecated')` Replaced by the `client`
+\item{app}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} Replaced by the \code{client}
 argument.}
 
 \item{path}{JSON downloaded from \href{https://console.cloud.google.com}{Google Cloud Console}, containing a client id and
@@ -18,26 +18,30 @@ secret, in one of the forms supported for the \code{txt} argument of
 \code{\link[jsonlite:fromJSON]{jsonlite::fromJSON()}} (typically, a file path or JSON string).}
 
 \item{client}{A Google OAuth client, presumably constructed via
-[gargle::gargle_oauth_client_from_json()]. Note, however, that it is
-preferred to specify the client with JSON, using the `path` argument.}
+\code{\link[gargle:gargle_oauth_client_from_json]{gargle::gargle_oauth_client_from_json()}}. Note, however, that it is
+preferred to specify the client with JSON, using the \code{path} argument.}
 }
 \value{
-* `gsd_auth_configure()`: An object of R6 class
-    [gargle::AuthState], invisibly.
-  * `gsd_oauth_client()`: the current user-configured OAuth client.
+\itemize{
+\item \code{gsd_auth_configure()}: An object of R6 class
+\link[gargle:AuthState-class]{gargle::AuthState}, invisibly.
+\item \code{gsd_oauth_client()}: the current user-configured OAuth client.
+}
 }
 \description{
 These functions give more control over and visibility into the auth
-configuration than [gsd_auth()] does. `gsd_auth_configure()`
+configuration than \code{\link[=gsd_auth]{gsd_auth()}} does. \code{gsd_auth_configure()}
 lets the user specify their own:
-  * OAuth client, which is used when obtaining a user token.
+\itemize{
+\item OAuth client, which is used when obtaining a user token.
+}
 
-See the `vignette("get-api-credentials", package = "gargle")`
+See the \code{vignette("get-api-credentials", package = "gargle")}
 for more.
 If the user does not configure these settings, internal defaults
 are used.
 
-`gsd_oauth_client()` retrieves the currently configured OAuth client.
+\code{gsd_oauth_client()} retrieves the currently configured OAuth client.
 }
 \examples{
 # see the current user-configured OAuth app (probaby `NULL`)

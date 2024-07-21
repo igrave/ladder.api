@@ -3,7 +3,7 @@
 \name{presentations.create}
 \alias{presentations.create}
 \title{Creates a blank presentation using the title given in the request.
-If a `presentationId` is provided, it is used as the ID of the new
+If a \code{presentationId} is provided, it is used as the ID of the new
 presentation. Otherwise, a new ID is generated. Other fields in the request,
 including any provided content, are ignored. Returns the created presentation.}
 \usage{
@@ -14,14 +14,11 @@ presentations.create(Presentation)
 }
 \description{
 Creates a blank presentation using the title given in the request.
-If a `presentationId` is provided, it is used as the ID of the new
+If a \code{presentationId} is provided, it is used as the ID of the new
 presentation. Otherwise, a new ID is generated. Other fields in the request,
 including any provided content, are ignored. Returns the created presentation.
 }
 \seealso{
 \href{https://developers.google.com/slides/}{Google Documentation}
-
-Other Presentation functions: 
-\code{\link{Presentation}()}
 }
 \concept{Presentation functions}

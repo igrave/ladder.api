@@ -7,7 +7,7 @@
 gsd_user()
 }
 \value{
-An email address or, if no token has been loaded, `NULL`.
+An email address or, if no token has been loaded, \code{NULL}.
 }
 \description{
 Reveals the email address of the user associated with the current token.
@@ -19,6 +19,6 @@ gsd_user()
 }
 }
 \seealso{
-[gargle::token_userinfo()], [gargle::token_email()],
-[gargle::token_tokeninfo()]
+\code{\link[gargle:token-info]{gargle::token_userinfo()}}, \code{\link[gargle:token-info]{gargle::token_email()}},
+\code{\link[gargle:token-info]{gargle::token_tokeninfo()}}
 }

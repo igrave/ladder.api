@@ -14,6 +14,19 @@ pt_to_cm <- function(pt) {
   pt / 72 * 2.54
 }
 
+px_to_emu <- function(px) {
+  px * 9525
+  # 914400 EMU/in / 96 px/in = 9525 EMU/px
+}
+
+inch_to_emu <- function(inch) {
+  inch * 914400
+}
+
+cm_to_emu <- function(cm) {
+  cm * 360000
+}
+
 translate_matrix <- function(x, y) {
   matrix(
     c(

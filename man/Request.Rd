@@ -4,96 +4,185 @@
 \alias{Request}
 \title{Request Object}
 \usage{
-Request(...)
+Request(
+  createSlide = NULL,
+  createShape = NULL,
+  createTable = NULL,
+  insertText = NULL,
+  insertTableRows = NULL,
+  insertTableColumns = NULL,
+  deleteTableRow = NULL,
+  deleteTableColumn = NULL,
+  replaceAllText = NULL,
+  deleteObject = NULL,
+  updatePageElementTransform = NULL,
+  updateSlidesPosition = NULL,
+  deleteText = NULL,
+  createImage = NULL,
+  createVideo = NULL,
+  createSheetsChart = NULL,
+  createLine = NULL,
+  refreshSheetsChart = NULL,
+  updateShapeProperties = NULL,
+  updateImageProperties = NULL,
+  updateVideoProperties = NULL,
+  updatePageProperties = NULL,
+  updateTableCellProperties = NULL,
+  updateLineProperties = NULL,
+  createParagraphBullets = NULL,
+  replaceAllShapesWithImage = NULL,
+  duplicateObject = NULL,
+  updateTextStyle = NULL,
+  replaceAllShapesWithSheetsChart = NULL,
+  deleteParagraphBullets = NULL,
+  updateParagraphStyle = NULL,
+  updateTableBorderProperties = NULL,
+  updateTableColumnProperties = NULL,
+  updateTableRowProperties = NULL,
+  mergeTableCells = NULL,
+  unmergeTableCells = NULL,
+  groupObjects = NULL,
+  ungroupObjects = NULL,
+  updatePageElementAltText = NULL,
+  replaceImage = NULL,
+  updateSlideProperties = NULL,
+  updatePageElementsZOrder = NULL,
+  updateLineCategory = NULL,
+  rerouteLine = NULL
+)
 }
 \arguments{
-\item{insertTableColumns}{Inserts columns into a table}
+\item{createSlide}{(\link{CreateSlideRequest})
+Creates a new slide.}
 
-\item{deleteTableColumn}{Deletes a column from a table}
+\item{createShape}{(\link{CreateShapeRequest})
+Creates a new shape.}
 
-\item{updateSlidesPosition}{Updates the position of a set of slides in the presentation}
+\item{createTable}{(\link{CreateTableRequest})
+Creates a new table.}
 
-\item{updateTextStyle}{Updates the styling of text within a Shape or Table}
+\item{insertText}{(\link{InsertTextRequest})
+Inserts text into a shape or table cell.}
 
-\item{createSlide}{Creates a new slide}
+\item{insertTableRows}{(\link{InsertTableRowsRequest})
+Inserts rows into a table.}
 
-\item{updateParagraphStyle}{Updates the styling of paragraphs within a Shape or Table}
+\item{insertTableColumns}{(\link{InsertTableColumnsRequest})
+Inserts columns into a table.}
 
-\item{updateTableRowProperties}{Updates the properties of a Table row}
+\item{deleteTableRow}{(\link{DeleteTableRowRequest})
+Deletes a row from a table.}
 
-\item{updateTableBorderProperties}{Updates the properties of the table borders in a Table}
+\item{deleteTableColumn}{(\link{DeleteTableColumnRequest})
+Deletes a column from a table.}
 
-\item{replaceAllShapesWithSheetsChart}{Replaces all shapes matching some criteria with a Google Sheets chart}
+\item{replaceAllText}{(\link{ReplaceAllTextRequest})
+Replaces all instances of specified text.}
 
-\item{updateTableColumnProperties}{Updates the properties of a Table column}
+\item{deleteObject}{(\link{DeleteObjectRequest})
+Deletes a page or page element from the presentation.}
 
-\item{ungroupObjects}{Ungroups objects, such as groups}
+\item{updatePageElementTransform}{(\link{UpdatePageElementTransformRequest})
+Updates the transform of a page element.}
 
-\item{replaceImage}{Replaces an existing image with a new image}
+\item{updateSlidesPosition}{(\link{UpdateSlidesPositionRequest})
+Updates the position of a set of slides in the presentation.}
 
-\item{deleteTableRow}{Deletes a row from a table}
+\item{deleteText}{(\link{DeleteTextRequest})
+Deletes text from a shape or a table cell.}
 
-\item{createParagraphBullets}{Creates bullets for paragraphs}
+\item{createImage}{(\link{CreateImageRequest})
+Creates an image.}
 
-\item{updateLineProperties}{Updates the properties of a Line}
+\item{createVideo}{(\link{CreateVideoRequest})
+Creates a video.}
 
-\item{updateImageProperties}{Updates the properties of an Image}
+\item{createSheetsChart}{(\link{CreateSheetsChartRequest})
+Creates an embedded Google Sheets chart.}
 
-\item{deleteParagraphBullets}{Deletes bullets from paragraphs}
+\item{createLine}{(\link{CreateLineRequest})
+Creates a line.}
 
-\item{createSheetsChart}{Creates an embedded Google Sheets chart}
+\item{refreshSheetsChart}{(\link{RefreshSheetsChartRequest})
+Refreshes a Google Sheets chart.}
 
-\item{updateVideoProperties}{Updates the properties of a Video}
+\item{updateShapeProperties}{(\link{UpdateShapePropertiesRequest})
+Updates the properties of a Shape.}
 
-\item{updateShapeProperties}{Updates the properties of a Shape}
+\item{updateImageProperties}{(\link{UpdateImagePropertiesRequest})
+Updates the properties of an Image.}
 
-\item{groupObjects}{Groups objects, such as page elements}
+\item{updateVideoProperties}{(\link{UpdateVideoPropertiesRequest})
+Updates the properties of a Video.}
 
-\item{mergeTableCells}{Merges cells in a Table}
+\item{updatePageProperties}{(\link{UpdatePagePropertiesRequest})
+Updates the properties of a Page.}
 
-\item{replaceAllShapesWithImage}{Replaces all shapes matching some criteria with an image}
+\item{updateTableCellProperties}{(\link{UpdateTableCellPropertiesRequest})
+Updates the properties of a TableCell.}
 
-\item{refreshSheetsChart}{Refreshes a Google Sheets chart}
+\item{updateLineProperties}{(\link{UpdateLinePropertiesRequest})
+Updates the properties of a Line.}
 
-\item{unmergeTableCells}{Unmerges cells in a Table}
+\item{createParagraphBullets}{(\link{CreateParagraphBulletsRequest})
+Creates bullets for paragraphs.}
 
-\item{updateSlideProperties}{Updates the properties of a Slide}
+\item{replaceAllShapesWithImage}{(\link{ReplaceAllShapesWithImageRequest})
+Replaces all shapes matching some criteria with an image.}
 
-\item{updatePageElementTransform}{Updates the transform of a page element}
+\item{duplicateObject}{(\link{DuplicateObjectRequest})
+Duplicates a slide or page element.}
 
-\item{insertTableRows}{Inserts rows into a table}
+\item{updateTextStyle}{(\link{UpdateTextStyleRequest})
+Updates the styling of text within a Shape or Table.}
 
-\item{deleteText}{Deletes text from a shape or a table cell}
+\item{replaceAllShapesWithSheetsChart}{(\link{ReplaceAllShapesWithSheetsChartRequest})
+Replaces all shapes matching some criteria with a Google Sheets chart.}
 
-\item{createImage}{Creates an image}
+\item{deleteParagraphBullets}{(\link{DeleteParagraphBulletsRequest})
+Deletes bullets from paragraphs.}
 
-\item{createVideo}{Creates a video}
+\item{updateParagraphStyle}{(\link{UpdateParagraphStyleRequest})
+Updates the styling of paragraphs within a Shape or Table.}
 
-\item{updatePageElementAltText}{Updates the alt text title and/or description of a page element}
+\item{updateTableBorderProperties}{(\link{UpdateTableBorderPropertiesRequest})
+Updates the properties of the table borders in a Table.}
 
-\item{createLine}{Creates a line}
+\item{updateTableColumnProperties}{(\link{UpdateTableColumnPropertiesRequest})
+Updates the properties of a Table column.}
 
-\item{rerouteLine}{Reroutes a line such that it's connected at the two closest connection sites on the connected page elements}
+\item{updateTableRowProperties}{(\link{UpdateTableRowPropertiesRequest})
+Updates the properties of a Table row.}
 
-\item{createTable}{Creates a new table}
+\item{mergeTableCells}{(\link{MergeTableCellsRequest})
+Merges cells in a Table.}
 
-\item{updateLineCategory}{Updates the category of a line}
+\item{unmergeTableCells}{(\link{UnmergeTableCellsRequest})
+Unmerges cells in a Table.}
 
-\item{updatePageElementsZOrder}{Updates the Z-order of page elements}
+\item{groupObjects}{(\link{GroupObjectsRequest})
+Groups objects, such as page elements.}
 
-\item{updatePageProperties}{Updates the properties of a Page}
+\item{ungroupObjects}{(\link{UngroupObjectsRequest})
+Ungroups objects, such as groups.}
 
-\item{createShape}{Creates a new shape}
+\item{updatePageElementAltText}{(\link{UpdatePageElementAltTextRequest})
+Updates the alt text title and/or description of a page element.}
 
-\item{updateTableCellProperties}{Updates the properties of a TableCell}
+\item{replaceImage}{(\link{ReplaceImageRequest})
+Replaces an existing image with a new image.}
 
-\item{insertText}{Inserts text into a shape or table cell}
+\item{updateSlideProperties}{(\link{UpdateSlidePropertiesRequest})
+Updates the properties of a Slide}
 
-\item{duplicateObject}{Duplicates a slide or page element}
+\item{updatePageElementsZOrder}{(\link{UpdatePageElementsZOrderRequest})
+Updates the Z-order of page elements.}
 
-\item{deleteObject}{Deletes a page or page element from the presentation}
+\item{updateLineCategory}{(\link{UpdateLineCategoryRequest})
+Updates the category of a line.}
 
-\item{replaceAllText}{Replaces all instances of specified text}
+\item{rerouteLine}{(\link{RerouteLineRequest})
+Reroutes a line such that it's connected at the two closest connection sites on the connected page elements.}
 }
 \value{
 Request object
@@ -102,7 +191,5 @@ Request object
 Request Object
 }
 \details{
-Autogenerated via \code{\link[googleAuthR]{gar_create_api_objects}}
 A single kind of update to apply to a presentation.
 }
-\concept{Request functions}

@@ -43,7 +43,7 @@ supported for the \code{txt} argument of \code{\link[jsonlite:fromJSON]{jsonlite
 file path or JSON string).}
 
 \item{scopes}{A character vector of scopes to request.
-Pick from those listed at <https://developers.google.com/identity/protocols/oauth2/scopes>.}
+Pick from those listed at \url{https://developers.google.com/identity/protocols/oauth2/scopes}.}
 
 \item{cache}{Specifies the OAuth token cache. Defaults to the option named
 \code{"gargle_oauth_cache"}, retrieved via \code{\link[gargle:gargle_oauth_cache]{gargle_oauth_cache()}}.}
@@ -68,7 +68,7 @@ httr's class \code{request}, i.e. a token that has been prepared with
 }
 \description{
 Authorize gslideDevice to view and manage your presentations. This function is a
-wrapper around [gargle::token_fetch()].
+wrapper around \code{\link[gargle:token_fetch]{gargle::token_fetch()}}.
 
 By default, you are directed to a web browser, asked to sign in to your
 Google account, and to grant gslideDevice permission to operate on your
@@ -79,43 +79,45 @@ level means the same token can be used across multiple projects and
 tokens are less likely to be synced to the cloud by accident.
 }
 \details{
-Most users, most of the time, do not need to call `gsd_auth()`
+Most users, most of the time, do not need to call \code{gsd_auth()}
 explicitly -- it is triggered by the first action that requires
 authorization. Even when called, the default arguments often suffice.
 
-However, when necessary, `gsd_auth()` allows the user to explicitly:
-  * Declare which Google identity to use, via an `email` specification.
-  * Use a service account token or workload identity federation via
-    `path`.
-  * Bring your own `token`.
-  * Customize `scopes`.
-  * Use a non-default `cache` folder or turn caching off.
-  * Explicitly request out-of-band (OOB) auth via `use_oob`.
+However, when necessary, \code{gsd_auth()} allows the user to explicitly:
+\itemize{
+\item Declare which Google identity to use, via an \code{email} specification.
+\item Use a service account token or workload identity federation via
+\code{path}.
+\item Bring your own \code{token}.
+\item Customize \code{scopes}.
+\item Use a non-default \code{cache} folder or turn caching off.
+\item Explicitly request out-of-band (OOB) auth via \code{use_oob}.
+}
 
 If you are interacting with R within a browser (applies to RStudio
 Server, Posit Workbench, Posit Cloud, and Google Colaboratory), you need
 OOB auth or the pseudo-OOB variant. If this does not happen
-automatically, you can request it explicitly with `use_oob = TRUE` or,
+automatically, you can request it explicitly with \code{use_oob = TRUE} or,
 more persistently, by setting an option via
-`options(gargle_oob_default = TRUE)`.
+\code{options(gargle_oob_default = TRUE)}.
 
 The choice between conventional OOB or pseudo-OOB auth is determined
 by the type of OAuth client. If the client is of the "installed" type,
-`use_oob = TRUE` results in conventional OOB auth. If the client is of
-the "web" type, `use_oob = TRUE` results in pseudo-OOB auth. Packages
+\code{use_oob = TRUE} results in conventional OOB auth. If the client is of
+the "web" type, \code{use_oob = TRUE} results in pseudo-OOB auth. Packages
 that provide a built-in OAuth client can usually detect which type of
 client to use. But if you need to set this explicitly, use the
-`"gargle_oauth_client_type"` option:
-```r
-options(gargle_oauth_client_type = "web")       # pseudo-OOB
+\code{"gargle_oauth_client_type"} option:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{options(gargle_oauth_client_type = "web")       # pseudo-OOB
 # or, alternatively
 options(gargle_oauth_client_type = "installed") # conventional OOB
-```
+}\if{html}{\out{</div>}}
 
 For details on the many ways to find a token, see
-[gargle::token_fetch()]. For deeper control over auth, use
-[gsd_auth_configure()] to bring your own OAuth client or API key.
-To learn more about gargle options, see [gargle::gargle_options].
+\code{\link[gargle:token_fetch]{gargle::token_fetch()}}. For deeper control over auth, use
+\code{\link[=gsd_auth_configure]{gsd_auth_configure()}} to bring your own OAuth client or API key.
+To learn more about gargle options, see \link[gargle:gargle_options]{gargle::gargle_options}.
 }
 \examples{
 \dontrun{

@@ -5,44 +5,56 @@
 \title{TextStyle Object}
 \usage{
 TextStyle(
+  backgroundColor = NULL,
+  foregroundColor = NULL,
+  bold = NULL,
+  italic = NULL,
+  fontFamily = NULL,
+  fontSize = NULL,
   link = NULL,
   baselineOffset = NULL,
-  foregroundColor = NULL,
-  strikethrough = NULL,
-  weightedFontFamily = NULL,
-  underline = NULL,
-  italic = NULL,
   smallCaps = NULL,
-  fontSize = NULL,
-  fontFamily = NULL,
-  bold = NULL,
-  backgroundColor = NULL
+  strikethrough = NULL,
+  underline = NULL,
+  weightedFontFamily = NULL
 )
 }
 \arguments{
-\item{link}{The hyperlink destination of the text}
+\item{backgroundColor}{(\link{OptionalColor})
+The background color of the text. If set, the color is either opaque or transparent, depending on if the \code{opaque_color} field in it is set.}
 
-\item{baselineOffset}{The text's vertical offset from its normal position}
+\item{foregroundColor}{(\link{OptionalColor})
+The color of the text itself. If set, the color is either opaque or transparent, depending on if the \code{opaque_color} field in it is set.}
 
-\item{foregroundColor}{The color of the text itself}
+\item{bold}{(boolean)
+Whether or not the text is rendered as bold.}
 
-\item{strikethrough}{Whether or not the text is struck through}
+\item{italic}{(boolean)
+Whether or not the text is italicized.}
 
-\item{weightedFontFamily}{The font family and rendered weight of the text}
+\item{fontFamily}{(string)
+The font family of the text. The font family can be any font from the Font menu in Slides or from \link{Google Fonts} (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in \code{Arial}. Some fonts can affect the weight of the text. If an update request specifies values for both \code{font_family} and \code{bold}, the explicitly-set \code{bold} value is used.}
 
-\item{underline}{Whether or not the text is underlined}
+\item{fontSize}{(\link{Dimension})
+The size of the text's font. When read, the \code{font_size} will specified in points.}
 
-\item{italic}{Whether or not the text is italicized}
+\item{link}{(\link{Link})
+The hyperlink destination of the text. If unset, there is no link. Links are not inherited from parent text. Changing the link in an update request causes some other changes to the text style of the range: * When setting a link, the text foreground color will be set to ThemeColorType.HYPERLINK and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults. * Setting a link on a text range that overlaps with an existing link will also update the existing link to point to the new URL. * Links are not settable on newline characters. As a result, setting a link on a text range that crosses a paragraph boundary, such as \code{"ABC\\n123"}, will separate the newline character(s) into their own text runs. The link will be applied separately to the runs before and after the newline. * Removing a link will update the text style of the range to match the style of the preceding text (or the default text styles if the prece}
 
-\item{smallCaps}{Whether or not the text is in small capital letters}
+\item{baselineOffset}{(string)
+The text's vertical offset from its normal position. Text with \code{SUPERSCRIPT} or \code{SUBSCRIPT} baseline offsets is automatically rendered in a smaller font size, computed based on the \code{font_size} field. The \code{font_size} itself is not affected by changes in this field.}
 
-\item{fontSize}{The size of the text's font}
+\item{smallCaps}{(boolean)
+Whether or not the text is in small capital letters.}
 
-\item{fontFamily}{The font family of the text}
+\item{strikethrough}{(boolean)
+Whether or not the text is struck through.}
 
-\item{bold}{Whether or not the text is rendered as bold}
+\item{underline}{(boolean)
+Whether or not the text is underlined.}
 
-\item{backgroundColor}{The background color of the text}
+\item{weightedFontFamily}{(\link{WeightedFontFamily})
+The font family and rendered weight of the text. This field is an extension of \code{font_family} meant to support explicit font weights without breaking backwards compatibility. As such, when reading the style of a range of text, the value of \code{weighted_font_family#font_family} will always be equal to that of \code{font_family}. However, when writing, if both fields are included in the field mask (either explicitly or through the wildcard \code{"*"}), their values are reconciled as follows: * If \code{font_family} is set and \code{weighted_font_family} is not, the value of \code{font_family} is applied with weight \code{400} ("normal"). * If both fields are set, the value of \code{font_family} must match that of \code{weighted_font_family#font_family}. If so, the font family and weight of \code{weighted_font_family} is applied. Otherwise, a 400 bad request error is returned. * If \code{weighted_font_family} is set and \code{font_family} is not, the font family and weight of \code{}
 }
 \value{
 TextStyle object
@@ -51,7 +63,5 @@ TextStyle object
 TextStyle Object
 }
 \details{
-Autogenerated via \code{\link[googleAuthR]{gar_create_api_objects}}
 Represents the styling that can be applied to a TextRun. If this text is contained in a shape with a parent placeholder, then these text styles may be inherited from the parent. Which text styles are inherited depend on the nesting level of lists: * A text run in a paragraph that is not in a list will inherit its text style from the the newline character in the paragraph at the 0 nesting level of the list inside the parent placeholder. * A text run in a paragraph that is in a list will inherit its text style from the newline character in the paragraph at its corresponding nesting level of the list inside the parent placeholder. Inherited text styles are represented as unset fields in this message. If text is contained in a shape without a parent placeholder, unsetting these fields will revert the style to a value matching the defaults in the Slides editor.
 }
-\concept{TextStyle functions}
