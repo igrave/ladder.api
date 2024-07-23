@@ -14,7 +14,7 @@ The color of the gradient stop.}
 The alpha value of this color in the gradient band. Defaults to 1.0, fully opaque.}
 
 \item{position}{(number)
-The relative position of the color stop in the gradient band measured in percentage. The value should be in the interval \link{0.0, 1.0}.}
+The relative position of the color stop in the gradient band measured in percentage. The value should be in the interval [0.0, 1.0].}
 }
 \value{
 ColorStop object

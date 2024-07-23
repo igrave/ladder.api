@@ -1100,11 +1100,11 @@ Image <- function(
 #' @param cropProperties ([CropProperties])
 #'  The crop properties of the image. If not set, the image is not cropped. This property is read-only.
 #' @param transparency (number)
-#'  The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent. This property is read-only.
+#'  The transparency effect of the image. The value should be in the interval \[0.0, 1.0\], where 0 means no effect and 1 means completely transparent. This property is read-only.
 #' @param brightness (number)
-#'  The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only.
+#'  The brightness effect of the image. The value should be in the interval \[-1.0, 1.0\], where 0 means no effect. This property is read-only.
 #' @param contrast (number)
-#'  The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only.
+#'  The contrast effect of the image. The value should be in the interval \[-1.0, 1.0\], where 0 means no effect. This property is read-only.
 #' @param recolor ([Recolor])
 #'  The recolor effect of the image. If not set, the image is not recolored. This property is read-only.
 #' @param outline ([Outline])
@@ -1218,7 +1218,7 @@ Recolor <- function(
 #' @param alpha (number)
 #'  The alpha value of this color in the gradient band. Defaults to 1.0, fully opaque.
 #' @param position (number)
-#'  The relative position of the color stop in the gradient band measured in percentage. The value should be in the interval [0.0, 1.0].
+#'  The relative position of the color stop in the gradient band measured in percentage. The value should be in the interval \[0.0, 1.0\].
 #'
 #' @return ColorStop object
 #'
@@ -2890,7 +2890,7 @@ CreateVideoRequest <- function(
 #' Creates an embedded Google Sheets chart. NOTE: Chart creation requires at least one of the spreadsheets.readonly, spreadsheets, drive.readonly, drive.file, or drive OAuth scopes.
 #'
 #' @param objectId (string)
-#'  A user-supplied object ID. If specified, the ID must be unique among all pages and page elements in the presentation. The ID should start with a word character [a-zA-Z0-9_] and then followed by any number of the following characters [a-zA-Z0-9_-:]. The length of the ID should not be less than 5 or greater than 50. If empty, a unique identifier will be generated.
+#'  A user-supplied object ID. If specified, the ID must be unique among all pages and page elements in the presentation. The ID should start with a word character \[a-zA-Z0-9_\] and then followed by any number of the following characters \[a-zA-Z0-9_-:\]. The length of the ID should not be less than 5 or greater than 50. If empty, a unique identifier will be generated.
 #' @param elementProperties ([PageElementProperties])
 #'  The element properties for the chart. When the aspect ratio of the provided size does not match the chart aspect ratio, the chart is scaled and centered with respect to the size in order to maintain aspect ratio. The provided transform is applied after this operation.
 #' @param spreadsheetId (string)

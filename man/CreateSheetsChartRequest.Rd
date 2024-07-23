@@ -14,7 +14,7 @@ CreateSheetsChartRequest(
 }
 \arguments{
 \item{objectId}{(string)
-A user-supplied object ID. If specified, the ID must be unique among all pages and page elements in the presentation. The ID should start with a word character \link{a-zA-Z0-9_} and then followed by any number of the following characters \link{a-zA-Z0-9_-:}. The length of the ID should not be less than 5 or greater than 50. If empty, a unique identifier will be generated.}
+A user-supplied object ID. If specified, the ID must be unique among all pages and page elements in the presentation. The ID should start with a word character [a-zA-Z0-9_] and then followed by any number of the following characters [a-zA-Z0-9_-:]. The length of the ID should not be less than 5 or greater than 50. If empty, a unique identifier will be generated.}
 
 \item{elementProperties}{(\link{PageElementProperties})
 The element properties for the chart. When the aspect ratio of the provided size does not match the chart aspect ratio, the chart is scaled and centered with respect to the size in order to maintain aspect ratio. The provided transform is applied after this operation.}

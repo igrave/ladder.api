@@ -20,13 +20,13 @@ ImageProperties(
 The crop properties of the image. If not set, the image is not cropped. This property is read-only.}
 
 \item{transparency}{(number)
-The transparency effect of the image. The value should be in the interval \link{0.0, 1.0}, where 0 means no effect and 1 means completely transparent. This property is read-only.}
+The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent. This property is read-only.}
 
 \item{brightness}{(number)
-The brightness effect of the image. The value should be in the interval \link{-1.0, 1.0}, where 0 means no effect. This property is read-only.}
+The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only.}
 
 \item{contrast}{(number)
-The contrast effect of the image. The value should be in the interval \link{-1.0, 1.0}, where 0 means no effect. This property is read-only.}
+The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only.}
 
 \item{recolor}{(\link{Recolor})
 The recolor effect of the image. If not set, the image is not recolored. This property is read-only.}
