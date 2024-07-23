@@ -20,5 +20,8 @@ LayoutReference object
 LayoutReference Object
 }
 \details{
-Slide layout reference. This may reference either: - A predefined layout - One of the layouts in the presentation.
+Slide layout reference. This may reference either:
+\itemize{
+\item A predefined layout - One of the layouts in the presentation.
+}
 }
