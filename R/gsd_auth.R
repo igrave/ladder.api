@@ -185,6 +185,18 @@ gsd_auth_configure <- function(app, path) {
 #' @rdname gsd_auth_configure
 gsd_oauth_app <- function() .auth$app
 
+
+#' @export
+#' @rdname gsd_auth_configure
+gsd_api_key <- function() {
+  .auth$api_key
+}
+
+#' @export
+#' @rdname gsd_auth_configure
+gsd_oauth_client <- function() {
+  .auth$client
+}
 #' Get info on current user
 #'
 #' @eval gargle:::PREFIX_user_description()

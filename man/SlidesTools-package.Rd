@@ -8,6 +8,13 @@
 \description{
 Create, read and modify Slides presentations with full REST API functionality.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://igrave.github.io/SlidesTools/}
+}
+
+}
 \author{
 \strong{Maintainer}: Isaac Gravestock \email{isaac.gravestock@gmail.com} [compiler]
 

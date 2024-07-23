@@ -3,11 +3,17 @@
 \name{gsd_auth_configure}
 \alias{gsd_auth_configure}
 \alias{gsd_oauth_app}
+\alias{gsd_api_key}
+\alias{gsd_oauth_client}
 \title{Edit and view auth configuration}
 \usage{
 gsd_auth_configure(app, path)
 
 gsd_oauth_app()
+
+gsd_api_key()
+
+gsd_oauth_client()
 }
 \arguments{
 \item{app}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} Replaced by the \code{client}

@@ -230,7 +230,7 @@ PageElement <- function(
 #' AffineTransform Object
 #'
 #' @details
-#' AffineTransform uses a 3x3 matrix with an implied last row of [ 0 0 1 ] to transform source coordinates (x,y) into destination coordinates (x', y') according to: x' x = shear_y scale_y translate_y 1 [ 1 ] After transformation, x' = scale_x * x + shear_x * y + translate_x; y' = scale_y * y + shear_y * x + translate_y; This message is therefore composed of these six matrix elements.
+#' AffineTransform uses a 3x3 matrix with an implied last row of \[ 0 0 1 \] to transform source coordinates (x,y) into destination coordinates (x', y') according to: x' x = shear_y scale_y translate_y 1 \[ 1 \] After transformation, x' = scale_x * x + shear_x * y + translate_x; y' = scale_y * y + shear_y * x + translate_y; This message is therefore composed of these six matrix elements.
 #'
 #' @param scaleX (number)
 #'  The X coordinate scaling element.
@@ -516,7 +516,7 @@ Bullet <- function(
 #' @param italic (boolean)
 #'  Whether or not the text is italicized.
 #' @param fontFamily (string)
-#'  The font family of the text. The font family can be any font from the Font menu in Slides or from [Google Fonts] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`. Some fonts can affect the weight of the text. If an update request specifies values for both `font_family` and `bold`, the explicitly-set `bold` value is used.
+#'  The font family of the text. The font family can be any font from the Font menu in Slides or from [Google Fonts](https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`. Some fonts can affect the weight of the text. If an update request specifies values for both `font_family` and `bold`, the explicitly-set `bold` value is used.
 #' @param fontSize ([Dimension])
 #'  The size of the text's font. When read, the `font_size` will specified in points.
 #' @param link ([Link])
@@ -688,7 +688,7 @@ Link <- function(
 #' Represents a font family and weight used to style a TextRun.
 #'
 #' @param fontFamily (string)
-#'  The font family of the text. The font family can be any font from the Font menu in Slides or from [Google Fonts] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`.
+#'  The font family of the text. The font family can be any font from the Font menu in Slides or from [Google Fonts](https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`.
 #' @param weight (integer)
 #'  The rendered weight of the text. This field can have any value that is a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. Weights greater than or equal to `700` are considered bold, and weights less than `700`are not bold. The default value is `400` ("normal").
 #'
@@ -1413,7 +1413,7 @@ LineFill <- function(solidFill = NULL) {
 #' @param connectedObjectId (string)
 #'  The object ID of the connected page element. Some page elements, such as groups, tables, and lines do not have connection sites and therefore cannot be connected to a connector line.
 #' @param connectionSiteIndex (integer)
-#'  The index of the connection site on the connected page element. In most cases, it corresponds to the predefined connection site index from the ECMA-376 standard. More information on those connection sites can be found in the description of the "cnx" attribute in section 20.1.9.9 and Annex H. "Predefined DrawingML Shape and Text Geometries" of "Office Open XML File Formats-Fundamentals and Markup Language Reference", part 1 of [ECMA-376 5th edition] (http://www.ecma-international.org/publications/standards/Ecma-376.htm). The position of each connection site can also be viewed from Slides editor.
+#'  The index of the connection site on the connected page element. In most cases, it corresponds to the predefined connection site index from the ECMA-376 standard. More information on those connection sites can be found in the description of the "cnx" attribute in section 20.1.9.9 and Annex H. "Predefined DrawingML Shape and Text Geometries" of "Office Open XML File Formats-Fundamentals and Markup Language Reference", part 1 of [ECMA-376 5th edition](http://www.ecma-international.org/publications/standards/Ecma-376.htm). The position of each connection site can also be viewed from Slides editor.
 #'
 #' @return LineConnection object
 #'
@@ -3126,7 +3126,7 @@ UpdateTableCellPropertiesRequest <- function(
 #' TableRange Object
 #'
 #' @details
-#' A table range represents a reference to a subset of a table. It's important to note that the cells specified by a table range do not necessarily form a rectangle. For example, let's say we have a 3 x 3 table where all the cells of the last row are merged together. The table looks like this: [ ] A table range with location = (0, 0), row span = 3 and column span = 2 specifies the following cells: x x [ x x x ]
+#' A table range represents a reference to a subset of a table. It's important to note that the cells specified by a table range do not necessarily form a rectangle. For example, let's say we have a 3 x 3 table where all the cells of the last row are merged together. The table looks like this: \[ \] A table range with location = (0, 0), row span = 3 and column span = 2 specifies the following cells: x x \[ x x x \]
 #'
 #' @param location ([TableCellLocation])
 #'  The starting location of the table range.

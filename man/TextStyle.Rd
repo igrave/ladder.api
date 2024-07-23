@@ -33,7 +33,7 @@ Whether or not the text is rendered as bold.}
 Whether or not the text is italicized.}
 
 \item{fontFamily}{(string)
-The font family of the text. The font family can be any font from the Font menu in Slides or from \link{Google Fonts} (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in \code{Arial}. Some fonts can affect the weight of the text. If an update request specifies values for both \code{font_family} and \code{bold}, the explicitly-set \code{bold} value is used.}
+The font family of the text. The font family can be any font from the Font menu in Slides or from \href{https://fonts.google.com/}{Google Fonts}. If the font name is unrecognized, the text is rendered in \code{Arial}. Some fonts can affect the weight of the text. If an update request specifies values for both \code{font_family} and \code{bold}, the explicitly-set \code{bold} value is used.}
 
 \item{fontSize}{(\link{Dimension})
 The size of the text's font. When read, the \code{font_size} will specified in points.}

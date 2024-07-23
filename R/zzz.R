@@ -6,10 +6,10 @@
   utils::assignInMyNamespace(
     ".auth",
     gargle::init_AuthState(
-      package = "googleslides.api",
+      package = "SlidesTools",
       auth_active = TRUE,
       gargle::gargle_oauth_client_from_json(
-        path = system.file("api.json", package = "googleslides.api")
+        path = system.file("api.json", package = "SlidesTools")
       )
     )
   )

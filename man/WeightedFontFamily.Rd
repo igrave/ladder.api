@@ -8,7 +8,7 @@ WeightedFontFamily(fontFamily = NULL, weight = NULL)
 }
 \arguments{
 \item{fontFamily}{(string)
-The font family of the text. The font family can be any font from the Font menu in Slides or from \link{Google Fonts} (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in \code{Arial}.}
+The font family of the text. The font family can be any font from the Font menu in Slides or from \href{https://fonts.google.com/}{Google Fonts}. If the font name is unrecognized, the text is rendered in \code{Arial}.}
 
 \item{weight}{(integer)
 The rendered weight of the text. This field can have any value that is a multiple of \code{100} between \code{100} and \code{900}, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, \href{https://www.w3.org/TR/CSS21/fonts.html#font-boldness}{section 15.6}, with non-numerical values disallowed. Weights greater than or equal to \code{700} are considered bold, and weights less than \code{700}are not bold. The default value is \code{400} ("normal").}
