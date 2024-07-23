@@ -2,3 +2,5 @@ docs
 .Rproj.user
 .RData
 .Rhistory
+
+*.Rproj
