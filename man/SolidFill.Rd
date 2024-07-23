@@ -11,7 +11,11 @@ SolidFill(color = NULL, alpha = NULL)
 The color value of the solid fill.}
 
 \item{alpha}{(number)
-The fraction of this \code{color} that should be applied to the pixel. That is, the final pixel color is defined by the equation: pixel color = alpha * (color) + (1.0 - alpha) * (background color) This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color.}
+The fraction of this \code{color} that should be applied to the pixel. That is, the final pixel color is defined by the equation: pixel color = alpha
+\itemize{
+\item (color) + (1.0 - alpha)
+\item (background color) This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color.
+}}
 }
 \value{
 SolidFill object

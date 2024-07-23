@@ -39,7 +39,13 @@ The font family of the text. The font family can be any font from the Font menu 
 The size of the text's font. When read, the \code{font_size} will specified in points.}
 
 \item{link}{(\link{Link})
-The hyperlink destination of the text. If unset, there is no link. Links are not inherited from parent text. Changing the link in an update request causes some other changes to the text style of the range: * When setting a link, the text foreground color will be set to ThemeColorType.HYPERLINK and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults. * Setting a link on a text range that overlaps with an existing link will also update the existing link to point to the new URL. * Links are not settable on newline characters. As a result, setting a link on a text range that crosses a paragraph boundary, such as \code{"ABC\\n123"}, will separate the newline character(s) into their own text runs. The link will be applied separately to the runs before and after the newline. * Removing a link will update the text style of the range to match the style of the preceding text (or the default text styles if the prece}
+The hyperlink destination of the text. If unset, there is no link. Links are not inherited from parent text. Changing the link in an update request causes some other changes to the text style of the range:
+\itemize{
+\item When setting a link, the text foreground color will be set to ThemeColorType.HYPERLINK and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults.
+\item Setting a link on a text range that overlaps with an existing link will also update the existing link to point to the new URL.
+\item Links are not settable on newline characters. As a result, setting a link on a text range that crosses a paragraph boundary, such as \code{"ABC\\n123"}, will separate the newline character(s) into their own text runs. The link will be applied separately to the runs before and after the newline.
+\item Removing a link will update the text style of the range to match the style of the preceding text (or the default text styles if the preceding text is another link) unless different styles are being set in the same request.
+}}
 
 \item{baselineOffset}{(string)
 The text's vertical offset from its normal position. Text with \code{SUPERSCRIPT} or \code{SUBSCRIPT} baseline offsets is automatically rendered in a smaller font size, computed based on the \code{font_size} field. The \code{font_size} itself is not affected by changes in this field.}
@@ -54,7 +60,13 @@ Whether or not the text is struck through.}
 Whether or not the text is underlined.}
 
 \item{weightedFontFamily}{(\link{WeightedFontFamily})
-The font family and rendered weight of the text. This field is an extension of \code{font_family} meant to support explicit font weights without breaking backwards compatibility. As such, when reading the style of a range of text, the value of \code{weighted_font_family#font_family} will always be equal to that of \code{font_family}. However, when writing, if both fields are included in the field mask (either explicitly or through the wildcard \code{"*"}), their values are reconciled as follows: * If \code{font_family} is set and \code{weighted_font_family} is not, the value of \code{font_family} is applied with weight \code{400} ("normal"). * If both fields are set, the value of \code{font_family} must match that of \code{weighted_font_family#font_family}. If so, the font family and weight of \code{weighted_font_family} is applied. Otherwise, a 400 bad request error is returned. * If \code{weighted_font_family} is set and \code{font_family} is not, the font family and weight of \code{}
+The font family and rendered weight of the text. This field is an extension of \code{font_family} meant to support explicit font weights without breaking backwards compatibility. As such, when reading the style of a range of text, the value of \code{weighted_font_family#font_family} will always be equal to that of \code{font_family}. However, when writing, if both fields are included in the field mask (either explicitly or through the wildcard \code{"*"}), their values are reconciled as follows:
+\itemize{
+\item If \code{font_family} is set and \code{weighted_font_family} is not, the value of \code{font_family} is applied with weight \code{400} ("normal").
+\item If both fields are set, the value of \code{font_family} must match that of \code{weighted_font_family#font_family}. If so, the font family and weight of \code{weighted_font_family} is applied. Otherwise, a 400 bad request error is returned.
+\item If \code{weighted_font_family} is set and \code{font_family} is not, the font family and weight of \code{weighted_font_family} is applied.
+\item If neither field is set, the font family and weight of the text inherit from the parent. Note that these properties cannot inherit separately from each other. If an update request specifies values for both \code{weighted_font_family} and \code{bold}, the \code{weighted_font_family} is applied first, then \code{bold}. If \code{weighted_font_family#weight} is not set, it defaults to \code{400}. If \code{weighted_font_family} is set, then \code{weighted_font_family#font_family} must also be set with a non-empty value. Otherwise, a 400 bad request error is returned.
+}}
 }
 \value{
 TextStyle object

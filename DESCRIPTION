@@ -1,14 +1,14 @@
-Package: googleslides.api
+Package: SlidesTools
 Type: Package
 Title: Google Slides API client and tools
-Version: 0.1.0
+Version: 0.0.1
 Authors@R: c(
     person(given = "Isaac", family = "Gravestock",
     email = "isaac.gravestock@gmail.com", role = c("cre", "com")
     ),
     person("Google", role = "cph", comment = "Createor of API and documentation")
     )
-Description: Create Google Slides presentations from within R with full API support.
+Description: Create, read and modify Slides presentations with full REST API functionality.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
