@@ -15,4 +15,4 @@ LazyData: true
 RoxygenNote: 7.3.2
 Imports: gargle
 Roxygen: list(markdown = TRUE)
-
+URL: https://igrave.github.io/SlidesTools/
