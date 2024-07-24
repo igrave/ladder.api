@@ -2,11 +2,17 @@
 % Please edit documentation in R/utils.R
 \name{rm_null_objs}
 \alias{rm_null_objs}
-\title{Recursively step down into list, removing all such objects}
+\title{Recursively step down into list, removing NULL elements}
 \usage{
 rm_null_objs(x)
 }
+\arguments{
+\item{x}{A list like object}
+}
+\value{
+A list with all NULL elements (including children) removed
+}
 \description{
-Recursively step down into list, removing all such objects
+Recursively step down into list, removing NULL elements
 }
 \keyword{internal}

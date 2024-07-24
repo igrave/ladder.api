@@ -64,9 +64,12 @@ rot_matrix <- function(deg) {
 #'
 #' @keywords internal
 is_null_obj <- function(x) is.null(x) | all(sapply(x, is.null))
-#' Recursively step down into list, removing all such objects
-#'
+
+#' Recursively step down into list, removing NULL elements
+#' @export
+#' @param x A list like object
 #' @keywords internal
+#' @returns A list with all NULL elements (including children) removed
 rm_null_objs <- function(x) {
   class_x <- class(x)
   x <- Filter(Negate(is_null_obj), x)
