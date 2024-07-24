@@ -15,7 +15,7 @@ choose_slides <- function() {
   server <- httpuv::startServer(
     host = "127.0.0.1", port = 1083,
     app = list(
-      staticPaths = list("index.html" = "inst/picker.html"),
+      staticPaths = list("index.html" = system.file("picker.html", package = "SlidesTools")),
       staticPathOptions = httpuv::staticPathOptions(
         headers = list(accesstoken = .auth$cred$credentials$access_token)
       ),
