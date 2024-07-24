@@ -1,3 +1,13 @@
+#' Choose Slides presentation
+#'
+#' Opens a webpage for a user to authenticate with Google and select a presentation.
+#' This presentation is then authorised for use with SlidesTools.
+#'
+#' @return A presentation id
+#'
+#' @export
+#'
+#' @examples
 choose_slides <- function() {
   request_url <- "http://127.0.0.1:1083/index.html"
   auth_slide_id <- NULL

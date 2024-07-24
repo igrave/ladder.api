@@ -62,7 +62,7 @@ gsd_auth <- function(email = gargle::gargle_oauth_email(),
     email = email,
     path = path,
     package = "gslidesDevice",
-    cache = cache,
+    # cache = cache,
     use_oob = use_oob,
     token = token
   )
