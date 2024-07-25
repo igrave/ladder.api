@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 </head>
 <body>
-<p>Choose Slides for gslideDevice</p>
+<p>Choose Slides for SlidesTools</p>
 
 <!--Add buttons to initiate auth sequence and sign out-->
 <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
@@ -21,17 +21,17 @@
 
   // Authorization scopes required by the API; multiple scopes can be
   // included, separated by spaces.
-  const SCOPES = 'https://www.googleapis.com/auth/drive.file';
+  const SCOPES = 'https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/presentations.currentonly';
 
-  // TODO(developer): Set to client ID and API key from the Developer Console
+  // client ID and API key from the Developer Console
   const CLIENT_ID = '1073903696751-e5c51669nkid25bk0gjng5evspeakp7r.apps.googleusercontent.com';
   const API_KEY = 'AIzaSyAyLt5QNsDtC73_fbV7ayndchq5iEzyy-k';
 
-  // TODO(developer): Replace with your own project number from console.developers.google.com.
-  const APP_ID = 'helpful-range-376621';
+  // project number from console.developers.google.com.
+  const APP_ID = '1073903696751';
 
   let tokenClient;
-  let accessToken = 'ya29.a0Ael9sCP8OGqNpKNUhQSq3sVitH0_5shJZyzz0iuFcesUGl77yiL83TUyUgiLp3UHF80HE03-kyRMDzm9KGlPhfwhn9JioArrBPekuS4QwnukRdNzsQlz6VIBtjOq0q2-RTk4bEZvVq0Xn4QTLOLH7AYxnCq0aCgYKAcQSARISFQF4udJhgogD94TtNkBVM2yxyDVfcw0163';
+  let accessToken;
   let pickerInited = false;
   let gisInited = false;
 

@@ -1,20 +1,20 @@
-## This file is the interface between gslideDevice and the
+## This file is the interface between SlidesTools and the
 ## auth functionality in gargle.
 
-# Initialization happens in .onLoad
+# Initialization happens in .onLoad()
 .auth <- NULL
 
 ## The roxygen comments for these functions are mostly generated from data
 ## in this list and template text maintained in gargle.
 gargle_lookup_table <- list(
-  PACKAGE     = "gslideDevice",
+  PACKAGE     = "SlidesTools",
   YOUR_STUFF  = "your presentations",
   PRODUCT     = "Google Slides",
   API         = "Slides API",
-  PREFIX      = "gsd"
+  PREFIX      = "slides"
 )
 
-#' Authorize gslideDevice
+#' Authorize SlidesTools
 #'
 #' @eval gargle:::PREFIX_auth_description(gargle_lookup_table)
 #' @eval gargle:::PREFIX_auth_details(gargle_lookup_table)
@@ -25,44 +25,45 @@ gargle_lookup_table <- list(
 #' @family auth functions
 #' @export
 #'
-#' @examples
-#' \dontrun{
-#' ## load/refresh existing credentials, if available
-#' ## otherwise, go to browser for authentication and authorization
-#' gsd_auth()
+#' @examplesIf rlang::is_interactive()
+#' # load/refresh existing credentials, if available
+#' # otherwise, go to browser for authentication and authorization
+#' slides_auth()
 #'
-#' ## force use of a token associated with a specific email
-#' gsd_auth(email = "jenny@example.com")
+#' # see user associated with current token
+#' slides_user()
 #'
-#' ## force a menu where you can choose from existing tokens or
-#' ## choose to get a new one
-#' gsd_auth(email = NA)
+#' # force use of a token associated with a specific email
+#' slides_auth(email = "jenny@example.com")
+#' slides_user()
 #'
-#' ## use a 'read only' scope, so it's impossible to change data
-#' gsd_auth(
-#'   scopes = "https://www.googleapis.com/auth/devstorage.read_only"
-#' )
+#' # force the OAuth web dance
+#' slides_auth(email = NA)
 #'
-#' ## use a service account token
-#' gsd_auth(path = "foofy-83ee9e7c9c48.json")
-#' }
-gsd_auth <- function(email = gargle::gargle_oauth_email(),
+#' # use a 'read only' scope, so it's impossible to edit or delete files
+#' slides_auth(scopes = "slides.readonly")
+#'
+#' # use a service account token
+#' slides_auth(path = "foofy-83ee9e7c9c48.json")
+#'
+slides_auth <- function(email = gargle::gargle_oauth_email(),
                      path = NULL,
+                     subject = NULL,
                      scopes = c(
                        "https://www.googleapis.com/auth/drive.file",
                        "https://www.googleapis.com/auth/presentations.currentonly"
-                       # "https://www.googleapis.com/auth/presentations"
-                     ),
+                       ),
                      cache = gargle::gargle_oauth_cache(),
                      use_oob = gargle::gargle_oob_default(),
                      token = NULL) {
   cred <- gargle::token_fetch(
     scopes = scopes,
-    app = gsd_oauth_app(),
+    app = slides_oauth_client(),
     email = email,
     path = path,
-    package = "gslidesDevice",
-    # cache = cache,
+    subject = subject,
+    package = "SlidesTools",
+    cache = cache,
     use_oob = use_oob,
     token = token
   )
@@ -70,7 +71,7 @@ gsd_auth <- function(email = gargle::gargle_oauth_email(),
     stop(
       "Can't get Google credentials.\n",
       "Are you running gslidesDevice in a non-interactive session? Consider:\n",
-      "  * Call `gsd_auth()` directly with all necessary specifics.\n",
+      "  * Call `slides_auth()` directly with all necessary specifics.\n",
       call. = FALSE
     )
   }
@@ -88,10 +89,10 @@ gsd_auth <- function(email = gargle::gargle_oauth_email(),
 #' @export
 #' @examples
 #' \dontrun{
-#' gsd_deauth()
-#' gsd_user()
+#' slides_deauth()
+#' slides_user()
 #' }
-gsd_deauth <- function() {
+slides_deauth <- function() {
   .auth$set_auth_active(FALSE)
   .auth$clear_cred()
   invisible()
@@ -106,11 +107,11 @@ gsd_deauth <- function() {
 #' @export
 #' @examples
 #' \dontrun{
-#' gsd_token()
+#' slides_token()
 #' }
-gsd_token <- function() {
-  if (!gsd_has_token()) {
-    gsd_auth()
+slides_token <- function() {
+  if (!slides_has_token()) {
+    slides_auth()
   }
   httr::config(token = .auth$cred)
 }
@@ -124,77 +125,76 @@ gsd_token <- function() {
 #' @export
 #'
 #' @examples
-#' gsd_has_token()
-gsd_has_token <- function() {
+#' slides_has_token()
+slides_has_token <- function() {
   inherits(.auth$cred, "Token2.0")
 }
 
 #' Edit and view auth configuration
 #'
-#' @eval gargle:::PREFIX_auth_configure_description(gargle_lookup_table, .has_api_key = FALSE)
-#' @eval gargle:::PREFIX_auth_configure_params(.has_api_key = FALSE)
-#' @eval gargle:::PREFIX_auth_configure_return(gargle_lookup_table, .has_api_key = FALSE)
+#' @eval gargle:::PREFIX_auth_configure_description(gargle_lookup_table)
+#' @eval gargle:::PREFIX_auth_configure_params()
+#' @eval gargle:::PREFIX_auth_configure_return(gargle_lookup_table)
 #'
 #' @family auth functions
 #' @export
 #' @examples
-#' # see the current user-configured OAuth app (probaby `NULL`)
-#' gsd_oauth_app()
+#' # see and store the current user-configured OAuth client (probaby `NULL`)
+#' (original_client <- slides_oauth_client())
 #'
-#' if (require(httr)) {
-#'   # store current state, so we can restore
-#'   original_app <- gsd_oauth_app()
+#' # see and store the current user-configured API key (probaby `NULL`)
+#' (original_api_key <- slides_api_key())
 #'
-#'   # bring your own app via client id (aka key) and secret
-#'   google_app <- httr::oauth_app(
-#'     "my-awesome-google-api-wrapping-package",
-#'     key = "123456789.apps.googleusercontent.com",
-#'     secret = "abcdefghijklmnopqrstuvwxyz"
-#'   )
-#'   gsd_auth_configure(app = google_app)
-#'
-#'   # confirm current app
-#'   gsd_oauth_app()
-#'
-#'   # restore original state
-#'   gsd_auth_configure(app = original_app)
-#'   gsd_oauth_app()
-#' }
-#'
-#' \dontrun{
-#' # bring your own app via JSON downloaded from GCP Console
-#' gsd_auth_configure(
-#'   path = "/path/to/the/JSON/you/downloaded/from/gcp/console.json"
+#' # the preferred way to configure your own client is via a JSON file
+#' # downloaded from Google Developers Console
+#' # this example JSON is indicative, but fake
+#' path_to_json <- system.file(
+#'   "extdata", "client_secret_installed.googleusercontent.com.json",
+#'   package = "gargle"
 #' )
-#' }
+#' slides_auth_configure(path = path_to_json)
 #'
-gsd_auth_configure <- function(app, path) {
-  if (!xor(missing(app), missing(path))) {
-    stop("Must supply exactly one of `app` and `path`", call. = FALSE)
+#' # this is also obviously a fake API key
+#' slides_auth_configure(api_key = "the_key_I_got_for_a_google_API")
+#'
+#' # confirm the changes
+#' slides_oauth_client()
+#' slides_api_key()
+#'
+#' # restore original auth config
+#' slides_auth_configure(client = original_client, api_key = original_api_key)
+slides_auth_configure <- function(client, path, api_key, app) {
+  if (!missing(client) && !missing(path)) {
+    stop("Must supply exactly one of `client` or `path`, not both")
   }
-  if (!missing(path)) {
-    stopifnot(rlang::is_string(path))
-    app <- gargle::gargle_oauth_client_from_json(path)
-  }
-  stopifnot(is.null(app) || inherits(app, "oauth_app"))
+  stopifnot(missing(api_key) || is.null(api_key) || is_string(api_key))
 
-  .auth$set_app(app)
+  if (!missing(path)) {
+    stopifnot(is_string(path))
+    client <- gargle::gargle_oauth_client_from_json(path)
+  }
+  stopifnot(missing(client) || is.null(client) || inherits(client, "gargle_oauth_client"))
+
+  if (!missing(client) || !missing(path)) {
+    .auth$set_client(client)
+  }
+
+  if (!missing(api_key)) {
+    .auth$set_api_key(api_key)
+  }
+
+  invisible(.auth)
 }
 
 #' @export
-#' @rdname gsd_auth_configure
-gsd_oauth_app <- function() .auth$app
-
-
-#' @export
-#' @rdname gsd_auth_configure
-gsd_api_key <- function() {
+#' @rdname slides_auth_configure
+slides_api_key <- function() {
   .auth$api_key
 }
 
 #' @export
-#' @rdname gsd_auth_configure
-gsd_oauth_client <- function() {
+#' @rdname slides_auth_configure
+slides_oauth_client <- function() {
   .auth$client
 }
 #' Get info on current user
@@ -206,11 +206,11 @@ gsd_oauth_client <- function() {
 #' @export
 #' @examples
 #' \dontrun{
-#' gsd_user()
+#' slides_user()
 #' }
-gsd_user <- function() {
-  if (gsd_has_token()) {
-    gargle::token_email(gsd_token())
+slides_user <- function() {
+  if (slides_has_token()) {
+    gargle::token_email(slides_token())
   } else {
     NULL
   }

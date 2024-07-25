@@ -10,7 +10,7 @@ presentations.get <- function(presentationId) {
     path = "/v1/presentations/{presentationId}",
     params = list(presentationId = presentationId),
     base_url = "https://slides.googleapis.com",
-    token = gsd_token()
+    token = slides_token()
   )
   response <- gargle::request_make(request)
   gargle::response_process(response)
@@ -33,7 +33,7 @@ presentations.batchUpdate <- function(BatchUpdatePresentationRequest, presentati
     params = list(presentationId = presentationId),
     body = BatchUpdatePresentationRequest,
     base_url = "https://slides.googleapis.com",
-    token = gsd_token()
+    token = slides_token()
   )
   response <- gargle::request_make(request)
   gargle::response_process(response)
@@ -56,7 +56,7 @@ presentations.create <- function(Presentation) {
     path = "/v1/presentations",
     body = Presentation,
     base_url = "https://slides.googleapis.com",
-    token = gsd_token()
+    token = slides_token()
   )
   response <- gargle::request_make(request)
   gargle::response_process(response)
@@ -86,7 +86,7 @@ presentations.pages.get <- function(presentationId, pageObjectId) {
     path = "/v1/presentations/{presentationId}/pages/{pageObjectId}",
     params = list(presentationId = presentationId, pageObjectId = pageObjectId),
     base_url = "https://slides.googleapis.com",
-    token = gsd_token()
+    token = slides_token()
   )
   response <- gargle::request_make(request)
   gargle::response_process(response)
@@ -121,7 +121,7 @@ presentations.pages.getThumbnail <- function(presentationId,
       query_params
     ),
     base_url = "https://slides.googleapis.com",
-    token = gsd_token()
+    token = slides_token()
   )
   response <- gargle::request_make(request)
   gargle::response_process(response)
