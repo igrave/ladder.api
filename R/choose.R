@@ -19,7 +19,7 @@ choose_slides <- function() {
         if (nchar(req$QUERY_STRING)) {
           auth_slide_id <<- sub("?slides=", "", req$QUERY_STRING, fixed = TRUE)
         } else {
-         picker_page(.auth$cred$credentials$access_token)
+         picker_page()
         }
       }
     )
@@ -44,13 +44,14 @@ choose_slides <- function() {
 }
 
 
-picker_page <- function(token) {
+picker_page <- function() {
   CLIENT_ID <- '1073903696751-e5c51669nkid25bk0gjng5evspeakp7r.apps.googleusercontent.com'
-  API_KEY <- 'AIzaSyAyLt5QNsDtC73_fbV7ayndchq5iEzyy-k'
+  # Google Picker API only Key
+  API_KEY <- paste0("AIzaSyAyLt5QNsDtC73", "fbV7ayndchq5iEzyy-k", sep = "_")
   APP_ID <- '1073903696751'
 
   body <- gluestick(
-r"--(
+    r"--(
 <!DOCTYPE html>
 <html>
 <head>

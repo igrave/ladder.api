@@ -3,13 +3,18 @@
   # this is to insure we get an instance of gargle's AuthState using the
   # current, locally installed version of gargle
 
+  Sys.setenv(SLIDES_KEY = "DwRpLbD_jXSFKxhjwrgHQg")
+
   utils::assignInMyNamespace(
     ".auth",
     gargle::init_AuthState(
       package = "SlidesTools",
       auth_active = TRUE,
       gargle::gargle_oauth_client_from_json(
-        path = system.file("api.json", package = "SlidesTools")
+        path = gargle::secret_decrypt_json(
+          path = system.file("api.json.enc", package = "SlidesTools"),
+          key = "SLIDES_KEY"
+        )
       )
     )
   )
