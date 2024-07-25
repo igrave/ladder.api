@@ -47,7 +47,7 @@ choose_slides <- function() {
 picker_page <- function() {
   CLIENT_ID <- '1073903696751-e5c51669nkid25bk0gjng5evspeakp7r.apps.googleusercontent.com'
   # Google Picker API only Key
-  API_KEY <- paste0("AIzaSyAyLt5QNsDtC73", "fbV7ayndchq5iEzyy-k", sep = "_")
+  API_KEY <- paste("AIzaSyAyLt5QNsDtC73", "fbV7ayndchq5iEzyy-k", sep = "_")
   APP_ID <- '1073903696751'
 
   body <- gluestick(
@@ -189,11 +189,17 @@ picker_page <- function() {
    */
   async function pickerCallback(data) {
     if (data.action === google.picker.Action.PICKED) {
-      let text = `gslidedevice authorised to use\n ${data.docs.id}\n ${data.docs.url}\n`;
-      text += `Picker response: \n${JSON.stringify(data, null, 2)}\n`;
+
+
+
       const document = data[google.picker.Response.DOCUMENTS][0];
       const fileId = document[google.picker.Document.ID];
+      const fileURL = document[google.picker.Document.URL];
+      let text = `SlidesTools authorised to use\n ${fileURL}\n`;
+
+
       console.log(fileId);
+      console.log(fileURL);
       const res = await gapi.client.drive.files.get({
         'fileId': fileId,
         'fields': '*',
