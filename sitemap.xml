@@ -140,12 +140,6 @@
 <url><loc>https://igrave.github.io/SlidesTools/reference/WordArt.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/WriteControl.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/choose_slides.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/gsd_auth.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/gsd_auth_configure.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/gsd_deauth.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/gsd_has_token.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/gsd_token.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/gsd_user.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/index.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/is_null_obj.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/presentations.batchUpdate.html</loc></url>
@@ -154,5 +148,11 @@
 <url><loc>https://igrave.github.io/SlidesTools/reference/presentations.pages.get.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/presentations.pages.getThumbnail.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/rm_null_objs.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/slides_auth.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/slides_auth_configure.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/slides_deauth.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/slides_has_token.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/slides_token.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/slides_user.html</loc></url>
 </urlset>
 
