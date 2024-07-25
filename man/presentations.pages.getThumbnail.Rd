@@ -2,7 +2,7 @@
 % Please edit documentation in R/api_functions.R
 \name{presentations.pages.getThumbnail}
 \alias{presentations.pages.getThumbnail}
-\title{Generates a thumbnail of the latest version of the specified page in the presentation and returns a URL to the thumbnail image. This request counts as an \href{/slides/limits}{expensive read request} for quota purposes.}
+\title{Generates a thumbnail of the latest version of the specified page.}
 \usage{
 presentations.pages.getThumbnail(
   presentationId,
@@ -21,7 +21,9 @@ presentations.pages.getThumbnail(
 \item{thumbnailProperties.mimeType}{The optional mime type of the thumbnail image}
 }
 \description{
-Generates a thumbnail of the latest version of the specified page in the presentation and returns a URL to the thumbnail image. This request counts as an \href{/slides/limits}{expensive read request} for quota purposes.
+Generates a thumbnail of the latest version of the specified page in the presentation and returns
+a URL to the thumbnail image. This request counts as an \href{/slides/limits}{expensive read request}
+for quota purposes.
 }
 \seealso{
 \href{https://developers.google.com/slides/}{Google Documentation}

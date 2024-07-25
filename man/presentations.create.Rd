@@ -2,10 +2,7 @@
 % Please edit documentation in R/api_functions.R
 \name{presentations.create}
 \alias{presentations.create}
-\title{Creates a blank presentation using the title given in the request.
-If a \code{presentationId} is provided, it is used as the ID of the new
-presentation. Otherwise, a new ID is generated. Other fields in the request,
-including any provided content, are ignored. Returns the created presentation.}
+\title{Creates a blank presentation using the title given in the request.}
 \usage{
 presentations.create(Presentation)
 }
@@ -13,7 +10,6 @@ presentations.create(Presentation)
 \item{Presentation}{The \link{Presentation} object to pass to this method}
 }
 \description{
-Creates a blank presentation using the title given in the request.
 If a \code{presentationId} is provided, it is used as the ID of the new
 presentation. Otherwise, a new ID is generated. Other fields in the request,
 including any provided content, are ignored. Returns the created presentation.
