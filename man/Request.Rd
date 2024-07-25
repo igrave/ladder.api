@@ -4,52 +4,7 @@
 \alias{Request}
 \title{Request Object}
 \usage{
-Request(
-  createSlide = NULL,
-  createShape = NULL,
-  createTable = NULL,
-  insertText = NULL,
-  insertTableRows = NULL,
-  insertTableColumns = NULL,
-  deleteTableRow = NULL,
-  deleteTableColumn = NULL,
-  replaceAllText = NULL,
-  deleteObject = NULL,
-  updatePageElementTransform = NULL,
-  updateSlidesPosition = NULL,
-  deleteText = NULL,
-  createImage = NULL,
-  createVideo = NULL,
-  createSheetsChart = NULL,
-  createLine = NULL,
-  refreshSheetsChart = NULL,
-  updateShapeProperties = NULL,
-  updateImageProperties = NULL,
-  updateVideoProperties = NULL,
-  updatePageProperties = NULL,
-  updateTableCellProperties = NULL,
-  updateLineProperties = NULL,
-  createParagraphBullets = NULL,
-  replaceAllShapesWithImage = NULL,
-  duplicateObject = NULL,
-  updateTextStyle = NULL,
-  replaceAllShapesWithSheetsChart = NULL,
-  deleteParagraphBullets = NULL,
-  updateParagraphStyle = NULL,
-  updateTableBorderProperties = NULL,
-  updateTableColumnProperties = NULL,
-  updateTableRowProperties = NULL,
-  mergeTableCells = NULL,
-  unmergeTableCells = NULL,
-  groupObjects = NULL,
-  ungroupObjects = NULL,
-  updatePageElementAltText = NULL,
-  replaceImage = NULL,
-  updateSlideProperties = NULL,
-  updatePageElementsZOrder = NULL,
-  updateLineCategory = NULL,
-  rerouteLine = NULL
-)
+Request(...)
 }
 \arguments{
 \item{createSlide}{(\link{CreateSlideRequest})
