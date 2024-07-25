@@ -25,7 +25,7 @@ presentations.get <- function(presentationId) {
 #' @family BatchUpdatePresentationRequest functions
 #' @export
 presentations.batchUpdate <- function(BatchUpdatePresentationRequest, presentationId) {
-  # stopifnot(inherits(BatchUpdatePresentationRequest, "gar_BatchUpdatePresentationRequest"))
+  # stopifnot(inherits(BatchUpdatePresentationRequest, "BatchUpdatePresentationRequest"))
 
   request <- gargle::request_build(
     method = "POST",
@@ -76,11 +76,6 @@ presentations.create <- function(Presentation) {
 #' @importFrom gargle request_build request_make response_process
 #'
 presentations.pages.get <- function(presentationId, pageObjectId) {
-  # url <- sprintf("https://slides.googleapis.com/v1/presentations/%s/pages/%s",
-  # presentationId, pageObjectId)
-  # slides.presentations.pages.get
-  # f <- googleAuthR::gar_api_generator(url, "GET", data_parse_function = function(x) x)
-  # f()
   request <- gargle::request_build(
     method = "GET",
     path = "/v1/presentations/{presentationId}/pages/{pageObjectId}",
