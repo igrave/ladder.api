@@ -1,4 +1,4 @@
-Package: SlidesTools
+Package: ladder.api
 Type: Package
 Title: Google Slides API client and tools
 Version: 0.0.1

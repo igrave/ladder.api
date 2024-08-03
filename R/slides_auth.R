@@ -1,4 +1,4 @@
-## This file is the interface between SlidesTools and the
+## This file is the interface between ladder.api and the
 ## auth functionality in gargle.
 
 # Initialization happens in .onLoad()
@@ -7,14 +7,14 @@
 ## The roxygen comments for these functions are mostly generated from data
 ## in this list and template text maintained in gargle.
 gargle_lookup_table <- list(
-  PACKAGE     = "SlidesTools",
+  PACKAGE     = "ladder.api",
   YOUR_STUFF  = "your presentations",
   PRODUCT     = "Google Slides",
   API         = "Slides API",
   PREFIX      = "slides"
 )
 
-#' Authorize SlidesTools
+#' Authorize ladder
 #'
 #' @eval gargle:::PREFIX_auth_description(gargle_lookup_table)
 #' @eval gargle:::PREFIX_auth_details(gargle_lookup_table)
@@ -28,25 +28,25 @@ gargle_lookup_table <- list(
 #' @examplesIf rlang::is_interactive()
 #' # load/refresh existing credentials, if available
 #' # otherwise, go to browser for authentication and authorization
-#' slides_auth()
+#' ladder_auth()
 #'
 #' # see user associated with current token
-#' slides_user()
+#' ladder_user()
 #'
 #' # force use of a token associated with a specific email
-#' slides_auth(email = "jenny@example.com")
-#' slides_user()
+#' ladder_auth(email = "jenny@example.com")
+#' ladder_user()
 #'
 #' # force the OAuth web dance
-#' slides_auth(email = NA)
+#' ladder_auth(email = NA)
 #'
 #' # use a 'read only' scope, so it's impossible to edit or delete files
-#' slides_auth(scopes = "slides.readonly")
+#' ladder_auth(scopes = "slides.readonly")
 #'
 #' # use a service account token
-#' slides_auth(path = "foofy-83ee9e7c9c48.json")
+#' ladder_auth(path = "foofy-83ee9e7c9c48.json")
 #'
-slides_auth <- function(email = gargle::gargle_oauth_email(),
+ladder_auth <- function(email = gargle::gargle_oauth_email(),
                      path = NULL,
                      subject = NULL,
                      scopes = c(
@@ -58,11 +58,11 @@ slides_auth <- function(email = gargle::gargle_oauth_email(),
                      token = NULL) {
   cred <- gargle::token_fetch(
     scopes = scopes,
-    app = slides_oauth_client(),
+    app = ladder_oauth_client(),
     email = email,
     path = path,
     subject = subject,
-    package = "SlidesTools",
+    package = "ladder.api",
     cache = cache,
     use_oob = use_oob,
     token = token
@@ -70,8 +70,8 @@ slides_auth <- function(email = gargle::gargle_oauth_email(),
   if (!inherits(cred, "Token2.0")) {
     stop(
       "Can't get Google credentials.\n",
-      "Are you running gslidesDevice in a non-interactive session? Consider:\n",
-      "  * Call `slides_auth()` directly with all necessary specifics.\n",
+      "Are you running ladder in a non-interactive R session? Consider:\n",
+      "  * Call `ladder_auth()` directly with all necessary specifics.\n",
       call. = FALSE
     )
   }
@@ -89,10 +89,10 @@ slides_auth <- function(email = gargle::gargle_oauth_email(),
 #' @export
 #' @examples
 #' \dontrun{
-#' slides_deauth()
-#' slides_user()
+#' ladder_deauth()
+#' ladder_user()
 #' }
-slides_deauth <- function() {
+ladder_deauth <- function() {
   .auth$set_auth_active(FALSE)
   .auth$clear_cred()
   invisible()
@@ -107,11 +107,11 @@ slides_deauth <- function() {
 #' @export
 #' @examples
 #' \dontrun{
-#' slides_token()
+#' ladder_token()
 #' }
-slides_token <- function() {
-  if (!slides_has_token()) {
-    slides_auth()
+ladder_token <- function() {
+  if (!ladder_has_token()) {
+    ladder_auth()
   }
   httr::config(token = .auth$cred)
 }
@@ -125,8 +125,8 @@ slides_token <- function() {
 #' @export
 #'
 #' @examples
-#' slides_has_token()
-slides_has_token <- function() {
+#' ladder_has_token()
+ladder_has_token <- function() {
   inherits(.auth$cred, "Token2.0")
 }
 
@@ -140,10 +140,10 @@ slides_has_token <- function() {
 #' @export
 #' @examples
 #' # see and store the current user-configured OAuth client (probaby `NULL`)
-#' (original_client <- slides_oauth_client())
+#' (original_client <- ladder_oauth_client())
 #'
 #' # see and store the current user-configured API key (probaby `NULL`)
-#' (original_api_key <- slides_api_key())
+#' (original_api_key <- ladder_api_key())
 #'
 #' # the preferred way to configure your own client is via a JSON file
 #' # downloaded from Google Developers Console
@@ -152,18 +152,18 @@ slides_has_token <- function() {
 #'   "extdata", "client_secret_installed.googleusercontent.com.json",
 #'   package = "gargle"
 #' )
-#' slides_auth_configure(path = path_to_json)
+#' ladder_auth_configure(path = path_to_json)
 #'
 #' # this is also obviously a fake API key
-#' slides_auth_configure(api_key = "the_key_I_got_for_a_google_API")
+#' ladder_auth_configure(api_key = "the_key_I_got_for_a_google_API")
 #'
 #' # confirm the changes
-#' slides_oauth_client()
-#' slides_api_key()
+#' ladder_oauth_client()
+#' ladder_api_key()
 #'
 #' # restore original auth config
-#' slides_auth_configure(client = original_client, api_key = original_api_key)
-slides_auth_configure <- function(client, path, api_key, app) {
+#' ladder_auth_configure(client = original_client, api_key = original_api_key)
+ladder_auth_configure <- function(client, path, api_key, app) {
   if (!missing(client) && !missing(path)) {
     stop("Must supply exactly one of `client` or `path`, not both")
   }
@@ -187,14 +187,14 @@ slides_auth_configure <- function(client, path, api_key, app) {
 }
 
 #' @export
-#' @rdname slides_auth_configure
-slides_api_key <- function() {
+#' @rdname ladder_auth_configure
+ladder_api_key <- function() {
   .auth$api_key
 }
 
 #' @export
-#' @rdname slides_auth_configure
-slides_oauth_client <- function() {
+#' @rdname ladder_auth_configure
+ladder_oauth_client <- function() {
   .auth$client
 }
 #' Get info on current user
@@ -206,11 +206,11 @@ slides_oauth_client <- function() {
 #' @export
 #' @examples
 #' \dontrun{
-#' slides_user()
+#' ladder_user()
 #' }
-slides_user <- function() {
-  if (slides_has_token()) {
-    gargle::token_email(slides_token())
+ladder_user <- function() {
+  if (ladder_has_token()) {
+    gargle::token_email(ladder_token())
   } else {
     NULL
   }

@@ -8,11 +8,11 @@
   utils::assignInMyNamespace(
     ".auth",
     gargle::init_AuthState(
-      package = "SlidesTools",
+      package = "ladder.api",
       auth_active = TRUE,
       gargle::gargle_oauth_client_from_json(
         path = gargle::secret_decrypt_json(
-          path = system.file("api.json.enc", package = "SlidesTools"),
+          path = system.file("api.json.enc", package = "ladder.api"),
           key = "SLIDES_KEY"
         )
       )

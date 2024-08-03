@@ -1,7 +1,7 @@
 #' Choose Slides presentation
 #'
 #' Opens a webpage for a user to authenticate with Google and select a presentation.
-#' This presentation is then authorised for use with SlidesTools.
+#' This presentation is then authorised for use with ladder.
 #'
 #' @return A presentation id
 #'
@@ -55,11 +55,11 @@ picker_page <- function() {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Choose Slides for SlidesTools</title>
+  <title>Choose Slides for ladder</title>
   <meta charset="utf-8" />
 </head>
 <body>
-<p>Choose Slides for SlidesTools</p>
+<p>Choose Slides for ladder</p>
 
 <!--Add buttons to initiate auth sequence and sign out-->
 <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
@@ -195,7 +195,7 @@ picker_page <- function() {
       const document = data[google.picker.Response.DOCUMENTS][0];
       const fileId = document[google.picker.Document.ID];
       const fileURL = document[google.picker.Document.URL];
-      let text = `SlidesTools authorised to use\n ${fileURL}\n`;
+      let text = `ladder authorised to use\n ${fileURL}\n`;
 
 
       console.log(fileId);
