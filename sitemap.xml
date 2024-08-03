@@ -90,7 +90,6 @@
 <url><loc>https://igrave.github.io/SlidesTools/reference/SheetsChartProperties.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/Size.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/SlideProperties.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/SlidesTools-package.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/SolidFill.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/SpeakerSpotlight.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/SpeakerSpotlightProperties.html</loc></url>
@@ -142,17 +141,18 @@
 <url><loc>https://igrave.github.io/SlidesTools/reference/choose_slides.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/index.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/is_null_obj.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/ladder.api-package.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/ladder_auth.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/ladder_auth_configure.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/ladder_deauth.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/ladder_has_token.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/ladder_token.html</loc></url>
+<url><loc>https://igrave.github.io/SlidesTools/reference/ladder_user.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/presentations.batchUpdate.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/presentations.create.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/presentations.get.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/presentations.pages.get.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/presentations.pages.getThumbnail.html</loc></url>
 <url><loc>https://igrave.github.io/SlidesTools/reference/rm_null_objs.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/slides_auth.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/slides_auth_configure.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/slides_deauth.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/slides_has_token.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/slides_token.html</loc></url>
-<url><loc>https://igrave.github.io/SlidesTools/reference/slides_user.html</loc></url>
 </urlset>
 
