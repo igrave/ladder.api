@@ -1,14 +1,14 @@
-url: https://igrave.github.io/SlidesTools/
+url: https://igrave.github.io/ladder.api/
 template:
   bootstrap: 5
 footer:
   structure:
-    left: package
-    right:
+    left:
+    - package
     - developed_by
+    right:
     - legal
   components:
     legal: Portions of this page are reproduced from work created and [shared by Google](https://developers.google.com/readme/policies)
-      and used according to terms described in the [Creative Commons 4.0 Attribution
-      License](https://creativecommons.org/licenses/by/4.0/).
+      and used according to terms described in the [Creative Commons 4.0 Attribution License](https://creativecommons.org/licenses/by/4.0/).
 
