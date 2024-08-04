@@ -148,10 +148,10 @@ httr's class <code>request</code>, i.e. a token that has been prepared with
 </dl></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Most users, most of the time, do not need to call <code>slides_auth()</code>
+    <p>Most users, most of the time, do not need to call <code>ladder_auth()</code>
 explicitly – it is triggered by the first action that requires
 authorization. Even when called, the default arguments often suffice.</p>
-<p>However, when necessary, <code>slides_auth()</code> allows the user to explicitly:</p><ul><li><p>Declare which Google identity to use, via an <code>email</code> specification.</p></li>
+<p>However, when necessary, <code>ladder_auth()</code> allows the user to explicitly:</p><ul><li><p>Declare which Google identity to use, via an <code>email</code> specification.</p></li>
 <li><p>Use a service account token or workload identity federation via
 <code>path</code>.</p></li>
 <li><p>Bring your own <code>token</code>.</p></li>
@@ -176,7 +176,7 @@ client to use. But if you need to set this explicitly, use the
 <span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>gargle_oauth_client_type <span class="op">=</span> <span class="st">"installed"</span><span class="op">)</span> <span class="co"># conventional OOB</span></span></code></pre><p></p></div>
 <p>For details on the many ways to find a token, see
 <code><a href="https://gargle.r-lib.org/reference/token_fetch.html" class="external-link">gargle::token_fetch()</a></code>. For deeper control over auth, use
-<code>slides_auth_configure()</code> to bring your own OAuth client or API key.
+<code><a href="ladder_auth_configure.html">ladder_auth_configure()</a></code> to bring your own OAuth client or API key.
 To learn more about gargle options, see <a href="https://gargle.r-lib.org/reference/gargle_options.html" class="external-link">gargle::gargle_options</a>.</p>
     </div>
     <div class="section level2">
