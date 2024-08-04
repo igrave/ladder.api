@@ -13,8 +13,8 @@ resources for which no Google sign-in is required. This is handy for using
 ladder.api in a non-interactive setting to make requests that do not
 require a token. It will prevent the attempt to obtain a token
 interactively in the browser. The user can configure their own API key
-via \code{\link[=slides_auth_configure]{slides_auth_configure()}} and retrieve that key via
-\code{\link[=slides_api_key]{slides_api_key()}}.
+via \code{\link[=ladder_auth_configure]{ladder_auth_configure()}} and retrieve that key via
+\code{\link[=ladder_api_key]{ladder_api_key()}}.
 In the absence of a user-configured key, a built-in default key is used.
 }
 \examples{

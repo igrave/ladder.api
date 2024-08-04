@@ -11,7 +11,7 @@ gargle_lookup_table <- list(
   YOUR_STUFF  = "your presentations",
   PRODUCT     = "Google Slides",
   API         = "Slides API",
-  PREFIX      = "slides"
+  PREFIX      = "ladder"
 )
 
 #' Authorize ladder
@@ -215,3 +215,4 @@ ladder_user <- function() {
     NULL
   }
 }
+

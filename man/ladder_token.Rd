@@ -13,10 +13,10 @@ A \code{request} object (an S3 class provided by \link[httr:httr-package]{httr})
 For internal use or for those programming around the Slides API.
 Returns a token pre-processed with \code{\link[httr:config]{httr::config()}}. Most users
 do not need to handle tokens "by hand" or, even if they need some
-control, \code{\link[=slides_auth]{slides_auth()}} is what they need. If there is no current
-token, \code{\link[=slides_auth]{slides_auth()}} is called to either load from cache or
+control, \code{\link[=ladder_auth]{ladder_auth()}} is what they need. If there is no current
+token, \code{\link[=ladder_auth]{ladder_auth()}} is called to either load from cache or
 initiate OAuth2.0 flow.
-If auth has been deactivated via \code{\link[=slides_deauth]{slides_deauth()}}, \code{slides_token()}
+If auth has been deactivated via \code{\link[=ladder_deauth]{ladder_deauth()}}, \code{ladder_token()}
 returns \code{NULL}.
 }
 \examples{

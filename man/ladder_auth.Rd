@@ -89,11 +89,11 @@ level means the same token can be used across multiple projects and
 tokens are less likely to be synced to the cloud by accident.
 }
 \details{
-Most users, most of the time, do not need to call \code{slides_auth()}
+Most users, most of the time, do not need to call \code{ladder_auth()}
 explicitly -- it is triggered by the first action that requires
 authorization. Even when called, the default arguments often suffice.
 
-However, when necessary, \code{slides_auth()} allows the user to explicitly:
+However, when necessary, \code{ladder_auth()} allows the user to explicitly:
 \itemize{
 \item Declare which Google identity to use, via an \code{email} specification.
 \item Use a service account token or workload identity federation via
@@ -126,7 +126,7 @@ options(gargle_oauth_client_type = "installed") # conventional OOB
 
 For details on the many ways to find a token, see
 \code{\link[gargle:token_fetch]{gargle::token_fetch()}}. For deeper control over auth, use
-\code{\link[=slides_auth_configure]{slides_auth_configure()}} to bring your own OAuth client or API key.
+\code{\link[=ladder_auth_configure]{ladder_auth_configure()}} to bring your own OAuth client or API key.
 To learn more about gargle options, see \link[gargle:gargle_options]{gargle::gargle_options}.
 }
 \examples{

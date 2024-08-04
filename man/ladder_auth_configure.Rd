@@ -28,19 +28,19 @@ argument.}
 }
 \value{
 \itemize{
-\item \code{slides_auth_configure()}: An object of R6 class
+\item \code{ladder_auth_configure()}: An object of R6 class
 \link[gargle:AuthState-class]{gargle::AuthState}, invisibly.
-\item \code{slides_oauth_client()}: the current user-configured OAuth client.
-\item \code{slides_api_key()}: the current user-configured API key.
+\item \code{ladder_oauth_client()}: the current user-configured OAuth client.
+\item \code{ladder_api_key()}: the current user-configured API key.
 }
 }
 \description{
 These functions give more control over and visibility into the auth
-configuration than \code{\link[=slides_auth]{slides_auth()}} does. \code{slides_auth_configure()}
+configuration than \code{\link[=ladder_auth]{ladder_auth()}} does. \code{ladder_auth_configure()}
 lets the user specify their own:
 \itemize{
 \item OAuth client, which is used when obtaining a user token.
-\item API key. If ladder.api is de-authorized via \code{\link[=slides_deauth]{slides_deauth()}}, all
+\item API key. If ladder.api is de-authorized via \code{\link[=ladder_deauth]{ladder_deauth()}}, all
 requests are sent with an API key in lieu of a token.
 }
 
@@ -49,7 +49,7 @@ for more.
 If the user does not configure these settings, internal defaults
 are used.
 
-\code{slides_oauth_client()} and \code{slides_api_key()} retrieve the
+\code{ladder_oauth_client()} and \code{ladder_api_key()} retrieve the
 currently configured OAuth client and API key, respectively.
 }
 \examples{
