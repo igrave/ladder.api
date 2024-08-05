@@ -13,3 +13,8 @@ A presentation id
 Opens a webpage for a user to authenticate with Google and select a presentation.
 This presentation is then authorised for use with ladder.
 }
+\examples{
+\donttest{
+  id <- choose_slides()
+}
+}

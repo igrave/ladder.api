@@ -8,6 +8,9 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
+#'   id <- choose_slides()
+#' }
 choose_slides <- function() {
   request_url <- "http://127.0.0.1:1083/index.html"
   auth_slide_id <- NULL
