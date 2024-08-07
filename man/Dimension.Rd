@@ -11,7 +11,12 @@ Dimension(magnitude = NULL, unit = NULL)
 The magnitude.}
 
 \item{unit}{(string)
-The units for magnitude.}
+The units for magnitude.
+\itemize{
+\item \code{UNIT_UNSPECIFIED}: The units are unknown.
+\item \code{EMU}: An English Metric Unit (EMU) is defined as 1/360,000 of a centimeter and thus there are 914,400 EMUs per inch, and 12,700 EMUs per point.
+\item \code{PT}: A point, 1/72 of an inch.
+}}
 }
 \value{
 Dimension object

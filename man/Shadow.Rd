@@ -17,13 +17,29 @@ Shadow(
 }
 \arguments{
 \item{type}{(string)
-The type of the shadow. This property is read-only.}
+The type of the shadow. This property is read-only.
+\itemize{
+\item \code{SHADOW_TYPE_UNSPECIFIED}: Unspecified shadow type.
+\item \code{OUTER}: Outer shadow.
+}}
 
 \item{transform}{(\link{AffineTransform})
 Transform that encodes the translate, scale, and skew of the shadow, relative to the alignment position.}
 
 \item{alignment}{(string)
-The alignment point of the shadow, that sets the origin for translate, scale and skew of the shadow. This property is read-only.}
+The alignment point of the shadow, that sets the origin for translate, scale and skew of the shadow. This property is read-only.
+\itemize{
+\item \code{RECTANGLE_POSITION_UNSPECIFIED}: Unspecified.
+\item \code{TOP_LEFT}: Top left.
+\item \code{TOP_CENTER}: Top center.
+\item \code{TOP_RIGHT}: Top right.
+\item \code{LEFT_CENTER}: Left center.
+\item \code{CENTER}: Center.
+\item \code{RIGHT_CENTER}: Right center.
+\item \code{BOTTOM_LEFT}: Bottom left.
+\item \code{BOTTOM_CENTER}: Bottom center.
+\item \code{BOTTOM_RIGHT}: Bottom right.
+}}
 
 \item{blurRadius}{(\link{Dimension})
 The radius of the shadow blur. The larger the radius, the more diffuse the shadow becomes.}
@@ -38,7 +54,12 @@ The alpha of the shadow's color, from 0.0 to 1.0.}
 Whether the shadow should rotate with the shape. This property is read-only.}
 
 \item{propertyState}{(string)
-The shadow property state. Updating the shadow on a page element will implicitly update this field to \code{RENDERED}, unless another value is specified in the same request. To have no shadow on a page element, set this field to \code{NOT_RENDERED}. In this case, any other shadow fields set in the same request will be ignored.}
+The shadow property state. Updating the shadow on a page element will implicitly update this field to \code{RENDERED}, unless another value is specified in the same request. To have no shadow on a page element, set this field to \code{NOT_RENDERED}. In this case, any other shadow fields set in the same request will be ignored.
+\itemize{
+\item \code{RENDERED}: If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value.
+\item \code{NOT_RENDERED}: If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED.
+\item \code{INHERIT}: If a property's state is INHERIT, then the property state uses the value of corresponding \code{property_state} field on the parent shape. Elements that do not inherit will never have an INHERIT property state.
+}}
 }
 \value{
 Shadow object

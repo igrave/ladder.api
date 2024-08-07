@@ -11,7 +11,14 @@ Link(url = NULL, relativeLink = NULL, pageObjectId = NULL, slideIndex = NULL)
 If set, indicates this is a link to the external web page at this URL.}
 
 \item{relativeLink}{(string)
-If set, indicates this is a link to a slide in this presentation, addressed by its position.}
+If set, indicates this is a link to a slide in this presentation, addressed by its position.
+\itemize{
+\item \code{RELATIVE_SLIDE_LINK_UNSPECIFIED}: An unspecified relative slide link.
+\item \code{NEXT_SLIDE}: A link to the next slide.
+\item \code{PREVIOUS_SLIDE}: A link to the previous slide.
+\item \code{FIRST_SLIDE}: A link to the first slide in the presentation.
+\item \code{LAST_SLIDE}: A link to the last slide in the presentation.
+}}
 
 \item{pageObjectId}{(string)
 If set, indicates this is a link to the specific page in this presentation with this ID. A page with this ID may not exist.}

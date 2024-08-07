@@ -11,7 +11,26 @@ OpaqueColor(rgbColor = NULL, themeColor = NULL)
 An opaque RGB color.}
 
 \item{themeColor}{(string)
-An opaque theme color.}
+An opaque theme color.
+\itemize{
+\item \code{THEME_COLOR_TYPE_UNSPECIFIED}: Unspecified theme color. This value should not be used.
+\item \code{DARK1}: Represents the first dark color.
+\item \code{LIGHT1}: Represents the first light color.
+\item \code{DARK2}: Represents the second dark color.
+\item \code{LIGHT2}: Represents the second light color.
+\item \code{ACCENT1}: Represents the first accent color.
+\item \code{ACCENT2}: Represents the second accent color.
+\item \code{ACCENT3}: Represents the third accent color.
+\item \code{ACCENT4}: Represents the fourth accent color.
+\item \code{ACCENT5}: Represents the fifth accent color.
+\item \code{ACCENT6}: Represents the sixth accent color.
+\item \code{HYPERLINK}: Represents the color to use for hyperlinks.
+\item \code{FOLLOWED_HYPERLINK}: Represents the color to use for visited hyperlinks.
+\item \code{TEXT1}: Represents the first text color.
+\item \code{BACKGROUND1}: Represents the first background color.
+\item \code{TEXT2}: Represents the second text color.
+\item \code{BACKGROUND2}: Represents the second background color.
+}}
 }
 \value{
 OpaqueColor object

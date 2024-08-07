@@ -11,7 +11,14 @@ UpdatePageElementsZOrderRequest(pageElementObjectIds = NULL, operation = NULL)
 The object IDs of the page elements to update. All the page elements must be on the same page and must not be grouped.}
 
 \item{operation}{(string)
-The Z-order operation to apply on the page elements. When applying the operation on multiple page elements, the relative Z-orders within these page elements before the operation is maintained.}
+The Z-order operation to apply on the page elements. When applying the operation on multiple page elements, the relative Z-orders within these page elements before the operation is maintained.
+\itemize{
+\item \code{Z_ORDER_OPERATION_UNSPECIFIED}: Unspecified operation.
+\item \code{BRING_TO_FRONT}: Brings the page elements to the front of the page.
+\item \code{BRING_FORWARD}: Brings the page elements forward on the page by one element relative to the forwardmost one in the specified page elements.
+\item \code{SEND_BACKWARD}: Sends the page elements backward on the page by one element relative to the furthest behind one in the specified page elements.
+\item \code{SEND_TO_BACK}: Sends the page elements to the back of the page.
+}}
 }
 \value{
 UpdatePageElementsZOrderRequest object

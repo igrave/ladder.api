@@ -11,7 +11,12 @@ Video(url = NULL, source = NULL, id = NULL, videoProperties = NULL)
 An URL to a video. The URL is valid as long as the source video exists and sharing settings do not change.}
 
 \item{source}{(string)
-The video source.}
+The video source.
+\itemize{
+\item \code{SOURCE_UNSPECIFIED}: The video source is unspecified.
+\item \code{YOUTUBE}: The video source is YouTube.
+\item \code{DRIVE}: The video source is Google Drive.
+}}
 
 \item{id}{(string)
 The video source's unique identifier for this video.}

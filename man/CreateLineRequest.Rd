@@ -19,10 +19,21 @@ A user-supplied object ID. If you specify an ID, it must be unique among all pag
 The element properties for the line.}
 
 \item{lineCategory}{(string)
-The category of the line to be created. \emph{Deprecated}: use \code{category} instead. The exact line type created is determined based on the category and how it's routed to connect to other page elements. If you specify both a \code{category} and a \code{line_category}, the \code{category} takes precedence.}
+The category of the line to be created. \emph{Deprecated}: use \code{category} instead. The exact line type created is determined based on the category and how it's routed to connect to other page elements. If you specify both a \code{category} and a \code{line_category}, the \code{category} takes precedence.
+\itemize{
+\item \code{STRAIGHT}: Straight connectors, including straight connector 1. The is the default category when one is not specified.
+\item \code{BENT}: Bent connectors, including bent connector 2 to 5.
+\item \code{CURVED}: Curved connectors, including curved connector 2 to 5.
+}}
 
 \item{category}{(string)
-The category of the line to be created. The exact line type created is determined based on the category and how it's routed to connect to other page elements. If you specify both a \code{category} and a \code{line_category}, the \code{category} takes precedence. If you do not specify a value for \code{category}, but specify a value for \code{line_category}, then the specified \code{line_category} value is used. If you do not specify either, then STRAIGHT is used.}
+The category of the line to be created. The exact line type created is determined based on the category and how it's routed to connect to other page elements. If you specify both a \code{category} and a \code{line_category}, the \code{category} takes precedence. If you do not specify a value for \code{category}, but specify a value for \code{line_category}, then the specified \code{line_category} value is used. If you do not specify either, then STRAIGHT is used.
+\itemize{
+\item \code{LINE_CATEGORY_UNSPECIFIED}: Unspecified line category.
+\item \code{STRAIGHT}: Straight connectors, including straight connector 1.
+\item \code{BENT}: Bent connectors, including bent connector 2 to 5.
+\item \code{CURVED}: Curved connectors, including curved connector 2 to 5.
+}}
 }
 \value{
 CreateLineRequest object

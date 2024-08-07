@@ -85,6 +85,9 @@ Size <- function(
 #'  The magnitude.
 #' @param unit (string)
 #'  The units for magnitude.
+#' - `UNIT_UNSPECIFIED`: The units are unknown.
+#' - `EMU`: An English Metric Unit (EMU) is defined as 1/360,000 of a centimeter and thus there are 914,400 EMUs per inch, and 12,700 EMUs per point.
+#' - `PT`: A point, 1/72 of an inch.
 #'
 #' @return Dimension object
 #'
@@ -110,6 +113,11 @@ Dimension <- function(
 #'  The object ID for this page. Object IDs used by Page and PageElement share the same namespace.
 #' @param pageType (string)
 #'  The type of the page.
+#' - `SLIDE`: A slide page.
+#' - `MASTER`: A master slide page.
+#' - `LAYOUT`: A layout page.
+#' - `NOTES`: A notes page.
+#' - `NOTES_MASTER`: A notes master page.
 #' @param pageElements (list of [PageElement] objects)
 #'  The page elements rendered on the page.
 #' @param slideProperties ([SlideProperties])
@@ -246,6 +254,9 @@ PageElement <- function(
 #'  The Y coordinate translation element.
 #' @param unit (string)
 #'  The units for translate elements.
+#' - `UNIT_UNSPECIFIED`: The units are unknown.
+#' - `EMU`: An English Metric Unit (EMU) is defined as 1/360,000 of a centimeter and thus there are 914,400 EMUs per inch, and 12,700 EMUs per point.
+#' - `PT`: A point, 1/72 of an inch.
 #'
 #' @return AffineTransform object
 #'
@@ -299,6 +310,149 @@ Group <- function(children = NULL) {
 #'
 #' @param shapeType (string)
 #'  The type of the shape.
+#' - `TYPE_UNSPECIFIED`: The shape type that is not predefined.
+#' - `TEXT_BOX`: Text box shape.
+#' - `RECTANGLE`: Rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'rect'.
+#' - `ROUND_RECTANGLE`: Round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'roundRect'
+#' - `ELLIPSE`: Ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'ellipse'
+#' - `ARC`: Curved arc shape. Corresponds to ECMA-376 ST_ShapeType 'arc'
+#' - `BENT_ARROW`: Bent arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentArrow'
+#' - `BENT_UP_ARROW`: Bent up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentUpArrow'
+#' - `BEVEL`: Bevel shape. Corresponds to ECMA-376 ST_ShapeType 'bevel'
+#' - `BLOCK_ARC`: Block arc shape. Corresponds to ECMA-376 ST_ShapeType 'blockArc'
+#' - `BRACE_PAIR`: Brace pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracePair'
+#' - `BRACKET_PAIR`: Bracket pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracketPair'
+#' - `CAN`: Can shape. Corresponds to ECMA-376 ST_ShapeType 'can'
+#' - `CHEVRON`: Chevron shape. Corresponds to ECMA-376 ST_ShapeType 'chevron'
+#' - `CHORD`: Chord shape. Corresponds to ECMA-376 ST_ShapeType 'chord'
+#' - `CLOUD`: Cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloud'
+#' - `CORNER`: Corner shape. Corresponds to ECMA-376 ST_ShapeType 'corner'
+#' - `CUBE`: Cube shape. Corresponds to ECMA-376 ST_ShapeType 'cube'
+#' - `CURVED_DOWN_ARROW`: Curved down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedDownArrow'
+#' - `CURVED_LEFT_ARROW`: Curved left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedLeftArrow'
+#' - `CURVED_RIGHT_ARROW`: Curved right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedRightArrow'
+#' - `CURVED_UP_ARROW`: Curved up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedUpArrow'
+#' - `DECAGON`: Decagon shape. Corresponds to ECMA-376 ST_ShapeType 'decagon'
+#' - `DIAGONAL_STRIPE`: Diagonal stripe shape. Corresponds to ECMA-376 ST_ShapeType 'diagStripe'
+#' - `DIAMOND`: Diamond shape. Corresponds to ECMA-376 ST_ShapeType 'diamond'
+#' - `DODECAGON`: Dodecagon shape. Corresponds to ECMA-376 ST_ShapeType 'dodecagon'
+#' - `DONUT`: Donut shape. Corresponds to ECMA-376 ST_ShapeType 'donut'
+#' - `DOUBLE_WAVE`: Double wave shape. Corresponds to ECMA-376 ST_ShapeType 'doubleWave'
+#' - `DOWN_ARROW`: Down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrow'
+#' - `DOWN_ARROW_CALLOUT`: Callout down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrowCallout'
+#' - `FOLDED_CORNER`: Folded corner shape. Corresponds to ECMA-376 ST_ShapeType 'foldedCorner'
+#' - `FRAME`: Frame shape. Corresponds to ECMA-376 ST_ShapeType 'frame'
+#' - `HALF_FRAME`: Half frame shape. Corresponds to ECMA-376 ST_ShapeType 'halfFrame'
+#' - `HEART`: Heart shape. Corresponds to ECMA-376 ST_ShapeType 'heart'
+#' - `HEPTAGON`: Heptagon shape. Corresponds to ECMA-376 ST_ShapeType 'heptagon'
+#' - `HEXAGON`: Hexagon shape. Corresponds to ECMA-376 ST_ShapeType 'hexagon'
+#' - `HOME_PLATE`: Home plate shape. Corresponds to ECMA-376 ST_ShapeType 'homePlate'
+#' - `HORIZONTAL_SCROLL`: Horizontal scroll shape. Corresponds to ECMA-376 ST_ShapeType 'horizontalScroll'
+#' - `IRREGULAR_SEAL_1`: Irregular seal 1 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal1'
+#' - `IRREGULAR_SEAL_2`: Irregular seal 2 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal2'
+#' - `LEFT_ARROW`: Left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrow'
+#' - `LEFT_ARROW_CALLOUT`: Callout left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrowCallout'
+#' - `LEFT_BRACE`: Left brace shape. Corresponds to ECMA-376 ST_ShapeType 'leftBrace'
+#' - `LEFT_BRACKET`: Left bracket shape. Corresponds to ECMA-376 ST_ShapeType 'leftBracket'
+#' - `LEFT_RIGHT_ARROW`: Left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrow'
+#' - `LEFT_RIGHT_ARROW_CALLOUT`: Callout left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrowCallout'
+#' - `LEFT_RIGHT_UP_ARROW`: Left right up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightUpArrow'
+#' - `LEFT_UP_ARROW`: Left up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftUpArrow'
+#' - `LIGHTNING_BOLT`: Lightning bolt shape. Corresponds to ECMA-376 ST_ShapeType 'lightningBolt'
+#' - `MATH_DIVIDE`: Divide math shape. Corresponds to ECMA-376 ST_ShapeType 'mathDivide'
+#' - `MATH_EQUAL`: Equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathEqual'
+#' - `MATH_MINUS`: Minus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMinus'
+#' - `MATH_MULTIPLY`: Multiply math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMultiply'
+#' - `MATH_NOT_EQUAL`: Not equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathNotEqual'
+#' - `MATH_PLUS`: Plus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathPlus'
+#' - `MOON`: Moon shape. Corresponds to ECMA-376 ST_ShapeType 'moon'
+#' - `NO_SMOKING`: No smoking shape. Corresponds to ECMA-376 ST_ShapeType 'noSmoking'
+#' - `NOTCHED_RIGHT_ARROW`: Notched right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'notchedRightArrow'
+#' - `OCTAGON`: Octagon shape. Corresponds to ECMA-376 ST_ShapeType 'octagon'
+#' - `PARALLELOGRAM`: Parallelogram shape. Corresponds to ECMA-376 ST_ShapeType 'parallelogram'
+#' - `PENTAGON`: Pentagon shape. Corresponds to ECMA-376 ST_ShapeType 'pentagon'
+#' - `PIE`: Pie shape. Corresponds to ECMA-376 ST_ShapeType 'pie'
+#' - `PLAQUE`: Plaque shape. Corresponds to ECMA-376 ST_ShapeType 'plaque'
+#' - `PLUS`: Plus shape. Corresponds to ECMA-376 ST_ShapeType 'plus'
+#' - `QUAD_ARROW`: Quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrow'
+#' - `QUAD_ARROW_CALLOUT`: Callout quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrowCallout'
+#' - `RIBBON`: Ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon'
+#' - `RIBBON_2`: Ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon2'
+#' - `RIGHT_ARROW`: Right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrow'
+#' - `RIGHT_ARROW_CALLOUT`: Callout right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrowCallout'
+#' - `RIGHT_BRACE`: Right brace shape. Corresponds to ECMA-376 ST_ShapeType 'rightBrace'
+#' - `RIGHT_BRACKET`: Right bracket shape. Corresponds to ECMA-376 ST_ShapeType 'rightBracket'
+#' - `ROUND_1_RECTANGLE`: One round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round1Rect'
+#' - `ROUND_2_DIAGONAL_RECTANGLE`: Two diagonal round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round2DiagRect'
+#' - `ROUND_2_SAME_RECTANGLE`: Two same-side round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round2SameRect'
+#' - `RIGHT_TRIANGLE`: Right triangle shape. Corresponds to ECMA-376 ST_ShapeType 'rtTriangle'
+#' - `SMILEY_FACE`: Smiley face shape. Corresponds to ECMA-376 ST_ShapeType 'smileyFace'
+#' - `SNIP_1_RECTANGLE`: One snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip1Rect'
+#' - `SNIP_2_DIAGONAL_RECTANGLE`: Two diagonal snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2DiagRect'
+#' - `SNIP_2_SAME_RECTANGLE`: Two same-side snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2SameRect'
+#' - `SNIP_ROUND_RECTANGLE`: One snip one round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snipRoundRect'
+#' - `STAR_10`: Ten pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star10'
+#' - `STAR_12`: Twelve pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star12'
+#' - `STAR_16`: Sixteen pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star16'
+#' - `STAR_24`: Twenty four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star24'
+#' - `STAR_32`: Thirty two pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star32'
+#' - `STAR_4`: Four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star4'
+#' - `STAR_5`: Five pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star5'
+#' - `STAR_6`: Six pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star6'
+#' - `STAR_7`: Seven pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star7'
+#' - `STAR_8`: Eight pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star8'
+#' - `STRIPED_RIGHT_ARROW`: Striped right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'stripedRightArrow'
+#' - `SUN`: Sun shape. Corresponds to ECMA-376 ST_ShapeType 'sun'
+#' - `TRAPEZOID`: Trapezoid shape. Corresponds to ECMA-376 ST_ShapeType 'trapezoid'
+#' - `TRIANGLE`: Triangle shape. Corresponds to ECMA-376 ST_ShapeType 'triangle'
+#' - `UP_ARROW`: Up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrow'
+#' - `UP_ARROW_CALLOUT`: Callout up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrowCallout'
+#' - `UP_DOWN_ARROW`: Up down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upDownArrow'
+#' - `UTURN_ARROW`: U-turn arrow shape. Corresponds to ECMA-376 ST_ShapeType 'uturnArrow'
+#' - `VERTICAL_SCROLL`: Vertical scroll shape. Corresponds to ECMA-376 ST_ShapeType 'verticalScroll'
+#' - `WAVE`: Wave shape. Corresponds to ECMA-376 ST_ShapeType 'wave'
+#' - `WEDGE_ELLIPSE_CALLOUT`: Callout wedge ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeEllipseCallout'
+#' - `WEDGE_RECTANGLE_CALLOUT`: Callout wedge rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRectCallout'
+#' - `WEDGE_ROUND_RECTANGLE_CALLOUT`: Callout wedge round rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRoundRectCallout'
+#' - `FLOW_CHART_ALTERNATE_PROCESS`: Alternate process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartAlternateProcess'
+#' - `FLOW_CHART_COLLATE`: Collate flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartCollate'
+#' - `FLOW_CHART_CONNECTOR`: Connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartConnector'
+#' - `FLOW_CHART_DECISION`: Decision flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDecision'
+#' - `FLOW_CHART_DELAY`: Delay flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDelay'
+#' - `FLOW_CHART_DISPLAY`: Display flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDisplay'
+#' - `FLOW_CHART_DOCUMENT`: Document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDocument'
+#' - `FLOW_CHART_EXTRACT`: Extract flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartExtract'
+#' - `FLOW_CHART_INPUT_OUTPUT`: Input output flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInputOutput'
+#' - `FLOW_CHART_INTERNAL_STORAGE`: Internal storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInternalStorage'
+#' - `FLOW_CHART_MAGNETIC_DISK`: Magnetic disk flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDisk'
+#' - `FLOW_CHART_MAGNETIC_DRUM`: Magnetic drum flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDrum'
+#' - `FLOW_CHART_MAGNETIC_TAPE`: Magnetic tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticTape'
+#' - `FLOW_CHART_MANUAL_INPUT`: Manual input flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualInput'
+#' - `FLOW_CHART_MANUAL_OPERATION`: Manual operation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualOperation'
+#' - `FLOW_CHART_MERGE`: Merge flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMerge'
+#' - `FLOW_CHART_MULTIDOCUMENT`: Multi-document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMultidocument'
+#' - `FLOW_CHART_OFFLINE_STORAGE`: Offline storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOfflineStorage'
+#' - `FLOW_CHART_OFFPAGE_CONNECTOR`: Off-page connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOffpageConnector'
+#' - `FLOW_CHART_ONLINE_STORAGE`: Online storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOnlineStorage'
+#' - `FLOW_CHART_OR`: Or flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOr'
+#' - `FLOW_CHART_PREDEFINED_PROCESS`: Predefined process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPredefinedProcess'
+#' - `FLOW_CHART_PREPARATION`: Preparation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPreparation'
+#' - `FLOW_CHART_PROCESS`: Process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartProcess'
+#' - `FLOW_CHART_PUNCHED_CARD`: Punched card flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedCard'
+#' - `FLOW_CHART_PUNCHED_TAPE`: Punched tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedTape'
+#' - `FLOW_CHART_SORT`: Sort flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSort'
+#' - `FLOW_CHART_SUMMING_JUNCTION`: Summing junction flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSummingJunction'
+#' - `FLOW_CHART_TERMINATOR`: Terminator flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartTerminator'
+#' - `ARROW_EAST`: East arrow shape.
+#' - `ARROW_NORTH_EAST`: Northeast arrow shape.
+#' - `ARROW_NORTH`: North arrow shape.
+#' - `SPEECH`: Speech shape.
+#' - `STARBURST`: Star burst shape.
+#' - `TEARDROP`: Teardrop shape. Corresponds to ECMA-376 ST_ShapeType 'teardrop'
+#' - `ELLIPSE_RIBBON`: Ellipse ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon'
+#' - `ELLIPSE_RIBBON_2`: Ellipse ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon2'
+#' - `CLOUD_CALLOUT`: Callout cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloudCallout'
+#' - `CUSTOM`: Custom shape.
 #' @param text ([TextContent])
 #'  The text content of the shape.
 #' @param shapeProperties ([ShapeProperties])
@@ -423,6 +577,11 @@ ParagraphMarker <- function(
 #'  The amount of space between lines, as a percentage of normal, where normal is represented as 100.0. If unset, the value is inherited from the parent.
 #' @param alignment (string)
 #'  The text alignment for this paragraph.
+#' - `ALIGNMENT_UNSPECIFIED`: The paragraph alignment is inherited from the parent.
+#' - `START`: The paragraph is aligned to the start of the line. Left-aligned for LTR text, right-aligned otherwise.
+#' - `CENTER`: The paragraph is centered.
+#' - `END`: The paragraph is aligned to the end of the line. Right-aligned for LTR text, left-aligned otherwise.
+#' - `JUSTIFIED`: The paragraph is justified.
 #' @param indentStart ([Dimension])
 #'  The amount indentation for the paragraph on the side that corresponds to the start of the text, based on the current text direction. If unset, the value is inherited from the parent.
 #' @param indentEnd ([Dimension])
@@ -435,8 +594,14 @@ ParagraphMarker <- function(
 #'  The amount of indentation for the start of the first line of the paragraph. If unset, the value is inherited from the parent.
 #' @param direction (string)
 #'  The text direction of this paragraph. If unset, the value defaults to LEFT_TO_RIGHT since text direction is not inherited.
+#' - `TEXT_DIRECTION_UNSPECIFIED`: The text direction is inherited from the parent.
+#' - `LEFT_TO_RIGHT`: The text goes from left to right.
+#' - `RIGHT_TO_LEFT`: The text goes from right to left.
 #' @param spacingMode (string)
 #'  The spacing mode for the paragraph.
+#' - `SPACING_MODE_UNSPECIFIED`: The spacing mode is inherited from the parent.
+#' - `NEVER_COLLAPSE`: Paragraph spacing is always rendered.
+#' - `COLLAPSE_LISTS`: Paragraph spacing is skipped between list elements.
 #'
 #' @return ParagraphStyle object
 #'
@@ -527,6 +692,10 @@ Bullet <- function(
 #'  * Removing a link will update the text style of the range to match the style of the preceding text (or the default text styles if the preceding text is another link) unless different styles are being set in the same request.
 #' @param baselineOffset (string)
 #'  The text's vertical offset from its normal position. Text with `SUPERSCRIPT` or `SUBSCRIPT` baseline offsets is automatically rendered in a smaller font size, computed based on the `font_size` field. The `font_size` itself is not affected by changes in this field.
+#' - `BASELINE_OFFSET_UNSPECIFIED`: The text's baseline offset is inherited from the parent.
+#' - `NONE`: The text is not vertically offset.
+#' - `SUPERSCRIPT`: The text is vertically offset upwards (superscript).
+#' - `SUBSCRIPT`: The text is vertically offset downwards (subscript).
 #' @param smallCaps (boolean)
 #'  Whether or not the text is in small capital letters.
 #' @param strikethrough (boolean)
@@ -604,6 +773,23 @@ OptionalColor <- function(opaqueColor = NULL) {
 #'  An opaque RGB color.
 #' @param themeColor (string)
 #'  An opaque theme color.
+#' - `THEME_COLOR_TYPE_UNSPECIFIED`: Unspecified theme color. This value should not be used.
+#' - `DARK1`: Represents the first dark color.
+#' - `LIGHT1`: Represents the first light color.
+#' - `DARK2`: Represents the second dark color.
+#' - `LIGHT2`: Represents the second light color.
+#' - `ACCENT1`: Represents the first accent color.
+#' - `ACCENT2`: Represents the second accent color.
+#' - `ACCENT3`: Represents the third accent color.
+#' - `ACCENT4`: Represents the fourth accent color.
+#' - `ACCENT5`: Represents the fifth accent color.
+#' - `ACCENT6`: Represents the sixth accent color.
+#' - `HYPERLINK`: Represents the color to use for hyperlinks.
+#' - `FOLLOWED_HYPERLINK`: Represents the color to use for visited hyperlinks.
+#' - `TEXT1`: Represents the first text color.
+#' - `BACKGROUND1`: Represents the first background color.
+#' - `TEXT2`: Represents the second text color.
+#' - `BACKGROUND2`: Represents the second background color.
 #'
 #' @return OpaqueColor object
 #'
@@ -658,6 +844,11 @@ RgbColor <- function(
 #'  If set, indicates this is a link to the external web page at this URL.
 #' @param relativeLink (string)
 #'  If set, indicates this is a link to a slide in this presentation, addressed by its position.
+#' - `RELATIVE_SLIDE_LINK_UNSPECIFIED`: An unspecified relative slide link.
+#' - `NEXT_SLIDE`: A link to the next slide.
+#' - `PREVIOUS_SLIDE`: A link to the previous slide.
+#' - `FIRST_SLIDE`: A link to the first slide in the presentation.
+#' - `LAST_SLIDE`: A link to the last slide in the presentation.
 #' @param pageObjectId (string)
 #'  If set, indicates this is a link to the specific page in this presentation with this ID. A page with this ID may not exist.
 #' @param slideIndex (integer)
@@ -739,6 +930,8 @@ TextRun <- function(
 #'
 #' @param type (string)
 #'  The type of this auto text.
+#' - `TYPE_UNSPECIFIED`: An unspecified autotext type.
+#' - `SLIDE_NUMBER`: Type for autotext that represents the current slide number.
 #' @param content (string)
 #'  The rendered content of this auto text, if available.
 #' @param style ([TextStyle])
@@ -821,6 +1014,11 @@ NestingLevel <- function(bulletStyle = NULL) {
 #'  The hyperlink destination of the shape. If unset, there is no link. Links are not inherited from parent placeholders.
 #' @param contentAlignment (string)
 #'  The alignment of the content in the shape. If unspecified, the alignment is inherited from a parent placeholder if it exists. If the shape has no parent, the default alignment matches the alignment for new shapes created in the Slides editor.
+#' - `CONTENT_ALIGNMENT_UNSPECIFIED`: An unspecified content alignment. The content alignment is inherited from the parent if it exists.
+#' - `CONTENT_ALIGNMENT_UNSUPPORTED`: An unsupported content alignment.
+#' - `TOP`: An alignment that aligns the content to the top of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 't'.
+#' - `MIDDLE`: An alignment that aligns the content to the middle of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'ctr'.
+#' - `BOTTOM`: An alignment that aligns the content to the bottom of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'b'.
 #' @param autofit ([Autofit])
 #'  The autofit properties of the shape. This property is only set for shapes that allow text.
 #'
@@ -854,6 +1052,9 @@ ShapeProperties <- function(
 #'
 #' @param propertyState (string)
 #'  The background fill property state. Updating the fill on a shape will implicitly update this field to `RENDERED`, unless another value is specified in the same request. To have no fill on a shape, set this field to `NOT_RENDERED`. In this case, any other fill fields set in the same request will be ignored.
+#' - `RENDERED`: If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value.
+#' - `NOT_RENDERED`: If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED.
+#' - `INHERIT`: If a property's state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state.
 #' @param solidFill ([SolidFill])
 #'  Solid color fill.
 #'
@@ -910,8 +1111,18 @@ SolidFill <- function(
 #'  The thickness of the outline.
 #' @param dashStyle (string)
 #'  The dash style of the outline.
+#' - `DASH_STYLE_UNSPECIFIED`: Unspecified dash style.
+#' - `SOLID`: Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default dash style.
+#' - `DOT`: Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'.
+#' - `DASH`: Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'.
+#' - `DASH_DOT`: Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dashDot'.
+#' - `LONG_DASH`: Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDash'.
+#' - `LONG_DASH_DOT`: Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDashDot'.
 #' @param propertyState (string)
 #'  The outline property state. Updating the outline on a page element will implicitly update this field to `RENDERED`, unless another value is specified in the same request. To have no outline on a page element, set this field to `NOT_RENDERED`. In this case, any other outline fields set in the same request will be ignored.
+#' - `RENDERED`: If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value.
+#' - `NOT_RENDERED`: If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED.
+#' - `INHERIT`: If a property's state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state.
 #'
 #' @return Outline object
 #'
@@ -959,10 +1170,22 @@ OutlineFill <- function(solidFill = NULL) {
 #'
 #' @param type (string)
 #'  The type of the shadow. This property is read-only.
+#' - `SHADOW_TYPE_UNSPECIFIED`: Unspecified shadow type.
+#' - `OUTER`: Outer shadow.
 #' @param transform ([AffineTransform])
 #'  Transform that encodes the translate, scale, and skew of the shadow, relative to the alignment position.
 #' @param alignment (string)
 #'  The alignment point of the shadow, that sets the origin for translate, scale and skew of the shadow. This property is read-only.
+#' - `RECTANGLE_POSITION_UNSPECIFIED`: Unspecified.
+#' - `TOP_LEFT`: Top left.
+#' - `TOP_CENTER`: Top center.
+#' - `TOP_RIGHT`: Top right.
+#' - `LEFT_CENTER`: Left center.
+#' - `CENTER`: Center.
+#' - `RIGHT_CENTER`: Right center.
+#' - `BOTTOM_LEFT`: Bottom left.
+#' - `BOTTOM_CENTER`: Bottom center.
+#' - `BOTTOM_RIGHT`: Bottom right.
 #' @param blurRadius ([Dimension])
 #'  The radius of the shadow blur. The larger the radius, the more diffuse the shadow becomes.
 #' @param color ([OpaqueColor])
@@ -973,6 +1196,9 @@ OutlineFill <- function(solidFill = NULL) {
 #'  Whether the shadow should rotate with the shape. This property is read-only.
 #' @param propertyState (string)
 #'  The shadow property state. Updating the shadow on a page element will implicitly update this field to `RENDERED`, unless another value is specified in the same request. To have no shadow on a page element, set this field to `NOT_RENDERED`. In this case, any other shadow fields set in the same request will be ignored.
+#' - `RENDERED`: If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value.
+#' - `NOT_RENDERED`: If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED.
+#' - `INHERIT`: If a property's state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state.
 #'
 #' @return Shadow object
 #'
@@ -1008,6 +1234,10 @@ Shadow <- function(
 #'
 #' @param autofitType (string)
 #'  The autofit type of the shape. If the autofit type is AUTOFIT_TYPE_UNSPECIFIED, the autofit type is inherited from a parent placeholder if it exists. The field is automatically set to NONE if a request is made that might affect text fitting within its bounding text box. In this case the font_scale is applied to the font_size and the line_spacing_reduction is applied to the line_spacing. Both properties are also reset to default values.
+#' - `AUTOFIT_TYPE_UNSPECIFIED`: The autofit type is unspecified.
+#' - `NONE`: Do not autofit.
+#' - `TEXT_AUTOFIT`: Shrink text on overflow to fit the shape.
+#' - `SHAPE_AUTOFIT`: Resize the shape to fit the text.
 #' @param fontScale (number)
 #'  The font scale applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value is the default value of 1. For TEXT_AUTOFIT, this value multiplied by the font_size gives the font size that is rendered in the editor. This property is read-only.
 #' @param lineSpacingReduction (number)
@@ -1037,6 +1267,23 @@ Autofit <- function(
 #'
 #' @param type (string)
 #'  The type of the placeholder.
+#' - `NONE`: Default value, signifies it is not a placeholder.
+#' - `BODY`: Body text.
+#' - `CHART`: Chart or graph.
+#' - `CLIP_ART`: Clip art image.
+#' - `CENTERED_TITLE`: Title centered.
+#' - `DIAGRAM`: Diagram.
+#' - `DATE_AND_TIME`: Date and time.
+#' - `FOOTER`: Footer text.
+#' - `HEADER`: Header text.
+#' - `MEDIA`: Multimedia.
+#' - `OBJECT`: Any content type.
+#' - `PICTURE`: Picture.
+#' - `SLIDE_NUMBER`: Number of a slide.
+#' - `SUBTITLE`: Subtitle.
+#' - `TABLE`: Table.
+#' - `TITLE`: Slide title.
+#' - `SLIDE_IMAGE`: Slide image.
 #' @param index (integer)
 #'  The index of the placeholder. If the same placeholder types are present in the same page, they would have different index values.
 #' @param parentObjectId (string)
@@ -1192,6 +1439,31 @@ CropProperties <- function(
 #'  The recolor effect is represented by a gradient, which is a list of color stops. The colors in the gradient will replace the corresponding colors at the same position in the color palette and apply to the image. This property is read-only.
 #' @param name (string)
 #'  The name of the recolor effect. The name is determined from the `recolor_stops` by matching the gradient against the colors in the page's current color scheme. This property is read-only.
+#' - `NONE`: No recolor effect. The default value.
+#' - `LIGHT1`: A recolor effect that lightens the image using the page's first available color from its color scheme.
+#' - `LIGHT2`: A recolor effect that lightens the image using the page's second available color from its color scheme.
+#' - `LIGHT3`: A recolor effect that lightens the image using the page's third available color from its color scheme.
+#' - `LIGHT4`: A recolor effect that lightens the image using the page's forth available color from its color scheme.
+#' - `LIGHT5`: A recolor effect that lightens the image using the page's fifth available color from its color scheme.
+#' - `LIGHT6`: A recolor effect that lightens the image using the page's sixth available color from its color scheme.
+#' - `LIGHT7`: A recolor effect that lightens the image using the page's seventh available color from its color scheme.
+#' - `LIGHT8`: A recolor effect that lightens the image using the page's eighth available color from its color scheme.
+#' - `LIGHT9`: A recolor effect that lightens the image using the page's ninth available color from its color scheme.
+#' - `LIGHT10`: A recolor effect that lightens the image using the page's tenth available color from its color scheme.
+#' - `DARK1`: A recolor effect that darkens the image using the page's first available color from its color scheme.
+#' - `DARK2`: A recolor effect that darkens the image using the page's second available color from its color scheme.
+#' - `DARK3`: A recolor effect that darkens the image using the page's third available color from its color scheme.
+#' - `DARK4`: A recolor effect that darkens the image using the page's fourth available color from its color scheme.
+#' - `DARK5`: A recolor effect that darkens the image using the page's fifth available color from its color scheme.
+#' - `DARK6`: A recolor effect that darkens the image using the page's sixth available color from its color scheme.
+#' - `DARK7`: A recolor effect that darkens the image using the page's seventh available color from its color scheme.
+#' - `DARK8`: A recolor effect that darkens the image using the page's eighth available color from its color scheme.
+#' - `DARK9`: A recolor effect that darkens the image using the page's ninth available color from its color scheme.
+#' - `DARK10`: A recolor effect that darkens the image using the page's tenth available color from its color scheme.
+#' - `GRAYSCALE`: A recolor effect that recolors the image to grayscale.
+#' - `NEGATIVE`: A recolor effect that recolors the image to negative grayscale.
+#' - `SEPIA`: A recolor effect that recolors the image using the sepia color.
+#' - `CUSTOM`: Custom recolor effect. Refer to `recolor_stops` for the concrete gradient.
 #'
 #' @return Recolor object
 #'
@@ -1246,6 +1518,9 @@ ColorStop <- function(
 #'  An URL to a video. The URL is valid as long as the source video exists and sharing settings do not change.
 #' @param source (string)
 #'  The video source.
+#' - `SOURCE_UNSPECIFIED`: The video source is unspecified.
+#' - `YOUTUBE`: The video source is YouTube.
+#' - `DRIVE`: The video source is Google Drive.
 #' @param id (string)
 #'  The video source's unique identifier for this video.
 #' @param videoProperties ([VideoProperties])
@@ -1316,8 +1591,23 @@ VideoProperties <- function(
 #'  The properties of the line.
 #' @param lineType (string)
 #'  The type of the line.
+#' - `TYPE_UNSPECIFIED`: An unspecified line type.
+#' - `STRAIGHT_CONNECTOR_1`: Straight connector 1 form. Corresponds to ECMA-376 ST_ShapeType 'straightConnector1'.
+#' - `BENT_CONNECTOR_2`: Bent connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector2'.
+#' - `BENT_CONNECTOR_3`: Bent connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector3'.
+#' - `BENT_CONNECTOR_4`: Bent connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector4'.
+#' - `BENT_CONNECTOR_5`: Bent connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector5'.
+#' - `CURVED_CONNECTOR_2`: Curved connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector2'.
+#' - `CURVED_CONNECTOR_3`: Curved connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector3'.
+#' - `CURVED_CONNECTOR_4`: Curved connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector4'.
+#' - `CURVED_CONNECTOR_5`: Curved connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector5'.
+#' - `STRAIGHT_LINE`: Straight line. Corresponds to ECMA-376 ST_ShapeType 'line'. This line type is not a connector.
 #' @param lineCategory (string)
 #'  The category of the line. It matches the `category` specified in CreateLineRequest, and can be updated with UpdateLineCategoryRequest.
+#' - `LINE_CATEGORY_UNSPECIFIED`: Unspecified line category.
+#' - `STRAIGHT`: Straight connectors, including straight connector 1.
+#' - `BENT`: Bent connectors, including bent connector 2 to 5.
+#' - `CURVED`: Curved connectors, including curved connector 2 to 5.
 #'
 #' @return Line object
 #'
@@ -1347,10 +1637,39 @@ Line <- function(
 #'  The thickness of the line.
 #' @param dashStyle (string)
 #'  The dash style of the line.
+#' - `DASH_STYLE_UNSPECIFIED`: Unspecified dash style.
+#' - `SOLID`: Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default dash style.
+#' - `DOT`: Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'.
+#' - `DASH`: Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'.
+#' - `DASH_DOT`: Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dashDot'.
+#' - `LONG_DASH`: Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDash'.
+#' - `LONG_DASH_DOT`: Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDashDot'.
 #' @param startArrow (string)
 #'  The style of the arrow at the beginning of the line.
+#' - `ARROW_STYLE_UNSPECIFIED`: An unspecified arrow style.
+#' - `NONE`: No arrow.
+#' - `STEALTH_ARROW`: Arrow with notched back. Corresponds to ECMA-376 ST_LineEndType value 'stealth'.
+#' - `FILL_ARROW`: Filled arrow. Corresponds to ECMA-376 ST_LineEndType value 'triangle'.
+#' - `FILL_CIRCLE`: Filled circle. Corresponds to ECMA-376 ST_LineEndType value 'oval'.
+#' - `FILL_SQUARE`: Filled square.
+#' - `FILL_DIAMOND`: Filled diamond. Corresponds to ECMA-376 ST_LineEndType value 'diamond'.
+#' - `OPEN_ARROW`: Hollow arrow.
+#' - `OPEN_CIRCLE`: Hollow circle.
+#' - `OPEN_SQUARE`: Hollow square.
+#' - `OPEN_DIAMOND`: Hollow diamond.
 #' @param endArrow (string)
 #'  The style of the arrow at the end of the line.
+#' - `ARROW_STYLE_UNSPECIFIED`: An unspecified arrow style.
+#' - `NONE`: No arrow.
+#' - `STEALTH_ARROW`: Arrow with notched back. Corresponds to ECMA-376 ST_LineEndType value 'stealth'.
+#' - `FILL_ARROW`: Filled arrow. Corresponds to ECMA-376 ST_LineEndType value 'triangle'.
+#' - `FILL_CIRCLE`: Filled circle. Corresponds to ECMA-376 ST_LineEndType value 'oval'.
+#' - `FILL_SQUARE`: Filled square.
+#' - `FILL_DIAMOND`: Filled diamond. Corresponds to ECMA-376 ST_LineEndType value 'diamond'.
+#' - `OPEN_ARROW`: Hollow arrow.
+#' - `OPEN_CIRCLE`: Hollow circle.
+#' - `OPEN_SQUARE`: Hollow square.
+#' - `OPEN_DIAMOND`: Hollow diamond.
 #' @param link ([Link])
 #'  The hyperlink destination of the line. If unset, there is no link.
 #' @param startConnection ([LineConnection])
@@ -1591,6 +1910,11 @@ TableCellLocation <- function(
 #'  The background fill of the table cell. The default fill matches the fill for newly created table cells in the Slides editor.
 #' @param contentAlignment (string)
 #'  The alignment of the content in the table cell. The default alignment matches the alignment for newly created table cells in the Slides editor.
+#' - `CONTENT_ALIGNMENT_UNSPECIFIED`: An unspecified content alignment. The content alignment is inherited from the parent if it exists.
+#' - `CONTENT_ALIGNMENT_UNSUPPORTED`: An unsupported content alignment.
+#' - `TOP`: An alignment that aligns the content to the top of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 't'.
+#' - `MIDDLE`: An alignment that aligns the content to the middle of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'ctr'.
+#' - `BOTTOM`: An alignment that aligns the content to the bottom of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'b'.
 #'
 #' @return TableCellProperties object
 #'
@@ -1614,6 +1938,9 @@ TableCellProperties <- function(
 #'
 #' @param propertyState (string)
 #'  The background fill property state. Updating the fill on a table cell will implicitly update this field to `RENDERED`, unless another value is specified in the same request. To have no fill on a table cell, set this field to `NOT_RENDERED`. In this case, any other fill fields set in the same request will be ignored.
+#' - `RENDERED`: If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value.
+#' - `NOT_RENDERED`: If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED.
+#' - `INHERIT`: If a property's state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state.
 #' @param solidFill ([SolidFill])
 #'  Solid color fill.
 #'
@@ -1708,6 +2035,13 @@ TableBorderCell <- function(
 #'  The thickness of the border.
 #' @param dashStyle (string)
 #'  The dash style of the border.
+#' - `DASH_STYLE_UNSPECIFIED`: Unspecified dash style.
+#' - `SOLID`: Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default dash style.
+#' - `DOT`: Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'.
+#' - `DASH`: Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'.
+#' - `DASH_DOT`: Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dashDot'.
+#' - `LONG_DASH`: Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDash'.
+#' - `LONG_DASH_DOT`: Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDashDot'.
 #'
 #' @return TableBorderProperties object
 #'
@@ -1998,6 +2332,9 @@ PageProperties <- function(
 #'
 #' @param propertyState (string)
 #'  The background fill property state. Updating the fill on a page will implicitly update this field to `RENDERED`, unless another value is specified in the same request. To have no fill on a page, set this field to `NOT_RENDERED`. In this case, any other fill fields set in the same request will be ignored.
+#' - `RENDERED`: If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value.
+#' - `NOT_RENDERED`: If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED.
+#' - `INHERIT`: If a property's state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state.
 #' @param solidFill ([SolidFill])
 #'  Solid color fill.
 #' @param stretchedPictureFill ([StretchedPictureFill])
@@ -2072,6 +2409,23 @@ ColorScheme <- function(colors = NULL) {
 #'
 #' @param type (string)
 #'  The type of the theme color.
+#' - `THEME_COLOR_TYPE_UNSPECIFIED`: Unspecified theme color. This value should not be used.
+#' - `DARK1`: Represents the first dark color.
+#' - `LIGHT1`: Represents the first light color.
+#' - `DARK2`: Represents the second dark color.
+#' - `LIGHT2`: Represents the second light color.
+#' - `ACCENT1`: Represents the first accent color.
+#' - `ACCENT2`: Represents the second accent color.
+#' - `ACCENT3`: Represents the third accent color.
+#' - `ACCENT4`: Represents the fourth accent color.
+#' - `ACCENT5`: Represents the fifth accent color.
+#' - `ACCENT6`: Represents the sixth accent color.
+#' - `HYPERLINK`: Represents the color to use for hyperlinks.
+#' - `FOLLOWED_HYPERLINK`: Represents the color to use for visited hyperlinks.
+#' - `TEXT1`: Represents the first text color.
+#' - `BACKGROUND1`: Represents the first background color.
+#' - `TEXT2`: Represents the second text color.
+#' - `BACKGROUND2`: Represents the second background color.
 #' @param color ([RgbColor])
 #'  The concrete color corresponding to the theme color type above.
 #'
@@ -2115,163 +2469,6 @@ BatchUpdatePresentationRequest <- function(
   )
 }
 
-#' Request Object
-#'
-#' @details
-#' A single kind of update to apply to a presentation.
-#'
-#' @param createSlide ([CreateSlideRequest])
-#'  Creates a new slide.
-#' @param createShape ([CreateShapeRequest])
-#'  Creates a new shape.
-#' @param createTable ([CreateTableRequest])
-#'  Creates a new table.
-#' @param insertText ([InsertTextRequest])
-#'  Inserts text into a shape or table cell.
-#' @param insertTableRows ([InsertTableRowsRequest])
-#'  Inserts rows into a table.
-#' @param insertTableColumns ([InsertTableColumnsRequest])
-#'  Inserts columns into a table.
-#' @param deleteTableRow ([DeleteTableRowRequest])
-#'  Deletes a row from a table.
-#' @param deleteTableColumn ([DeleteTableColumnRequest])
-#'  Deletes a column from a table.
-#' @param replaceAllText ([ReplaceAllTextRequest])
-#'  Replaces all instances of specified text.
-#' @param deleteObject ([DeleteObjectRequest])
-#'  Deletes a page or page element from the presentation.
-#' @param updatePageElementTransform ([UpdatePageElementTransformRequest])
-#'  Updates the transform of a page element.
-#' @param updateSlidesPosition ([UpdateSlidesPositionRequest])
-#'  Updates the position of a set of slides in the presentation.
-#' @param deleteText ([DeleteTextRequest])
-#'  Deletes text from a shape or a table cell.
-#' @param createImage ([CreateImageRequest])
-#'  Creates an image.
-#' @param createVideo ([CreateVideoRequest])
-#'  Creates a video.
-#' @param createSheetsChart ([CreateSheetsChartRequest])
-#'  Creates an embedded Google Sheets chart.
-#' @param createLine ([CreateLineRequest])
-#'  Creates a line.
-#' @param refreshSheetsChart ([RefreshSheetsChartRequest])
-#'  Refreshes a Google Sheets chart.
-#' @param updateShapeProperties ([UpdateShapePropertiesRequest])
-#'  Updates the properties of a Shape.
-#' @param updateImageProperties ([UpdateImagePropertiesRequest])
-#'  Updates the properties of an Image.
-#' @param updateVideoProperties ([UpdateVideoPropertiesRequest])
-#'  Updates the properties of a Video.
-#' @param updatePageProperties ([UpdatePagePropertiesRequest])
-#'  Updates the properties of a Page.
-#' @param updateTableCellProperties ([UpdateTableCellPropertiesRequest])
-#'  Updates the properties of a TableCell.
-#' @param updateLineProperties ([UpdateLinePropertiesRequest])
-#'  Updates the properties of a Line.
-#' @param createParagraphBullets ([CreateParagraphBulletsRequest])
-#'  Creates bullets for paragraphs.
-#' @param replaceAllShapesWithImage ([ReplaceAllShapesWithImageRequest])
-#'  Replaces all shapes matching some criteria with an image.
-#' @param duplicateObject ([DuplicateObjectRequest])
-#'  Duplicates a slide or page element.
-#' @param updateTextStyle ([UpdateTextStyleRequest])
-#'  Updates the styling of text within a Shape or Table.
-#' @param replaceAllShapesWithSheetsChart ([ReplaceAllShapesWithSheetsChartRequest])
-#'  Replaces all shapes matching some criteria with a Google Sheets chart.
-#' @param deleteParagraphBullets ([DeleteParagraphBulletsRequest])
-#'  Deletes bullets from paragraphs.
-#' @param updateParagraphStyle ([UpdateParagraphStyleRequest])
-#'  Updates the styling of paragraphs within a Shape or Table.
-#' @param updateTableBorderProperties ([UpdateTableBorderPropertiesRequest])
-#'  Updates the properties of the table borders in a Table.
-#' @param updateTableColumnProperties ([UpdateTableColumnPropertiesRequest])
-#'  Updates the properties of a Table column.
-#' @param updateTableRowProperties ([UpdateTableRowPropertiesRequest])
-#'  Updates the properties of a Table row.
-#' @param mergeTableCells ([MergeTableCellsRequest])
-#'  Merges cells in a Table.
-#' @param unmergeTableCells ([UnmergeTableCellsRequest])
-#'  Unmerges cells in a Table.
-#' @param groupObjects ([GroupObjectsRequest])
-#'  Groups objects, such as page elements.
-#' @param ungroupObjects ([UngroupObjectsRequest])
-#'  Ungroups objects, such as groups.
-#' @param updatePageElementAltText ([UpdatePageElementAltTextRequest])
-#'  Updates the alt text title and/or description of a page element.
-#' @param replaceImage ([ReplaceImageRequest])
-#'  Replaces an existing image with a new image.
-#' @param updateSlideProperties ([UpdateSlidePropertiesRequest])
-#'  Updates the properties of a Slide
-#' @param updatePageElementsZOrder ([UpdatePageElementsZOrderRequest])
-#'  Updates the Z-order of page elements.
-#' @param updateLineCategory ([UpdateLineCategoryRequest])
-#'  Updates the category of a line.
-#' @param rerouteLine ([RerouteLineRequest])
-#'  Reroutes a line such that it's connected at the two closest connection sites on the connected page elements.
-#'
-#' @return Request object
-#'
-#' @export
-Request <- function(...) {
-  req_list <- list(...)
-  req_types <- lapply(req_list, function(req) {
-    req_type <- switch(
-      class(req)[1],
-      "InsertTableColumnsRequest" = "insertTableColumns",
-      "DeleteTableColumnRequest" = "deleteTableColumn",
-      "UpdateSlidesPositionRequest" = "updateSlidesPosition",
-      "UpdateTextStyleRequest" = "updateTextStyle",
-      "CreateSlideRequest" = "createSlide",
-      "UpdateParagraphStyleRequest" = "updateParagraphStyle",
-      "UpdateTableRowPropertiesRequest" = "updateTableRowProperties",
-      "UpdateTableBorderPropertiesRequest" = "updateTableBorderProperties",
-      "ReplaceAllShapesWithSheetsChartRequest" = "replaceAllShapesWithSheetsChart",
-      "UpdateTableColumnPropertiesRequest" = "updateTableColumnProperties",
-      "UngroupObjectsRequest" = "ungroupObjects",
-      "ReplaceImageRequest" = "replaceImage",
-      "DeleteTableRowRequest" = "deleteTableRow",
-      "CreateParagraphBulletsRequest" = "createParagraphBullets",
-      "UpdateLinePropertiesRequest" = "updateLineProperties",
-      "UpdateImagePropertiesRequest" = "updateImageProperties",
-      "DeleteParagraphBulletsRequest" = "deleteParagraphBullets",
-      "CreateSheetsChartRequest" = "createSheetsChart",
-      "UpdateVideoPropertiesRequest" = "updateVideoProperties",
-      "UpdateShapePropertiesRequest" = "updateShapeProperties",
-      "GroupObjectsRequest" = "groupObjects",
-      "MergeTableCellsRequest" = "mergeTableCells",
-      "ReplaceAllShapesWithImageRequest" = "replaceAllShapesWithImage",
-      "RefreshSheetsChartRequest" = "refreshSheetsChart",
-      "UnmergeTableCellsRequest" = "unmergeTableCells",
-      "UpdateSlidePropertiesRequest" = "updateSlideProperties",
-      "UpdatePageElementTransformRequest" = "updatePageElementTransform",
-      "InsertTableRowsRequest" = "insertTableRows",
-      "DeleteTextRequest" = "deleteText",
-      "CreateImageRequest" = "createImage",
-      "CreateVideoRequest" = "createVideo",
-      "UpdatePageElementAltTextRequest" = "updatePageElementAltText",
-      "CreateLineRequest" = "createLine",
-      "RerouteLineRequest" = "rerouteLine",
-      "CreateTableRequest" = "createTable",
-      "UpdateLineCategoryRequest" = "updateLineCategory",
-      "UpdatePageElementsZOrderRequest" = "updatePageElementsZOrder",
-      "UpdatePagePropertiesRequest" = "updatePageProperties",
-      "CreateShapeRequest" = "createShape",
-      "UpdateTableCellPropertiesRequest" = "updateTableCellProperties",
-      "InsertTextRequest" = "insertText",
-      "DuplicateObjectRequest" = "duplicateObject",
-      "DeleteObjectRequest" = "deleteObject",
-      "ReplaceAllTextRequest" = "replaceAllText"
-    )
-    # req_type
-    req_list <- list()
-    req_list[[req_type]] <- req
-    req_list
-  })
-  # names(req_list) <- req_types
-  structure(req_types, class = c("Request", "list"))
-}
-
-
 #' CreateSlideRequest Object
 #'
 #' @details
@@ -2313,6 +2510,18 @@ CreateSlideRequest <- function(
 #'
 #' @param predefinedLayout (string)
 #'  Predefined layout.
+#' - `PREDEFINED_LAYOUT_UNSPECIFIED`: Unspecified layout.
+#' - `BLANK`: Blank layout, with no placeholders.
+#' - `CAPTION_ONLY`: Layout with a caption at the bottom.
+#' - `TITLE`: Layout with a title and a subtitle.
+#' - `TITLE_AND_BODY`: Layout with a title and body.
+#' - `TITLE_AND_TWO_COLUMNS`: Layout with a title and two columns.
+#' - `TITLE_ONLY`: Layout with only a title.
+#' - `SECTION_HEADER`: Layout with a section title.
+#' - `SECTION_TITLE_AND_DESCRIPTION`: Layout with a title and subtitle on one side and description on the other.
+#' - `ONE_COLUMN_TEXT`: Layout with one title and one body, arranged in a single column.
+#' - `MAIN_POINT`: Layout with a main point.
+#' - `BIG_NUMBER`: Layout with a big number heading.
 #' @param layoutId (string)
 #'  Layout ID: the object ID of one of the layouts in the presentation.
 #'
@@ -2371,6 +2580,149 @@ LayoutPlaceholderIdMapping <- function(
 #'  The element properties for the shape.
 #' @param shapeType (string)
 #'  The shape type.
+#' - `TYPE_UNSPECIFIED`: The shape type that is not predefined.
+#' - `TEXT_BOX`: Text box shape.
+#' - `RECTANGLE`: Rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'rect'.
+#' - `ROUND_RECTANGLE`: Round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'roundRect'
+#' - `ELLIPSE`: Ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'ellipse'
+#' - `ARC`: Curved arc shape. Corresponds to ECMA-376 ST_ShapeType 'arc'
+#' - `BENT_ARROW`: Bent arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentArrow'
+#' - `BENT_UP_ARROW`: Bent up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentUpArrow'
+#' - `BEVEL`: Bevel shape. Corresponds to ECMA-376 ST_ShapeType 'bevel'
+#' - `BLOCK_ARC`: Block arc shape. Corresponds to ECMA-376 ST_ShapeType 'blockArc'
+#' - `BRACE_PAIR`: Brace pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracePair'
+#' - `BRACKET_PAIR`: Bracket pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracketPair'
+#' - `CAN`: Can shape. Corresponds to ECMA-376 ST_ShapeType 'can'
+#' - `CHEVRON`: Chevron shape. Corresponds to ECMA-376 ST_ShapeType 'chevron'
+#' - `CHORD`: Chord shape. Corresponds to ECMA-376 ST_ShapeType 'chord'
+#' - `CLOUD`: Cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloud'
+#' - `CORNER`: Corner shape. Corresponds to ECMA-376 ST_ShapeType 'corner'
+#' - `CUBE`: Cube shape. Corresponds to ECMA-376 ST_ShapeType 'cube'
+#' - `CURVED_DOWN_ARROW`: Curved down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedDownArrow'
+#' - `CURVED_LEFT_ARROW`: Curved left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedLeftArrow'
+#' - `CURVED_RIGHT_ARROW`: Curved right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedRightArrow'
+#' - `CURVED_UP_ARROW`: Curved up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedUpArrow'
+#' - `DECAGON`: Decagon shape. Corresponds to ECMA-376 ST_ShapeType 'decagon'
+#' - `DIAGONAL_STRIPE`: Diagonal stripe shape. Corresponds to ECMA-376 ST_ShapeType 'diagStripe'
+#' - `DIAMOND`: Diamond shape. Corresponds to ECMA-376 ST_ShapeType 'diamond'
+#' - `DODECAGON`: Dodecagon shape. Corresponds to ECMA-376 ST_ShapeType 'dodecagon'
+#' - `DONUT`: Donut shape. Corresponds to ECMA-376 ST_ShapeType 'donut'
+#' - `DOUBLE_WAVE`: Double wave shape. Corresponds to ECMA-376 ST_ShapeType 'doubleWave'
+#' - `DOWN_ARROW`: Down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrow'
+#' - `DOWN_ARROW_CALLOUT`: Callout down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrowCallout'
+#' - `FOLDED_CORNER`: Folded corner shape. Corresponds to ECMA-376 ST_ShapeType 'foldedCorner'
+#' - `FRAME`: Frame shape. Corresponds to ECMA-376 ST_ShapeType 'frame'
+#' - `HALF_FRAME`: Half frame shape. Corresponds to ECMA-376 ST_ShapeType 'halfFrame'
+#' - `HEART`: Heart shape. Corresponds to ECMA-376 ST_ShapeType 'heart'
+#' - `HEPTAGON`: Heptagon shape. Corresponds to ECMA-376 ST_ShapeType 'heptagon'
+#' - `HEXAGON`: Hexagon shape. Corresponds to ECMA-376 ST_ShapeType 'hexagon'
+#' - `HOME_PLATE`: Home plate shape. Corresponds to ECMA-376 ST_ShapeType 'homePlate'
+#' - `HORIZONTAL_SCROLL`: Horizontal scroll shape. Corresponds to ECMA-376 ST_ShapeType 'horizontalScroll'
+#' - `IRREGULAR_SEAL_1`: Irregular seal 1 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal1'
+#' - `IRREGULAR_SEAL_2`: Irregular seal 2 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal2'
+#' - `LEFT_ARROW`: Left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrow'
+#' - `LEFT_ARROW_CALLOUT`: Callout left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrowCallout'
+#' - `LEFT_BRACE`: Left brace shape. Corresponds to ECMA-376 ST_ShapeType 'leftBrace'
+#' - `LEFT_BRACKET`: Left bracket shape. Corresponds to ECMA-376 ST_ShapeType 'leftBracket'
+#' - `LEFT_RIGHT_ARROW`: Left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrow'
+#' - `LEFT_RIGHT_ARROW_CALLOUT`: Callout left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrowCallout'
+#' - `LEFT_RIGHT_UP_ARROW`: Left right up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightUpArrow'
+#' - `LEFT_UP_ARROW`: Left up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftUpArrow'
+#' - `LIGHTNING_BOLT`: Lightning bolt shape. Corresponds to ECMA-376 ST_ShapeType 'lightningBolt'
+#' - `MATH_DIVIDE`: Divide math shape. Corresponds to ECMA-376 ST_ShapeType 'mathDivide'
+#' - `MATH_EQUAL`: Equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathEqual'
+#' - `MATH_MINUS`: Minus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMinus'
+#' - `MATH_MULTIPLY`: Multiply math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMultiply'
+#' - `MATH_NOT_EQUAL`: Not equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathNotEqual'
+#' - `MATH_PLUS`: Plus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathPlus'
+#' - `MOON`: Moon shape. Corresponds to ECMA-376 ST_ShapeType 'moon'
+#' - `NO_SMOKING`: No smoking shape. Corresponds to ECMA-376 ST_ShapeType 'noSmoking'
+#' - `NOTCHED_RIGHT_ARROW`: Notched right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'notchedRightArrow'
+#' - `OCTAGON`: Octagon shape. Corresponds to ECMA-376 ST_ShapeType 'octagon'
+#' - `PARALLELOGRAM`: Parallelogram shape. Corresponds to ECMA-376 ST_ShapeType 'parallelogram'
+#' - `PENTAGON`: Pentagon shape. Corresponds to ECMA-376 ST_ShapeType 'pentagon'
+#' - `PIE`: Pie shape. Corresponds to ECMA-376 ST_ShapeType 'pie'
+#' - `PLAQUE`: Plaque shape. Corresponds to ECMA-376 ST_ShapeType 'plaque'
+#' - `PLUS`: Plus shape. Corresponds to ECMA-376 ST_ShapeType 'plus'
+#' - `QUAD_ARROW`: Quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrow'
+#' - `QUAD_ARROW_CALLOUT`: Callout quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrowCallout'
+#' - `RIBBON`: Ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon'
+#' - `RIBBON_2`: Ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon2'
+#' - `RIGHT_ARROW`: Right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrow'
+#' - `RIGHT_ARROW_CALLOUT`: Callout right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrowCallout'
+#' - `RIGHT_BRACE`: Right brace shape. Corresponds to ECMA-376 ST_ShapeType 'rightBrace'
+#' - `RIGHT_BRACKET`: Right bracket shape. Corresponds to ECMA-376 ST_ShapeType 'rightBracket'
+#' - `ROUND_1_RECTANGLE`: One round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round1Rect'
+#' - `ROUND_2_DIAGONAL_RECTANGLE`: Two diagonal round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round2DiagRect'
+#' - `ROUND_2_SAME_RECTANGLE`: Two same-side round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round2SameRect'
+#' - `RIGHT_TRIANGLE`: Right triangle shape. Corresponds to ECMA-376 ST_ShapeType 'rtTriangle'
+#' - `SMILEY_FACE`: Smiley face shape. Corresponds to ECMA-376 ST_ShapeType 'smileyFace'
+#' - `SNIP_1_RECTANGLE`: One snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip1Rect'
+#' - `SNIP_2_DIAGONAL_RECTANGLE`: Two diagonal snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2DiagRect'
+#' - `SNIP_2_SAME_RECTANGLE`: Two same-side snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2SameRect'
+#' - `SNIP_ROUND_RECTANGLE`: One snip one round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snipRoundRect'
+#' - `STAR_10`: Ten pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star10'
+#' - `STAR_12`: Twelve pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star12'
+#' - `STAR_16`: Sixteen pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star16'
+#' - `STAR_24`: Twenty four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star24'
+#' - `STAR_32`: Thirty two pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star32'
+#' - `STAR_4`: Four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star4'
+#' - `STAR_5`: Five pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star5'
+#' - `STAR_6`: Six pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star6'
+#' - `STAR_7`: Seven pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star7'
+#' - `STAR_8`: Eight pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star8'
+#' - `STRIPED_RIGHT_ARROW`: Striped right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'stripedRightArrow'
+#' - `SUN`: Sun shape. Corresponds to ECMA-376 ST_ShapeType 'sun'
+#' - `TRAPEZOID`: Trapezoid shape. Corresponds to ECMA-376 ST_ShapeType 'trapezoid'
+#' - `TRIANGLE`: Triangle shape. Corresponds to ECMA-376 ST_ShapeType 'triangle'
+#' - `UP_ARROW`: Up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrow'
+#' - `UP_ARROW_CALLOUT`: Callout up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrowCallout'
+#' - `UP_DOWN_ARROW`: Up down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upDownArrow'
+#' - `UTURN_ARROW`: U-turn arrow shape. Corresponds to ECMA-376 ST_ShapeType 'uturnArrow'
+#' - `VERTICAL_SCROLL`: Vertical scroll shape. Corresponds to ECMA-376 ST_ShapeType 'verticalScroll'
+#' - `WAVE`: Wave shape. Corresponds to ECMA-376 ST_ShapeType 'wave'
+#' - `WEDGE_ELLIPSE_CALLOUT`: Callout wedge ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeEllipseCallout'
+#' - `WEDGE_RECTANGLE_CALLOUT`: Callout wedge rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRectCallout'
+#' - `WEDGE_ROUND_RECTANGLE_CALLOUT`: Callout wedge round rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRoundRectCallout'
+#' - `FLOW_CHART_ALTERNATE_PROCESS`: Alternate process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartAlternateProcess'
+#' - `FLOW_CHART_COLLATE`: Collate flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartCollate'
+#' - `FLOW_CHART_CONNECTOR`: Connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartConnector'
+#' - `FLOW_CHART_DECISION`: Decision flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDecision'
+#' - `FLOW_CHART_DELAY`: Delay flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDelay'
+#' - `FLOW_CHART_DISPLAY`: Display flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDisplay'
+#' - `FLOW_CHART_DOCUMENT`: Document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDocument'
+#' - `FLOW_CHART_EXTRACT`: Extract flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartExtract'
+#' - `FLOW_CHART_INPUT_OUTPUT`: Input output flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInputOutput'
+#' - `FLOW_CHART_INTERNAL_STORAGE`: Internal storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInternalStorage'
+#' - `FLOW_CHART_MAGNETIC_DISK`: Magnetic disk flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDisk'
+#' - `FLOW_CHART_MAGNETIC_DRUM`: Magnetic drum flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDrum'
+#' - `FLOW_CHART_MAGNETIC_TAPE`: Magnetic tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticTape'
+#' - `FLOW_CHART_MANUAL_INPUT`: Manual input flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualInput'
+#' - `FLOW_CHART_MANUAL_OPERATION`: Manual operation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualOperation'
+#' - `FLOW_CHART_MERGE`: Merge flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMerge'
+#' - `FLOW_CHART_MULTIDOCUMENT`: Multi-document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMultidocument'
+#' - `FLOW_CHART_OFFLINE_STORAGE`: Offline storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOfflineStorage'
+#' - `FLOW_CHART_OFFPAGE_CONNECTOR`: Off-page connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOffpageConnector'
+#' - `FLOW_CHART_ONLINE_STORAGE`: Online storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOnlineStorage'
+#' - `FLOW_CHART_OR`: Or flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOr'
+#' - `FLOW_CHART_PREDEFINED_PROCESS`: Predefined process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPredefinedProcess'
+#' - `FLOW_CHART_PREPARATION`: Preparation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPreparation'
+#' - `FLOW_CHART_PROCESS`: Process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartProcess'
+#' - `FLOW_CHART_PUNCHED_CARD`: Punched card flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedCard'
+#' - `FLOW_CHART_PUNCHED_TAPE`: Punched tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedTape'
+#' - `FLOW_CHART_SORT`: Sort flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSort'
+#' - `FLOW_CHART_SUMMING_JUNCTION`: Summing junction flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSummingJunction'
+#' - `FLOW_CHART_TERMINATOR`: Terminator flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartTerminator'
+#' - `ARROW_EAST`: East arrow shape.
+#' - `ARROW_NORTH_EAST`: Northeast arrow shape.
+#' - `ARROW_NORTH`: North arrow shape.
+#' - `SPEECH`: Speech shape.
+#' - `STARBURST`: Star burst shape.
+#' - `TEARDROP`: Teardrop shape. Corresponds to ECMA-376 ST_ShapeType 'teardrop'
+#' - `ELLIPSE_RIBBON`: Ellipse ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon'
+#' - `ELLIPSE_RIBBON_2`: Ellipse ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon2'
+#' - `CLOUD_CALLOUT`: Callout cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloudCallout'
+#' - `CUSTOM`: Custom shape.
 #'
 #' @return CreateShapeRequest object
 #'
@@ -2685,6 +3037,9 @@ DeleteObjectRequest <- function(objectId = NULL) {
 #'  The input transform matrix used to update the page element.
 #' @param applyMode (string)
 #'  The apply mode of the transform update.
+#' - `APPLY_MODE_UNSPECIFIED`: Unspecified mode.
+#' - `RELATIVE`: Applies the new AffineTransform matrix to the existing one, and replaces the existing one with the resulting concatenation.
+#' - `ABSOLUTE`: Replaces the existing AffineTransform matrix with the new one.
 #'
 #' @return UpdatePageElementTransformRequest object
 #'
@@ -2768,6 +3123,10 @@ DeleteTextRequest <- function(
 #'  The optional zero-based index of the end of the collection. Required for `FIXED_RANGE` ranges.
 #' @param type (string)
 #'  The type of range.
+#' - `RANGE_TYPE_UNSPECIFIED`: Unspecified range type. This value must not be used.
+#' - `FIXED_RANGE`: A fixed range. Both the `start_index` and `end_index` must be specified.
+#' - `FROM_START_INDEX`: Starts the range at `start_index` and continues until the end of the collection. The `end_index` must not be specified.
+#' - `ALL`: Sets the range to be the whole length of the collection. Both the `start_index` and the `end_index` must not be specified.
 #'
 #' @return Range object
 #'
@@ -2826,6 +3185,9 @@ CreateImageRequest <- function(
 #'  The element properties for the video. The PageElementProperties.size property is optional. If you don't specify a size, a default size is chosen by the server. The PageElementProperties.transform property is optional. The transform must not have shear components. If you don't specify a transform, the video will be placed at the top left corner of the page.
 #' @param source (string)
 #'  The video source.
+#' - `SOURCE_UNSPECIFIED`: The video source is unspecified.
+#' - `YOUTUBE`: The video source is YouTube.
+#' - `DRIVE`: The video source is Google Drive.
 #' @param id (string)
 #'  The video source's unique identifier for this video. e.g. For YouTube video https://www.youtube.com/watch?v=7U3axjORYZ0, the ID is 7U3axjORYZ0. For a Google Drive video https://drive.google.com/file/d/1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q the ID is 1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q. To access a Google Drive video file, you might need to add a resource key to the HTTP header for a subset of old files. For more information, see [Access link-shared files using resource keys](https://developers.google.com/drive/api/v3/resource-keys).
 #'
@@ -2863,6 +3225,8 @@ CreateVideoRequest <- function(
 #'  The ID of the specific chart in the Google Sheets spreadsheet.
 #' @param linkingMode (string)
 #'  The mode with which the chart is linked to the source spreadsheet. When not specified, the chart will be an image that is not linked.
+#' - `NOT_LINKED_IMAGE`: The chart is not associated with the source spreadsheet and cannot be updated. A chart that is not linked will be inserted as an image.
+#' - `LINKED`: Linking the chart allows it to be updated, and other collaborators will see a link to the spreadsheet.
 #'
 #' @return CreateSheetsChartRequest object
 #'
@@ -2896,8 +3260,15 @@ CreateSheetsChartRequest <- function(
 #'  The element properties for the line.
 #' @param lineCategory (string)
 #'  The category of the line to be created. *Deprecated*: use `category` instead. The exact line type created is determined based on the category and how it's routed to connect to other page elements. If you specify both a `category` and a `line_category`, the `category` takes precedence.
+#' - `STRAIGHT`: Straight connectors, including straight connector 1. The is the default category when one is not specified.
+#' - `BENT`: Bent connectors, including bent connector 2 to 5.
+#' - `CURVED`: Curved connectors, including curved connector 2 to 5.
 #' @param category (string)
 #'  The category of the line to be created. The exact line type created is determined based on the category and how it's routed to connect to other page elements. If you specify both a `category` and a `line_category`, the `category` takes precedence. If you do not specify a value for `category`, but specify a value for `line_category`, then the specified `line_category` value is used. If you do not specify either, then STRAIGHT is used.
+#' - `LINE_CATEGORY_UNSPECIFIED`: Unspecified line category.
+#' - `STRAIGHT`: Straight connectors, including straight connector 1.
+#' - `BENT`: Bent connectors, including bent connector 2 to 5.
+#' - `CURVED`: Curved connectors, including curved connector 2 to 5.
 #'
 #' @return CreateLineRequest object
 #'
@@ -3158,6 +3529,21 @@ UpdateLinePropertiesRequest <- function(
 #'  The range of text to apply the bullet presets to, based on TextElement indexes.
 #' @param bulletPreset (string)
 #'  The kinds of bullet glyphs to be used. Defaults to the `BULLET_DISC_CIRCLE_SQUARE` preset.
+#' - `BULLET_DISC_CIRCLE_SQUARE`: A bulleted list with a `DISC`, `CIRCLE` and `SQUARE` bullet glyph for the first 3 list nesting levels.
+#' - `BULLET_DIAMONDX_ARROW3D_SQUARE`: A bulleted list with a `DIAMONDX`, `ARROW3D` and `SQUARE` bullet glyph for the first 3 list nesting levels.
+#' - `BULLET_CHECKBOX`: A bulleted list with `CHECKBOX` bullet glyphs for all list nesting levels.
+#' - `BULLET_ARROW_DIAMOND_DISC`: A bulleted list with a `ARROW`, `DIAMOND` and `DISC` bullet glyph for the first 3 list nesting levels.
+#' - `BULLET_STAR_CIRCLE_SQUARE`: A bulleted list with a `STAR`, `CIRCLE` and `SQUARE` bullet glyph for the first 3 list nesting levels.
+#' - `BULLET_ARROW3D_CIRCLE_SQUARE`: A bulleted list with a `ARROW3D`, `CIRCLE` and `SQUARE` bullet glyph for the first 3 list nesting levels.
+#' - `BULLET_LEFTTRIANGLE_DIAMOND_DISC`: A bulleted list with a `LEFTTRIANGLE`, `DIAMOND` and `DISC` bullet glyph for the first 3 list nesting levels.
+#' - `BULLET_DIAMONDX_HOLLOWDIAMOND_SQUARE`: A bulleted list with a `DIAMONDX`, `HOLLOWDIAMOND` and `SQUARE` bullet glyph for the first 3 list nesting levels.
+#' - `BULLET_DIAMOND_CIRCLE_SQUARE`: A bulleted list with a `DIAMOND`, `CIRCLE` and `SQUARE` bullet glyph for the first 3 list nesting levels.
+#' - `NUMBERED_DIGIT_ALPHA_ROMAN`: A numbered list with `DIGIT`, `ALPHA` and `ROMAN` numeric glyphs for the first 3 list nesting levels, followed by periods.
+#' - `NUMBERED_DIGIT_ALPHA_ROMAN_PARENS`: A numbered list with `DIGIT`, `ALPHA` and `ROMAN` numeric glyphs for the first 3 list nesting levels, followed by parenthesis.
+#' - `NUMBERED_DIGIT_NESTED`: A numbered list with `DIGIT` numeric glyphs separated by periods, where each nesting level uses the previous nesting level's glyph as a prefix. For example: '1.', '1.1.', '2.', '2.2.'.
+#' - `NUMBERED_UPPERALPHA_ALPHA_ROMAN`: A numbered list with `UPPERALPHA`, `ALPHA` and `ROMAN` numeric glyphs for the first 3 list nesting levels, followed by periods.
+#' - `NUMBERED_UPPERROMAN_UPPERALPHA_DIGIT`: A numbered list with `UPPERROMAN`, `UPPERALPHA` and `DIGIT` numeric glyphs for the first 3 list nesting levels, followed by periods.
+#' - `NUMBERED_ZERODIGIT_ALPHA_ROMAN`: A numbered list with `ZERODIGIT`, `ALPHA` and `ROMAN` numeric glyphs for the first 3 list nesting levels, followed by periods.
 #'
 #' @return CreateParagraphBulletsRequest object
 #'
@@ -3189,8 +3575,13 @@ CreateParagraphBulletsRequest <- function(
 #'  The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF format. The provided URL can be at most 2 kB in length. The URL itself is saved with the image, and exposed via the Image.source_url field.
 #' @param replaceMethod (string)
 #'  The replace method. *Deprecated*: use `image_replace_method` instead. If you specify both a `replace_method` and an `image_replace_method`, the `image_replace_method` takes precedence.
+#' - `CENTER_INSIDE`: Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified.
+#' - `CENTER_CROP`: Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as that of the original shape.
 #' @param imageReplaceMethod (string)
 #'  The image replace method. If you specify both a `replace_method` and an `image_replace_method`, the `image_replace_method` takes precedence. If you do not specify a value for `image_replace_method`, but specify a value for `replace_method`, then the specified `replace_method` value is used. If you do not specify either, then CENTER_INSIDE is used.
+#' - `IMAGE_REPLACE_METHOD_UNSPECIFIED`: Unspecified image replace method. This value must not be used.
+#' - `CENTER_INSIDE`: Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified.
+#' - `CENTER_CROP`: Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as the original shape.
 #' @param pageObjectIds (list of [string] objects)
 #'  If non-empty, limits the matches to page elements only on the given pages. Returns a 400 bad request error if given the page object ID of a notes page or a notes master, or if a page with that object ID doesn't exist in the presentation.
 #'
@@ -3290,6 +3681,8 @@ UpdateTextStyleRequest <- function(
 #'  The ID of the specific chart in the Google Sheets spreadsheet.
 #' @param linkingMode (string)
 #'  The mode with which the chart is linked to the source spreadsheet. When not specified, the chart will be an image that is not linked.
+#' - `NOT_LINKED_IMAGE`: The chart is not associated with the source spreadsheet and cannot be updated. A chart that is not linked will be inserted as an image.
+#' - `LINKED`: Linking the chart allows it to be updated, and other collaborators will see a link to the spreadsheet.
 #' @param pageObjectIds (list of [string] objects)
 #'  If non-empty, limits the matches to page elements only on the given pages. Returns a 400 bad request error if given the page object ID of a notes page or a notes master, or if a page with that object ID doesn't exist in the presentation.
 #'
@@ -3391,6 +3784,15 @@ UpdateParagraphStyleRequest <- function(
 #'  The table range representing the subset of the table to which the updates are applied. If a table range is not specified, the updates will apply to the entire table.
 #' @param borderPosition (string)
 #'  The border position in the table range the updates should apply to. If a border position is not specified, the updates will apply to all borders in the table range.
+#' - `ALL`: All borders in the range.
+#' - `BOTTOM`: Borders at the bottom of the range.
+#' - `INNER`: Borders on the inside of the range.
+#' - `INNER_HORIZONTAL`: Horizontal borders on the inside of the range.
+#' - `INNER_VERTICAL`: Vertical borders on the inside of the range.
+#' - `LEFT`: Borders at the left of the range.
+#' - `OUTER`: Borders along the outside of the range.
+#' - `RIGHT`: Borders at the right of the range.
+#' - `TOP`: Borders at the top of the range.
 #' @param tableBorderProperties ([TableBorderProperties])
 #'  The table border properties to update.
 #' @param fields (string)
@@ -3618,6 +4020,9 @@ UpdatePageElementAltTextRequest <- function(
 #'  The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB, cannot exceed 25 megapixels, and must be in PNG, JPEG, or GIF format. The provided URL can't surpass 2 KB in length. The URL is saved with the image, and exposed through the Image.source_url field.
 #' @param imageReplaceMethod (string)
 #'  The replacement method.
+#' - `IMAGE_REPLACE_METHOD_UNSPECIFIED`: Unspecified image replace method. This value must not be used.
+#' - `CENTER_INSIDE`: Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified.
+#' - `CENTER_CROP`: Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as the original shape.
 #'
 #' @return ReplaceImageRequest object
 #'
@@ -3674,6 +4079,11 @@ UpdateSlidePropertiesRequest <- function(
 #'  The object IDs of the page elements to update. All the page elements must be on the same page and must not be grouped.
 #' @param operation (string)
 #'  The Z-order operation to apply on the page elements. When applying the operation on multiple page elements, the relative Z-orders within these page elements before the operation is maintained.
+#' - `Z_ORDER_OPERATION_UNSPECIFIED`: Unspecified operation.
+#' - `BRING_TO_FRONT`: Brings the page elements to the front of the page.
+#' - `BRING_FORWARD`: Brings the page elements forward on the page by one element relative to the forwardmost one in the specified page elements.
+#' - `SEND_BACKWARD`: Sends the page elements backward on the page by one element relative to the furthest behind one in the specified page elements.
+#' - `SEND_TO_BACK`: Sends the page elements to the back of the page.
 #'
 #' @return UpdatePageElementsZOrderRequest object
 #'
@@ -3699,6 +4109,10 @@ UpdatePageElementsZOrderRequest <- function(
 #'  The object ID of the line the update is applied to. Only a line with a category indicating it is a "connector" can be updated. The line may be rerouted after updating its category.
 #' @param lineCategory (string)
 #'  The line category to update to. The exact line type is determined based on the category to update to and how it's routed to connect to other page elements.
+#' - `LINE_CATEGORY_UNSPECIFIED`: Unspecified line category.
+#' - `STRAIGHT`: Straight connectors, including straight connector 1.
+#' - `BENT`: Bent connectors, including bent connector 2 to 5.
+#' - `CURVED`: Curved connectors, including curved connector 2 to 5.
 #'
 #' @return UpdateLineCategoryRequest object
 #'

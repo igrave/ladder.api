@@ -8,7 +8,11 @@ AutoText(type = NULL, content = NULL, style = NULL)
 }
 \arguments{
 \item{type}{(string)
-The type of this auto text.}
+The type of this auto text.
+\itemize{
+\item \code{TYPE_UNSPECIFIED}: An unspecified autotext type.
+\item \code{SLIDE_NUMBER}: Type for autotext that represents the current slide number.
+}}
 
 \item{content}{(string)
 The rendered content of this auto text, if available.}

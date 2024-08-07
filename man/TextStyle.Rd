@@ -48,7 +48,13 @@ The hyperlink destination of the text. If unset, there is no link. Links are not
 }}
 
 \item{baselineOffset}{(string)
-The text's vertical offset from its normal position. Text with \code{SUPERSCRIPT} or \code{SUBSCRIPT} baseline offsets is automatically rendered in a smaller font size, computed based on the \code{font_size} field. The \code{font_size} itself is not affected by changes in this field.}
+The text's vertical offset from its normal position. Text with \code{SUPERSCRIPT} or \code{SUBSCRIPT} baseline offsets is automatically rendered in a smaller font size, computed based on the \code{font_size} field. The \code{font_size} itself is not affected by changes in this field.
+\itemize{
+\item \code{BASELINE_OFFSET_UNSPECIFIED}: The text's baseline offset is inherited from the parent.
+\item \code{NONE}: The text is not vertically offset.
+\item \code{SUPERSCRIPT}: The text is vertically offset upwards (superscript).
+\item \code{SUBSCRIPT}: The text is vertically offset downwards (subscript).
+}}
 
 \item{smallCaps}{(boolean)
 Whether or not the text is in small capital letters.}

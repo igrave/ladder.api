@@ -20,10 +20,19 @@ If set, this request will replace all of the shapes that contain the given text.
 The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF format. The provided URL can be at most 2 kB in length. The URL itself is saved with the image, and exposed via the Image.source_url field.}
 
 \item{replaceMethod}{(string)
-The replace method. \emph{Deprecated}: use \code{image_replace_method} instead. If you specify both a \code{replace_method} and an \code{image_replace_method}, the \code{image_replace_method} takes precedence.}
+The replace method. \emph{Deprecated}: use \code{image_replace_method} instead. If you specify both a \code{replace_method} and an \code{image_replace_method}, the \code{image_replace_method} takes precedence.
+\itemize{
+\item \code{CENTER_INSIDE}: Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified.
+\item \code{CENTER_CROP}: Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as that of the original shape.
+}}
 
 \item{imageReplaceMethod}{(string)
-The image replace method. If you specify both a \code{replace_method} and an \code{image_replace_method}, the \code{image_replace_method} takes precedence. If you do not specify a value for \code{image_replace_method}, but specify a value for \code{replace_method}, then the specified \code{replace_method} value is used. If you do not specify either, then CENTER_INSIDE is used.}
+The image replace method. If you specify both a \code{replace_method} and an \code{image_replace_method}, the \code{image_replace_method} takes precedence. If you do not specify a value for \code{image_replace_method}, but specify a value for \code{replace_method}, then the specified \code{replace_method} value is used. If you do not specify either, then CENTER_INSIDE is used.
+\itemize{
+\item \code{IMAGE_REPLACE_METHOD_UNSPECIFIED}: Unspecified image replace method. This value must not be used.
+\item \code{CENTER_INSIDE}: Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified.
+\item \code{CENTER_CROP}: Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as the original shape.
+}}
 
 \item{pageObjectIds}{(list of \link{string} objects)
 If non-empty, limits the matches to page elements only on the given pages. Returns a 400 bad request error if given the page object ID of a notes page or a notes master, or if a page with that object ID doesn't exist in the presentation.}

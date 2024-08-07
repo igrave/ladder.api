@@ -22,7 +22,24 @@ The optional table cell location if the text to be modified is in a table cell. 
 The range of text to apply the bullet presets to, based on TextElement indexes.}
 
 \item{bulletPreset}{(string)
-The kinds of bullet glyphs to be used. Defaults to the \code{BULLET_DISC_CIRCLE_SQUARE} preset.}
+The kinds of bullet glyphs to be used. Defaults to the \code{BULLET_DISC_CIRCLE_SQUARE} preset.
+\itemize{
+\item \code{BULLET_DISC_CIRCLE_SQUARE}: A bulleted list with a \code{DISC}, \code{CIRCLE} and \code{SQUARE} bullet glyph for the first 3 list nesting levels.
+\item \code{BULLET_DIAMONDX_ARROW3D_SQUARE}: A bulleted list with a \code{DIAMONDX}, \code{ARROW3D} and \code{SQUARE} bullet glyph for the first 3 list nesting levels.
+\item \code{BULLET_CHECKBOX}: A bulleted list with \code{CHECKBOX} bullet glyphs for all list nesting levels.
+\item \code{BULLET_ARROW_DIAMOND_DISC}: A bulleted list with a \code{ARROW}, \code{DIAMOND} and \code{DISC} bullet glyph for the first 3 list nesting levels.
+\item \code{BULLET_STAR_CIRCLE_SQUARE}: A bulleted list with a \code{STAR}, \code{CIRCLE} and \code{SQUARE} bullet glyph for the first 3 list nesting levels.
+\item \code{BULLET_ARROW3D_CIRCLE_SQUARE}: A bulleted list with a \code{ARROW3D}, \code{CIRCLE} and \code{SQUARE} bullet glyph for the first 3 list nesting levels.
+\item \code{BULLET_LEFTTRIANGLE_DIAMOND_DISC}: A bulleted list with a \code{LEFTTRIANGLE}, \code{DIAMOND} and \code{DISC} bullet glyph for the first 3 list nesting levels.
+\item \code{BULLET_DIAMONDX_HOLLOWDIAMOND_SQUARE}: A bulleted list with a \code{DIAMONDX}, \code{HOLLOWDIAMOND} and \code{SQUARE} bullet glyph for the first 3 list nesting levels.
+\item \code{BULLET_DIAMOND_CIRCLE_SQUARE}: A bulleted list with a \code{DIAMOND}, \code{CIRCLE} and \code{SQUARE} bullet glyph for the first 3 list nesting levels.
+\item \code{NUMBERED_DIGIT_ALPHA_ROMAN}: A numbered list with \code{DIGIT}, \code{ALPHA} and \code{ROMAN} numeric glyphs for the first 3 list nesting levels, followed by periods.
+\item \code{NUMBERED_DIGIT_ALPHA_ROMAN_PARENS}: A numbered list with \code{DIGIT}, \code{ALPHA} and \code{ROMAN} numeric glyphs for the first 3 list nesting levels, followed by parenthesis.
+\item \code{NUMBERED_DIGIT_NESTED}: A numbered list with \code{DIGIT} numeric glyphs separated by periods, where each nesting level uses the previous nesting level's glyph as a prefix. For example: '1.', '1.1.', '2.', '2.2.'.
+\item \code{NUMBERED_UPPERALPHA_ALPHA_ROMAN}: A numbered list with \code{UPPERALPHA}, \code{ALPHA} and \code{ROMAN} numeric glyphs for the first 3 list nesting levels, followed by periods.
+\item \code{NUMBERED_UPPERROMAN_UPPERALPHA_DIGIT}: A numbered list with \code{UPPERROMAN}, \code{UPPERALPHA} and \code{DIGIT} numeric glyphs for the first 3 list nesting levels, followed by periods.
+\item \code{NUMBERED_ZERODIGIT_ALPHA_ROMAN}: A numbered list with \code{ZERODIGIT}, \code{ALPHA} and \code{ROMAN} numeric glyphs for the first 3 list nesting levels, followed by periods.
+}}
 }
 \value{
 CreateParagraphBulletsRequest object

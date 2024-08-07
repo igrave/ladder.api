@@ -21,7 +21,14 @@ Page(
 The object ID for this page. Object IDs used by Page and PageElement share the same namespace.}
 
 \item{pageType}{(string)
-The type of the page.}
+The type of the page.
+\itemize{
+\item \code{SLIDE}: A slide page.
+\item \code{MASTER}: A master slide page.
+\item \code{LAYOUT}: A layout page.
+\item \code{NOTES}: A notes page.
+\item \code{NOTES_MASTER}: A notes master page.
+}}
 
 \item{pageElements}{(list of \link{PageElement} objects)
 The page elements rendered on the page.}

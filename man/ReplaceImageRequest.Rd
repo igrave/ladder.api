@@ -18,7 +18,12 @@ The ID of the existing image that will be replaced. The ID can be retrieved from
 The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB, cannot exceed 25 megapixels, and must be in PNG, JPEG, or GIF format. The provided URL can't surpass 2 KB in length. The URL is saved with the image, and exposed through the Image.source_url field.}
 
 \item{imageReplaceMethod}{(string)
-The replacement method.}
+The replacement method.
+\itemize{
+\item \code{IMAGE_REPLACE_METHOD_UNSPECIFIED}: Unspecified image replace method. This value must not be used.
+\item \code{CENTER_INSIDE}: Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified.
+\item \code{CENTER_CROP}: Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as the original shape.
+}}
 }
 \value{
 ReplaceImageRequest object

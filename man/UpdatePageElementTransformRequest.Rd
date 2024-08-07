@@ -18,7 +18,12 @@ The object ID of the page element to update.}
 The input transform matrix used to update the page element.}
 
 \item{applyMode}{(string)
-The apply mode of the transform update.}
+The apply mode of the transform update.
+\itemize{
+\item \code{APPLY_MODE_UNSPECIFIED}: Unspecified mode.
+\item \code{RELATIVE}: Applies the new AffineTransform matrix to the existing one, and replaces the existing one with the resulting concatenation.
+\item \code{ABSOLUTE}: Replaces the existing AffineTransform matrix with the new one.
+}}
 }
 \value{
 UpdatePageElementTransformRequest object

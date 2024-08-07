@@ -11,7 +11,34 @@ Recolor(recolorStops = NULL, name = NULL)
 The recolor effect is represented by a gradient, which is a list of color stops. The colors in the gradient will replace the corresponding colors at the same position in the color palette and apply to the image. This property is read-only.}
 
 \item{name}{(string)
-The name of the recolor effect. The name is determined from the \code{recolor_stops} by matching the gradient against the colors in the page's current color scheme. This property is read-only.}
+The name of the recolor effect. The name is determined from the \code{recolor_stops} by matching the gradient against the colors in the page's current color scheme. This property is read-only.
+\itemize{
+\item \code{NONE}: No recolor effect. The default value.
+\item \code{LIGHT1}: A recolor effect that lightens the image using the page's first available color from its color scheme.
+\item \code{LIGHT2}: A recolor effect that lightens the image using the page's second available color from its color scheme.
+\item \code{LIGHT3}: A recolor effect that lightens the image using the page's third available color from its color scheme.
+\item \code{LIGHT4}: A recolor effect that lightens the image using the page's forth available color from its color scheme.
+\item \code{LIGHT5}: A recolor effect that lightens the image using the page's fifth available color from its color scheme.
+\item \code{LIGHT6}: A recolor effect that lightens the image using the page's sixth available color from its color scheme.
+\item \code{LIGHT7}: A recolor effect that lightens the image using the page's seventh available color from its color scheme.
+\item \code{LIGHT8}: A recolor effect that lightens the image using the page's eighth available color from its color scheme.
+\item \code{LIGHT9}: A recolor effect that lightens the image using the page's ninth available color from its color scheme.
+\item \code{LIGHT10}: A recolor effect that lightens the image using the page's tenth available color from its color scheme.
+\item \code{DARK1}: A recolor effect that darkens the image using the page's first available color from its color scheme.
+\item \code{DARK2}: A recolor effect that darkens the image using the page's second available color from its color scheme.
+\item \code{DARK3}: A recolor effect that darkens the image using the page's third available color from its color scheme.
+\item \code{DARK4}: A recolor effect that darkens the image using the page's fourth available color from its color scheme.
+\item \code{DARK5}: A recolor effect that darkens the image using the page's fifth available color from its color scheme.
+\item \code{DARK6}: A recolor effect that darkens the image using the page's sixth available color from its color scheme.
+\item \code{DARK7}: A recolor effect that darkens the image using the page's seventh available color from its color scheme.
+\item \code{DARK8}: A recolor effect that darkens the image using the page's eighth available color from its color scheme.
+\item \code{DARK9}: A recolor effect that darkens the image using the page's ninth available color from its color scheme.
+\item \code{DARK10}: A recolor effect that darkens the image using the page's tenth available color from its color scheme.
+\item \code{GRAYSCALE}: A recolor effect that recolors the image to grayscale.
+\item \code{NEGATIVE}: A recolor effect that recolors the image to negative grayscale.
+\item \code{SEPIA}: A recolor effect that recolors the image using the sepia color.
+\item \code{CUSTOM}: Custom recolor effect. Refer to \code{recolor_stops} for the concrete gradient.
+}}
 }
 \value{
 Recolor object

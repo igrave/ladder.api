@@ -19,10 +19,24 @@ The fill of the outline.}
 The thickness of the outline.}
 
 \item{dashStyle}{(string)
-The dash style of the outline.}
+The dash style of the outline.
+\itemize{
+\item \code{DASH_STYLE_UNSPECIFIED}: Unspecified dash style.
+\item \code{SOLID}: Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default dash style.
+\item \code{DOT}: Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'.
+\item \code{DASH}: Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'.
+\item \code{DASH_DOT}: Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dashDot'.
+\item \code{LONG_DASH}: Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDash'.
+\item \code{LONG_DASH_DOT}: Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDashDot'.
+}}
 
 \item{propertyState}{(string)
-The outline property state. Updating the outline on a page element will implicitly update this field to \code{RENDERED}, unless another value is specified in the same request. To have no outline on a page element, set this field to \code{NOT_RENDERED}. In this case, any other outline fields set in the same request will be ignored.}
+The outline property state. Updating the outline on a page element will implicitly update this field to \code{RENDERED}, unless another value is specified in the same request. To have no outline on a page element, set this field to \code{NOT_RENDERED}. In this case, any other outline fields set in the same request will be ignored.
+\itemize{
+\item \code{RENDERED}: If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value.
+\item \code{NOT_RENDERED}: If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED.
+\item \code{INHERIT}: If a property's state is INHERIT, then the property state uses the value of corresponding \code{property_state} field on the parent shape. Elements that do not inherit will never have an INHERIT property state.
+}}
 }
 \value{
 Outline object

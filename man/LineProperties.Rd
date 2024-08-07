@@ -23,13 +23,48 @@ The fill of the line. The default line fill matches the defaults for new lines c
 The thickness of the line.}
 
 \item{dashStyle}{(string)
-The dash style of the line.}
+The dash style of the line.
+\itemize{
+\item \code{DASH_STYLE_UNSPECIFIED}: Unspecified dash style.
+\item \code{SOLID}: Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default dash style.
+\item \code{DOT}: Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'.
+\item \code{DASH}: Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'.
+\item \code{DASH_DOT}: Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dashDot'.
+\item \code{LONG_DASH}: Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDash'.
+\item \code{LONG_DASH_DOT}: Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDashDot'.
+}}
 
 \item{startArrow}{(string)
-The style of the arrow at the beginning of the line.}
+The style of the arrow at the beginning of the line.
+\itemize{
+\item \code{ARROW_STYLE_UNSPECIFIED}: An unspecified arrow style.
+\item \code{NONE}: No arrow.
+\item \code{STEALTH_ARROW}: Arrow with notched back. Corresponds to ECMA-376 ST_LineEndType value 'stealth'.
+\item \code{FILL_ARROW}: Filled arrow. Corresponds to ECMA-376 ST_LineEndType value 'triangle'.
+\item \code{FILL_CIRCLE}: Filled circle. Corresponds to ECMA-376 ST_LineEndType value 'oval'.
+\item \code{FILL_SQUARE}: Filled square.
+\item \code{FILL_DIAMOND}: Filled diamond. Corresponds to ECMA-376 ST_LineEndType value 'diamond'.
+\item \code{OPEN_ARROW}: Hollow arrow.
+\item \code{OPEN_CIRCLE}: Hollow circle.
+\item \code{OPEN_SQUARE}: Hollow square.
+\item \code{OPEN_DIAMOND}: Hollow diamond.
+}}
 
 \item{endArrow}{(string)
-The style of the arrow at the end of the line.}
+The style of the arrow at the end of the line.
+\itemize{
+\item \code{ARROW_STYLE_UNSPECIFIED}: An unspecified arrow style.
+\item \code{NONE}: No arrow.
+\item \code{STEALTH_ARROW}: Arrow with notched back. Corresponds to ECMA-376 ST_LineEndType value 'stealth'.
+\item \code{FILL_ARROW}: Filled arrow. Corresponds to ECMA-376 ST_LineEndType value 'triangle'.
+\item \code{FILL_CIRCLE}: Filled circle. Corresponds to ECMA-376 ST_LineEndType value 'oval'.
+\item \code{FILL_SQUARE}: Filled square.
+\item \code{FILL_DIAMOND}: Filled diamond. Corresponds to ECMA-376 ST_LineEndType value 'diamond'.
+\item \code{OPEN_ARROW}: Hollow arrow.
+\item \code{OPEN_CIRCLE}: Hollow circle.
+\item \code{OPEN_SQUARE}: Hollow square.
+\item \code{OPEN_DIAMOND}: Hollow diamond.
+}}
 
 \item{link}{(\link{Link})
 The hyperlink destination of the line. If unset, there is no link.}

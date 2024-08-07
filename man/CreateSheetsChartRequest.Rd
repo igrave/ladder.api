@@ -26,7 +26,11 @@ The ID of the Google Sheets spreadsheet that contains the chart. You might need 
 The ID of the specific chart in the Google Sheets spreadsheet.}
 
 \item{linkingMode}{(string)
-The mode with which the chart is linked to the source spreadsheet. When not specified, the chart will be an image that is not linked.}
+The mode with which the chart is linked to the source spreadsheet. When not specified, the chart will be an image that is not linked.
+\itemize{
+\item \code{NOT_LINKED_IMAGE}: The chart is not associated with the source spreadsheet and cannot be updated. A chart that is not linked will be inserted as an image.
+\item \code{LINKED}: Linking the chart allows it to be updated, and other collaborators will see a link to the spreadsheet.
+}}
 }
 \value{
 CreateSheetsChartRequest object

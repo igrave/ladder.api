@@ -19,7 +19,12 @@ A user-supplied object ID. If you specify an ID, it must be unique among all pag
 The element properties for the video. The PageElementProperties.size property is optional. If you don't specify a size, a default size is chosen by the server. The PageElementProperties.transform property is optional. The transform must not have shear components. If you don't specify a transform, the video will be placed at the top left corner of the page.}
 
 \item{source}{(string)
-The video source.}
+The video source.
+\itemize{
+\item \code{SOURCE_UNSPECIFIED}: The video source is unspecified.
+\item \code{YOUTUBE}: The video source is YouTube.
+\item \code{DRIVE}: The video source is Google Drive.
+}}
 
 \item{id}{(string)
 The video source's unique identifier for this video. e.g. For YouTube video https://www.youtube.com/watch?v=7U3axjORYZ0, the ID is 7U3axjORYZ0. For a Google Drive video https://drive.google.com/file/d/1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q the ID is 1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q. To access a Google Drive video file, you might need to add a resource key to the HTTP header for a subset of old files. For more information, see \href{https://developers.google.com/drive/api/v3/resource-keys}{Access link-shared files using resource keys}.}

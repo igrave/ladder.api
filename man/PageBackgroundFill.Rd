@@ -12,7 +12,12 @@ PageBackgroundFill(
 }
 \arguments{
 \item{propertyState}{(string)
-The background fill property state. Updating the fill on a page will implicitly update this field to \code{RENDERED}, unless another value is specified in the same request. To have no fill on a page, set this field to \code{NOT_RENDERED}. In this case, any other fill fields set in the same request will be ignored.}
+The background fill property state. Updating the fill on a page will implicitly update this field to \code{RENDERED}, unless another value is specified in the same request. To have no fill on a page, set this field to \code{NOT_RENDERED}. In this case, any other fill fields set in the same request will be ignored.
+\itemize{
+\item \code{RENDERED}: If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value.
+\item \code{NOT_RENDERED}: If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED.
+\item \code{INHERIT}: If a property's state is INHERIT, then the property state uses the value of corresponding \code{property_state} field on the parent shape. Elements that do not inherit will never have an INHERIT property state.
+}}
 
 \item{solidFill}{(\link{SolidFill})
 Solid color fill.}

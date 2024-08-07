@@ -8,7 +8,26 @@ Placeholder(type = NULL, index = NULL, parentObjectId = NULL)
 }
 \arguments{
 \item{type}{(string)
-The type of the placeholder.}
+The type of the placeholder.
+\itemize{
+\item \code{NONE}: Default value, signifies it is not a placeholder.
+\item \code{BODY}: Body text.
+\item \code{CHART}: Chart or graph.
+\item \code{CLIP_ART}: Clip art image.
+\item \code{CENTERED_TITLE}: Title centered.
+\item \code{DIAGRAM}: Diagram.
+\item \code{DATE_AND_TIME}: Date and time.
+\item \code{FOOTER}: Footer text.
+\item \code{HEADER}: Header text.
+\item \code{MEDIA}: Multimedia.
+\item \code{OBJECT}: Any content type.
+\item \code{PICTURE}: Picture.
+\item \code{SLIDE_NUMBER}: Number of a slide.
+\item \code{SUBTITLE}: Subtitle.
+\item \code{TABLE}: Table.
+\item \code{TITLE}: Slide title.
+\item \code{SLIDE_IMAGE}: Slide image.
+}}
 
 \item{index}{(integer)
 The index of the placeholder. If the same placeholder types are present in the same page, they would have different index values.}

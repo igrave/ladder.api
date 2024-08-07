@@ -14,7 +14,13 @@ The optional zero-based index of the beginning of the collection. Required for \
 The optional zero-based index of the end of the collection. Required for \code{FIXED_RANGE} ranges.}
 
 \item{type}{(string)
-The type of range.}
+The type of range.
+\itemize{
+\item \code{RANGE_TYPE_UNSPECIFIED}: Unspecified range type. This value must not be used.
+\item \code{FIXED_RANGE}: A fixed range. Both the \code{start_index} and \code{end_index} must be specified.
+\item \code{FROM_START_INDEX}: Starts the range at \code{start_index} and continues until the end of the collection. The \code{end_index} must not be specified.
+\item \code{ALL}: Sets the range to be the whole length of the collection. Both the \code{start_index} and the \code{end_index} must not be specified.
+}}
 }
 \value{
 Range object

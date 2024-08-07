@@ -20,7 +20,18 @@ The object ID of the table.}
 The table range representing the subset of the table to which the updates are applied. If a table range is not specified, the updates will apply to the entire table.}
 
 \item{borderPosition}{(string)
-The border position in the table range the updates should apply to. If a border position is not specified, the updates will apply to all borders in the table range.}
+The border position in the table range the updates should apply to. If a border position is not specified, the updates will apply to all borders in the table range.
+\itemize{
+\item \code{ALL}: All borders in the range.
+\item \code{BOTTOM}: Borders at the bottom of the range.
+\item \code{INNER}: Borders on the inside of the range.
+\item \code{INNER_HORIZONTAL}: Horizontal borders on the inside of the range.
+\item \code{INNER_VERTICAL}: Vertical borders on the inside of the range.
+\item \code{LEFT}: Borders at the left of the range.
+\item \code{OUTER}: Borders along the outside of the range.
+\item \code{RIGHT}: Borders at the right of the range.
+\item \code{TOP}: Borders at the top of the range.
+}}
 
 \item{tableBorderProperties}{(\link{TableBorderProperties})
 The table border properties to update.}

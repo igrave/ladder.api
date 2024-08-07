@@ -27,7 +27,14 @@ The shadow properties of the shape. If unset, the shadow is inherited from a par
 The hyperlink destination of the shape. If unset, there is no link. Links are not inherited from parent placeholders.}
 
 \item{contentAlignment}{(string)
-The alignment of the content in the shape. If unspecified, the alignment is inherited from a parent placeholder if it exists. If the shape has no parent, the default alignment matches the alignment for new shapes created in the Slides editor.}
+The alignment of the content in the shape. If unspecified, the alignment is inherited from a parent placeholder if it exists. If the shape has no parent, the default alignment matches the alignment for new shapes created in the Slides editor.
+\itemize{
+\item \code{CONTENT_ALIGNMENT_UNSPECIFIED}: An unspecified content alignment. The content alignment is inherited from the parent if it exists.
+\item \code{CONTENT_ALIGNMENT_UNSUPPORTED}: An unsupported content alignment.
+\item \code{TOP}: An alignment that aligns the content to the top of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 't'.
+\item \code{MIDDLE}: An alignment that aligns the content to the middle of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'ctr'.
+\item \code{BOTTOM}: An alignment that aligns the content to the bottom of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'b'.
+}}
 
 \item{autofit}{(\link{Autofit})
 The autofit properties of the shape. This property is only set for shapes that allow text.}

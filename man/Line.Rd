@@ -11,10 +11,29 @@ Line(lineProperties = NULL, lineType = NULL, lineCategory = NULL)
 The properties of the line.}
 
 \item{lineType}{(string)
-The type of the line.}
+The type of the line.
+\itemize{
+\item \code{TYPE_UNSPECIFIED}: An unspecified line type.
+\item \code{STRAIGHT_CONNECTOR_1}: Straight connector 1 form. Corresponds to ECMA-376 ST_ShapeType 'straightConnector1'.
+\item \code{BENT_CONNECTOR_2}: Bent connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector2'.
+\item \code{BENT_CONNECTOR_3}: Bent connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector3'.
+\item \code{BENT_CONNECTOR_4}: Bent connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector4'.
+\item \code{BENT_CONNECTOR_5}: Bent connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector5'.
+\item \code{CURVED_CONNECTOR_2}: Curved connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector2'.
+\item \code{CURVED_CONNECTOR_3}: Curved connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector3'.
+\item \code{CURVED_CONNECTOR_4}: Curved connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector4'.
+\item \code{CURVED_CONNECTOR_5}: Curved connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector5'.
+\item \code{STRAIGHT_LINE}: Straight line. Corresponds to ECMA-376 ST_ShapeType 'line'. This line type is not a connector.
+}}
 
 \item{lineCategory}{(string)
-The category of the line. It matches the \code{category} specified in CreateLineRequest, and can be updated with UpdateLineCategoryRequest.}
+The category of the line. It matches the \code{category} specified in CreateLineRequest, and can be updated with UpdateLineCategoryRequest.
+\itemize{
+\item \code{LINE_CATEGORY_UNSPECIFIED}: Unspecified line category.
+\item \code{STRAIGHT}: Straight connectors, including straight connector 1.
+\item \code{BENT}: Bent connectors, including bent connector 2 to 5.
+\item \code{CURVED}: Curved connectors, including curved connector 2 to 5.
+}}
 }
 \value{
 Line object

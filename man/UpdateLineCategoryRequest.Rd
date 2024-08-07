@@ -11,7 +11,13 @@ UpdateLineCategoryRequest(objectId = NULL, lineCategory = NULL)
 The object ID of the line the update is applied to. Only a line with a category indicating it is a "connector" can be updated. The line may be rerouted after updating its category.}
 
 \item{lineCategory}{(string)
-The line category to update to. The exact line type is determined based on the category to update to and how it's routed to connect to other page elements.}
+The line category to update to. The exact line type is determined based on the category to update to and how it's routed to connect to other page elements.
+\itemize{
+\item \code{LINE_CATEGORY_UNSPECIFIED}: Unspecified line category.
+\item \code{STRAIGHT}: Straight connectors, including straight connector 1.
+\item \code{BENT}: Bent connectors, including bent connector 2 to 5.
+\item \code{CURVED}: Curved connectors, including curved connector 2 to 5.
+}}
 }
 \value{
 UpdateLineCategoryRequest object
