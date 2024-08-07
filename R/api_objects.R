@@ -95,6 +95,7 @@ Size <- function(
 Dimension <- function(
     magnitude = NULL,
     unit = NULL) {
+  checkmate::assert_choice(unit, c("UNIT_UNSPECIFIED", "EMU", "PT"), null.ok = TRUE)
   structure(
     list(
       "magnitude" = magnitude,
@@ -146,6 +147,7 @@ Page <- function(
     masterProperties = NULL,
     revisionId = NULL,
     pageProperties = NULL) {
+  checkmate::assert_choice(pageType, c("SLIDE", "MASTER", "LAYOUT", "NOTES", "NOTES_MASTER"), null.ok = TRUE)
   structure(
     list(
       "objectId" = objectId,
@@ -269,6 +271,7 @@ AffineTransform <- function(
     translateX = NULL,
     translateY = NULL,
     unit = NULL) {
+  checkmate::assert_choice(unit, c("UNIT_UNSPECIFIED", "EMU", "PT"), null.ok = TRUE)
   structure(
     list(
       "scaleX" = scaleX,
@@ -468,6 +471,7 @@ Shape <- function(
     text = NULL,
     shapeProperties = NULL,
     placeholder = NULL) {
+  checkmate::assert_choice(shapeType, c("TYPE_UNSPECIFIED", "TEXT_BOX", "RECTANGLE", "ROUND_RECTANGLE", "ELLIPSE", "ARC", "BENT_ARROW", "BENT_UP_ARROW", "BEVEL", "BLOCK_ARC", "BRACE_PAIR", "BRACKET_PAIR", "CAN", "CHEVRON", "CHORD", "CLOUD", "CORNER", "CUBE", "CURVED_DOWN_ARROW", "CURVED_LEFT_ARROW", "CURVED_RIGHT_ARROW", "CURVED_UP_ARROW", "DECAGON", "DIAGONAL_STRIPE", "DIAMOND", "DODECAGON", "DONUT", "DOUBLE_WAVE", "DOWN_ARROW", "DOWN_ARROW_CALLOUT", "FOLDED_CORNER", "FRAME", "HALF_FRAME", "HEART", "HEPTAGON", "HEXAGON", "HOME_PLATE", "HORIZONTAL_SCROLL", "IRREGULAR_SEAL_1", "IRREGULAR_SEAL_2", "LEFT_ARROW", "LEFT_ARROW_CALLOUT", "LEFT_BRACE", "LEFT_BRACKET", "LEFT_RIGHT_ARROW", "LEFT_RIGHT_ARROW_CALLOUT", "LEFT_RIGHT_UP_ARROW", "LEFT_UP_ARROW", "LIGHTNING_BOLT", "MATH_DIVIDE", "MATH_EQUAL", "MATH_MINUS", "MATH_MULTIPLY", "MATH_NOT_EQUAL", "MATH_PLUS", "MOON", "NO_SMOKING", "NOTCHED_RIGHT_ARROW", "OCTAGON", "PARALLELOGRAM", "PENTAGON", "PIE", "PLAQUE", "PLUS", "QUAD_ARROW", "QUAD_ARROW_CALLOUT", "RIBBON", "RIBBON_2", "RIGHT_ARROW", "RIGHT_ARROW_CALLOUT", "RIGHT_BRACE", "RIGHT_BRACKET", "ROUND_1_RECTANGLE", "ROUND_2_DIAGONAL_RECTANGLE", "ROUND_2_SAME_RECTANGLE", "RIGHT_TRIANGLE", "SMILEY_FACE", "SNIP_1_RECTANGLE", "SNIP_2_DIAGONAL_RECTANGLE", "SNIP_2_SAME_RECTANGLE", "SNIP_ROUND_RECTANGLE", "STAR_10", "STAR_12", "STAR_16", "STAR_24", "STAR_32", "STAR_4", "STAR_5", "STAR_6", "STAR_7", "STAR_8", "STRIPED_RIGHT_ARROW", "SUN", "TRAPEZOID", "TRIANGLE", "UP_ARROW", "UP_ARROW_CALLOUT", "UP_DOWN_ARROW", "UTURN_ARROW", "VERTICAL_SCROLL", "WAVE", "WEDGE_ELLIPSE_CALLOUT", "WEDGE_RECTANGLE_CALLOUT", "WEDGE_ROUND_RECTANGLE_CALLOUT", "FLOW_CHART_ALTERNATE_PROCESS", "FLOW_CHART_COLLATE", "FLOW_CHART_CONNECTOR", "FLOW_CHART_DECISION", "FLOW_CHART_DELAY", "FLOW_CHART_DISPLAY", "FLOW_CHART_DOCUMENT", "FLOW_CHART_EXTRACT", "FLOW_CHART_INPUT_OUTPUT", "FLOW_CHART_INTERNAL_STORAGE", "FLOW_CHART_MAGNETIC_DISK", "FLOW_CHART_MAGNETIC_DRUM", "FLOW_CHART_MAGNETIC_TAPE", "FLOW_CHART_MANUAL_INPUT", "FLOW_CHART_MANUAL_OPERATION", "FLOW_CHART_MERGE", "FLOW_CHART_MULTIDOCUMENT", "FLOW_CHART_OFFLINE_STORAGE", "FLOW_CHART_OFFPAGE_CONNECTOR", "FLOW_CHART_ONLINE_STORAGE", "FLOW_CHART_OR", "FLOW_CHART_PREDEFINED_PROCESS", "FLOW_CHART_PREPARATION", "FLOW_CHART_PROCESS", "FLOW_CHART_PUNCHED_CARD", "FLOW_CHART_PUNCHED_TAPE", "FLOW_CHART_SORT", "FLOW_CHART_SUMMING_JUNCTION", "FLOW_CHART_TERMINATOR", "ARROW_EAST", "ARROW_NORTH_EAST", "ARROW_NORTH", "SPEECH", "STARBURST", "TEARDROP", "ELLIPSE_RIBBON", "ELLIPSE_RIBBON_2", "CLOUD_CALLOUT", "CUSTOM"), null.ok = TRUE)
   structure(
     list(
       "shapeType" = shapeType,
@@ -616,6 +620,9 @@ ParagraphStyle <- function(
     indentFirstLine = NULL,
     direction = NULL,
     spacingMode = NULL) {
+  checkmate::assert_choice(alignment, c("ALIGNMENT_UNSPECIFIED", "START", "CENTER", "END", "JUSTIFIED"), null.ok = TRUE)
+  checkmate::assert_choice(direction, c("TEXT_DIRECTION_UNSPECIFIED", "LEFT_TO_RIGHT", "RIGHT_TO_LEFT"), null.ok = TRUE)
+  checkmate::assert_choice(spacingMode, c("SPACING_MODE_UNSPECIFIED", "NEVER_COLLAPSE", "COLLAPSE_LISTS"), null.ok = TRUE)
   structure(
     list(
       "lineSpacing" = lineSpacing,
@@ -725,6 +732,7 @@ TextStyle <- function(
     strikethrough = NULL,
     underline = NULL,
     weightedFontFamily = NULL) {
+  checkmate::assert_choice(baselineOffset, c("BASELINE_OFFSET_UNSPECIFIED", "NONE", "SUPERSCRIPT", "SUBSCRIPT"), null.ok = TRUE)
   structure(
     list(
       "backgroundColor" = backgroundColor,
@@ -797,6 +805,7 @@ OptionalColor <- function(opaqueColor = NULL) {
 OpaqueColor <- function(
     rgbColor = NULL,
     themeColor = NULL) {
+  checkmate::assert_choice(themeColor, c("THEME_COLOR_TYPE_UNSPECIFIED", "DARK1", "LIGHT1", "DARK2", "LIGHT2", "ACCENT1", "ACCENT2", "ACCENT3", "ACCENT4", "ACCENT5", "ACCENT6", "HYPERLINK", "FOLLOWED_HYPERLINK", "TEXT1", "BACKGROUND1", "TEXT2", "BACKGROUND2"), null.ok = TRUE)
   structure(
     list(
       "rgbColor" = rgbColor,
@@ -862,6 +871,7 @@ Link <- function(
     relativeLink = NULL,
     pageObjectId = NULL,
     slideIndex = NULL) {
+  checkmate::assert_choice(relativeLink, c("RELATIVE_SLIDE_LINK_UNSPECIFIED", "NEXT_SLIDE", "PREVIOUS_SLIDE", "FIRST_SLIDE", "LAST_SLIDE"), null.ok = TRUE)
   structure(
     list(
       "url" = url,
@@ -944,6 +954,7 @@ AutoText <- function(
     type = NULL,
     content = NULL,
     style = NULL) {
+  checkmate::assert_choice(type, c("TYPE_UNSPECIFIED", "SLIDE_NUMBER"), null.ok = TRUE)
   structure(
     list(
       "type" = type,
@@ -1032,6 +1043,7 @@ ShapeProperties <- function(
     link = NULL,
     contentAlignment = NULL,
     autofit = NULL) {
+  checkmate::assert_choice(contentAlignment, c("CONTENT_ALIGNMENT_UNSPECIFIED", "CONTENT_ALIGNMENT_UNSUPPORTED", "TOP", "MIDDLE", "BOTTOM"), null.ok = TRUE)
   structure(
     list(
       "shapeBackgroundFill" = shapeBackgroundFill,
@@ -1064,6 +1076,7 @@ ShapeProperties <- function(
 ShapeBackgroundFill <- function(
     propertyState = NULL,
     solidFill = NULL) {
+  checkmate::assert_choice(propertyState, c("RENDERED", "NOT_RENDERED", "INHERIT"), null.ok = TRUE)
   structure(
     list(
       "propertyState" = propertyState,
@@ -1132,6 +1145,8 @@ Outline <- function(
     weight = NULL,
     dashStyle = NULL,
     propertyState = NULL) {
+  checkmate::assert_choice(dashStyle, c("DASH_STYLE_UNSPECIFIED", "SOLID", "DOT", "DASH", "DASH_DOT", "LONG_DASH", "LONG_DASH_DOT"), null.ok = TRUE)
+  checkmate::assert_choice(propertyState, c("RENDERED", "NOT_RENDERED", "INHERIT"), null.ok = TRUE)
   structure(
     list(
       "outlineFill" = outlineFill,
@@ -1212,6 +1227,9 @@ Shadow <- function(
     alpha = NULL,
     rotateWithShape = NULL,
     propertyState = NULL) {
+  checkmate::assert_choice(type, c("SHADOW_TYPE_UNSPECIFIED", "OUTER"), null.ok = TRUE)
+  checkmate::assert_choice(alignment, c("RECTANGLE_POSITION_UNSPECIFIED", "TOP_LEFT", "TOP_CENTER", "TOP_RIGHT", "LEFT_CENTER", "CENTER", "RIGHT_CENTER", "BOTTOM_LEFT", "BOTTOM_CENTER", "BOTTOM_RIGHT"), null.ok = TRUE)
+  checkmate::assert_choice(propertyState, c("RENDERED", "NOT_RENDERED", "INHERIT"), null.ok = TRUE)
   structure(
     list(
       "type" = type,
@@ -1250,6 +1268,7 @@ Autofit <- function(
     autofitType = NULL,
     fontScale = NULL,
     lineSpacingReduction = NULL) {
+  checkmate::assert_choice(autofitType, c("AUTOFIT_TYPE_UNSPECIFIED", "NONE", "TEXT_AUTOFIT", "SHAPE_AUTOFIT"), null.ok = TRUE)
   structure(
     list(
       "autofitType" = autofitType,
@@ -1296,6 +1315,7 @@ Placeholder <- function(
     type = NULL,
     index = NULL,
     parentObjectId = NULL) {
+  checkmate::assert_choice(type, c("NONE", "BODY", "CHART", "CLIP_ART", "CENTERED_TITLE", "DIAGRAM", "DATE_AND_TIME", "FOOTER", "HEADER", "MEDIA", "OBJECT", "PICTURE", "SLIDE_NUMBER", "SUBTITLE", "TABLE", "TITLE", "SLIDE_IMAGE"), null.ok = TRUE)
   structure(
     list(
       "type" = type,
@@ -1471,6 +1491,7 @@ CropProperties <- function(
 Recolor <- function(
     recolorStops = NULL,
     name = NULL) {
+  checkmate::assert_choice(name, c("NONE", "LIGHT1", "LIGHT2", "LIGHT3", "LIGHT4", "LIGHT5", "LIGHT6", "LIGHT7", "LIGHT8", "LIGHT9", "LIGHT10", "DARK1", "DARK2", "DARK3", "DARK4", "DARK5", "DARK6", "DARK7", "DARK8", "DARK9", "DARK10", "GRAYSCALE", "NEGATIVE", "SEPIA", "CUSTOM"), null.ok = TRUE)
   structure(
     list(
       "recolorStops" = recolorStops,
@@ -1534,6 +1555,7 @@ Video <- function(
     source = NULL,
     id = NULL,
     videoProperties = NULL) {
+  checkmate::assert_choice(source, c("SOURCE_UNSPECIFIED", "YOUTUBE", "DRIVE"), null.ok = TRUE)
   structure(
     list(
       "url" = url,
@@ -1616,6 +1638,8 @@ Line <- function(
     lineProperties = NULL,
     lineType = NULL,
     lineCategory = NULL) {
+  checkmate::assert_choice(lineType, c("TYPE_UNSPECIFIED", "STRAIGHT_CONNECTOR_1", "BENT_CONNECTOR_2", "BENT_CONNECTOR_3", "BENT_CONNECTOR_4", "BENT_CONNECTOR_5", "CURVED_CONNECTOR_2", "CURVED_CONNECTOR_3", "CURVED_CONNECTOR_4", "CURVED_CONNECTOR_5", "STRAIGHT_LINE"), null.ok = TRUE)
+  checkmate::assert_choice(lineCategory, c("LINE_CATEGORY_UNSPECIFIED", "STRAIGHT", "BENT", "CURVED"), null.ok = TRUE)
   structure(
     list(
       "lineProperties" = lineProperties,
@@ -1689,6 +1713,9 @@ LineProperties <- function(
     link = NULL,
     startConnection = NULL,
     endConnection = NULL) {
+  checkmate::assert_choice(dashStyle, c("DASH_STYLE_UNSPECIFIED", "SOLID", "DOT", "DASH", "DASH_DOT", "LONG_DASH", "LONG_DASH_DOT"), null.ok = TRUE)
+  checkmate::assert_choice(startArrow, c("ARROW_STYLE_UNSPECIFIED", "NONE", "STEALTH_ARROW", "FILL_ARROW", "FILL_CIRCLE", "FILL_SQUARE", "FILL_DIAMOND", "OPEN_ARROW", "OPEN_CIRCLE", "OPEN_SQUARE", "OPEN_DIAMOND"), null.ok = TRUE)
+  checkmate::assert_choice(endArrow, c("ARROW_STYLE_UNSPECIFIED", "NONE", "STEALTH_ARROW", "FILL_ARROW", "FILL_CIRCLE", "FILL_SQUARE", "FILL_DIAMOND", "OPEN_ARROW", "OPEN_CIRCLE", "OPEN_SQUARE", "OPEN_DIAMOND"), null.ok = TRUE)
   structure(
     list(
       "lineFill" = lineFill,
@@ -1922,6 +1949,7 @@ TableCellLocation <- function(
 TableCellProperties <- function(
     tableCellBackgroundFill = NULL,
     contentAlignment = NULL) {
+  checkmate::assert_choice(contentAlignment, c("CONTENT_ALIGNMENT_UNSPECIFIED", "CONTENT_ALIGNMENT_UNSUPPORTED", "TOP", "MIDDLE", "BOTTOM"), null.ok = TRUE)
   structure(
     list(
       "tableCellBackgroundFill" = tableCellBackgroundFill,
@@ -1950,6 +1978,7 @@ TableCellProperties <- function(
 TableCellBackgroundFill <- function(
     propertyState = NULL,
     solidFill = NULL) {
+  checkmate::assert_choice(propertyState, c("RENDERED", "NOT_RENDERED", "INHERIT"), null.ok = TRUE)
   structure(
     list(
       "propertyState" = propertyState,
@@ -2050,6 +2079,7 @@ TableBorderProperties <- function(
     tableBorderFill = NULL,
     weight = NULL,
     dashStyle = NULL) {
+  checkmate::assert_choice(dashStyle, c("DASH_STYLE_UNSPECIFIED", "SOLID", "DOT", "DASH", "DASH_DOT", "LONG_DASH", "LONG_DASH_DOT"), null.ok = TRUE)
   structure(
     list(
       "tableBorderFill" = tableBorderFill,
@@ -2347,6 +2377,7 @@ PageBackgroundFill <- function(
     propertyState = NULL,
     solidFill = NULL,
     stretchedPictureFill = NULL) {
+  checkmate::assert_choice(propertyState, c("RENDERED", "NOT_RENDERED", "INHERIT"), null.ok = TRUE)
   structure(
     list(
       "propertyState" = propertyState,
@@ -2435,6 +2466,7 @@ ColorScheme <- function(colors = NULL) {
 ThemeColorPair <- function(
     type = NULL,
     color = NULL) {
+  checkmate::assert_choice(type, c("THEME_COLOR_TYPE_UNSPECIFIED", "DARK1", "LIGHT1", "DARK2", "LIGHT2", "ACCENT1", "ACCENT2", "ACCENT3", "ACCENT4", "ACCENT5", "ACCENT6", "HYPERLINK", "FOLLOWED_HYPERLINK", "TEXT1", "BACKGROUND1", "TEXT2", "BACKGROUND2"), null.ok = TRUE)
   structure(
     list(
       "type" = type,
@@ -2531,6 +2563,7 @@ CreateSlideRequest <- function(
 LayoutReference <- function(
     predefinedLayout = NULL,
     layoutId = NULL) {
+  checkmate::assert_choice(predefinedLayout, c("PREDEFINED_LAYOUT_UNSPECIFIED", "BLANK", "CAPTION_ONLY", "TITLE", "TITLE_AND_BODY", "TITLE_AND_TWO_COLUMNS", "TITLE_ONLY", "SECTION_HEADER", "SECTION_TITLE_AND_DESCRIPTION", "ONE_COLUMN_TEXT", "MAIN_POINT", "BIG_NUMBER"), null.ok = TRUE)
   structure(
     list(
       "predefinedLayout" = predefinedLayout,
@@ -2731,6 +2764,7 @@ CreateShapeRequest <- function(
     objectId = NULL,
     elementProperties = NULL,
     shapeType = NULL) {
+  checkmate::assert_choice(shapeType, c("TYPE_UNSPECIFIED", "TEXT_BOX", "RECTANGLE", "ROUND_RECTANGLE", "ELLIPSE", "ARC", "BENT_ARROW", "BENT_UP_ARROW", "BEVEL", "BLOCK_ARC", "BRACE_PAIR", "BRACKET_PAIR", "CAN", "CHEVRON", "CHORD", "CLOUD", "CORNER", "CUBE", "CURVED_DOWN_ARROW", "CURVED_LEFT_ARROW", "CURVED_RIGHT_ARROW", "CURVED_UP_ARROW", "DECAGON", "DIAGONAL_STRIPE", "DIAMOND", "DODECAGON", "DONUT", "DOUBLE_WAVE", "DOWN_ARROW", "DOWN_ARROW_CALLOUT", "FOLDED_CORNER", "FRAME", "HALF_FRAME", "HEART", "HEPTAGON", "HEXAGON", "HOME_PLATE", "HORIZONTAL_SCROLL", "IRREGULAR_SEAL_1", "IRREGULAR_SEAL_2", "LEFT_ARROW", "LEFT_ARROW_CALLOUT", "LEFT_BRACE", "LEFT_BRACKET", "LEFT_RIGHT_ARROW", "LEFT_RIGHT_ARROW_CALLOUT", "LEFT_RIGHT_UP_ARROW", "LEFT_UP_ARROW", "LIGHTNING_BOLT", "MATH_DIVIDE", "MATH_EQUAL", "MATH_MINUS", "MATH_MULTIPLY", "MATH_NOT_EQUAL", "MATH_PLUS", "MOON", "NO_SMOKING", "NOTCHED_RIGHT_ARROW", "OCTAGON", "PARALLELOGRAM", "PENTAGON", "PIE", "PLAQUE", "PLUS", "QUAD_ARROW", "QUAD_ARROW_CALLOUT", "RIBBON", "RIBBON_2", "RIGHT_ARROW", "RIGHT_ARROW_CALLOUT", "RIGHT_BRACE", "RIGHT_BRACKET", "ROUND_1_RECTANGLE", "ROUND_2_DIAGONAL_RECTANGLE", "ROUND_2_SAME_RECTANGLE", "RIGHT_TRIANGLE", "SMILEY_FACE", "SNIP_1_RECTANGLE", "SNIP_2_DIAGONAL_RECTANGLE", "SNIP_2_SAME_RECTANGLE", "SNIP_ROUND_RECTANGLE", "STAR_10", "STAR_12", "STAR_16", "STAR_24", "STAR_32", "STAR_4", "STAR_5", "STAR_6", "STAR_7", "STAR_8", "STRIPED_RIGHT_ARROW", "SUN", "TRAPEZOID", "TRIANGLE", "UP_ARROW", "UP_ARROW_CALLOUT", "UP_DOWN_ARROW", "UTURN_ARROW", "VERTICAL_SCROLL", "WAVE", "WEDGE_ELLIPSE_CALLOUT", "WEDGE_RECTANGLE_CALLOUT", "WEDGE_ROUND_RECTANGLE_CALLOUT", "FLOW_CHART_ALTERNATE_PROCESS", "FLOW_CHART_COLLATE", "FLOW_CHART_CONNECTOR", "FLOW_CHART_DECISION", "FLOW_CHART_DELAY", "FLOW_CHART_DISPLAY", "FLOW_CHART_DOCUMENT", "FLOW_CHART_EXTRACT", "FLOW_CHART_INPUT_OUTPUT", "FLOW_CHART_INTERNAL_STORAGE", "FLOW_CHART_MAGNETIC_DISK", "FLOW_CHART_MAGNETIC_DRUM", "FLOW_CHART_MAGNETIC_TAPE", "FLOW_CHART_MANUAL_INPUT", "FLOW_CHART_MANUAL_OPERATION", "FLOW_CHART_MERGE", "FLOW_CHART_MULTIDOCUMENT", "FLOW_CHART_OFFLINE_STORAGE", "FLOW_CHART_OFFPAGE_CONNECTOR", "FLOW_CHART_ONLINE_STORAGE", "FLOW_CHART_OR", "FLOW_CHART_PREDEFINED_PROCESS", "FLOW_CHART_PREPARATION", "FLOW_CHART_PROCESS", "FLOW_CHART_PUNCHED_CARD", "FLOW_CHART_PUNCHED_TAPE", "FLOW_CHART_SORT", "FLOW_CHART_SUMMING_JUNCTION", "FLOW_CHART_TERMINATOR", "ARROW_EAST", "ARROW_NORTH_EAST", "ARROW_NORTH", "SPEECH", "STARBURST", "TEARDROP", "ELLIPSE_RIBBON", "ELLIPSE_RIBBON_2", "CLOUD_CALLOUT", "CUSTOM"), null.ok = TRUE)
   structure(
     list(
       "objectId" = objectId,
@@ -3048,6 +3082,7 @@ UpdatePageElementTransformRequest <- function(
     objectId = NULL,
     transform = NULL,
     applyMode = NULL) {
+  checkmate::assert_choice(applyMode, c("APPLY_MODE_UNSPECIFIED", "RELATIVE", "ABSOLUTE"), null.ok = TRUE)
   structure(
     list(
       "objectId" = objectId,
@@ -3135,6 +3170,7 @@ Range <- function(
     startIndex = NULL,
     endIndex = NULL,
     type = NULL) {
+  checkmate::assert_choice(type, c("RANGE_TYPE_UNSPECIFIED", "FIXED_RANGE", "FROM_START_INDEX", "ALL"), null.ok = TRUE)
   structure(
     list(
       "startIndex" = startIndex,
@@ -3199,6 +3235,7 @@ CreateVideoRequest <- function(
     elementProperties = NULL,
     source = NULL,
     id = NULL) {
+  checkmate::assert_choice(source, c("SOURCE_UNSPECIFIED", "YOUTUBE", "DRIVE"), null.ok = TRUE)
   structure(
     list(
       "objectId" = objectId,
@@ -3237,6 +3274,7 @@ CreateSheetsChartRequest <- function(
     spreadsheetId = NULL,
     chartId = NULL,
     linkingMode = NULL) {
+  checkmate::assert_choice(linkingMode, c("NOT_LINKED_IMAGE", "LINKED"), null.ok = TRUE)
   structure(
     list(
       "objectId" = objectId,
@@ -3278,6 +3316,8 @@ CreateLineRequest <- function(
     elementProperties = NULL,
     lineCategory = NULL,
     category = NULL) {
+  checkmate::assert_choice(lineCategory, c("STRAIGHT", "BENT", "CURVED"), null.ok = TRUE)
+  checkmate::assert_choice(category, c("LINE_CATEGORY_UNSPECIFIED", "STRAIGHT", "BENT", "CURVED"), null.ok = TRUE)
   structure(
     list(
       "objectId" = objectId,
@@ -3553,6 +3593,7 @@ CreateParagraphBulletsRequest <- function(
     cellLocation = NULL,
     textRange = NULL,
     bulletPreset = NULL) {
+  checkmate::assert_choice(bulletPreset, c("BULLET_DISC_CIRCLE_SQUARE", "BULLET_DIAMONDX_ARROW3D_SQUARE", "BULLET_CHECKBOX", "BULLET_ARROW_DIAMOND_DISC", "BULLET_STAR_CIRCLE_SQUARE", "BULLET_ARROW3D_CIRCLE_SQUARE", "BULLET_LEFTTRIANGLE_DIAMOND_DISC", "BULLET_DIAMONDX_HOLLOWDIAMOND_SQUARE", "BULLET_DIAMOND_CIRCLE_SQUARE", "NUMBERED_DIGIT_ALPHA_ROMAN", "NUMBERED_DIGIT_ALPHA_ROMAN_PARENS", "NUMBERED_DIGIT_NESTED", "NUMBERED_UPPERALPHA_ALPHA_ROMAN", "NUMBERED_UPPERROMAN_UPPERALPHA_DIGIT", "NUMBERED_ZERODIGIT_ALPHA_ROMAN"), null.ok = TRUE)
   structure(
     list(
       "objectId" = objectId,
@@ -3594,6 +3635,8 @@ ReplaceAllShapesWithImageRequest <- function(
     replaceMethod = NULL,
     imageReplaceMethod = NULL,
     pageObjectIds = NULL) {
+  checkmate::assert_choice(replaceMethod, c("CENTER_INSIDE", "CENTER_CROP"), null.ok = TRUE)
+  checkmate::assert_choice(imageReplaceMethod, c("IMAGE_REPLACE_METHOD_UNSPECIFIED", "CENTER_INSIDE", "CENTER_CROP"), null.ok = TRUE)
   structure(
     list(
       "containsText" = containsText,
@@ -3695,6 +3738,7 @@ ReplaceAllShapesWithSheetsChartRequest <- function(
     chartId = NULL,
     linkingMode = NULL,
     pageObjectIds = NULL) {
+  checkmate::assert_choice(linkingMode, c("NOT_LINKED_IMAGE", "LINKED"), null.ok = TRUE)
   structure(
     list(
       "containsText" = containsText,
@@ -3807,6 +3851,7 @@ UpdateTableBorderPropertiesRequest <- function(
     borderPosition = NULL,
     tableBorderProperties = NULL,
     fields = NULL) {
+  checkmate::assert_choice(borderPosition, c("ALL", "BOTTOM", "INNER", "INNER_HORIZONTAL", "INNER_VERTICAL", "LEFT", "OUTER", "RIGHT", "TOP"), null.ok = TRUE)
   structure(
     list(
       "objectId" = objectId,
@@ -4031,6 +4076,7 @@ ReplaceImageRequest <- function(
     imageObjectId = NULL,
     url = NULL,
     imageReplaceMethod = NULL) {
+  checkmate::assert_choice(imageReplaceMethod, c("IMAGE_REPLACE_METHOD_UNSPECIFIED", "CENTER_INSIDE", "CENTER_CROP"), null.ok = TRUE)
   structure(
     list(
       "imageObjectId" = imageObjectId,
@@ -4091,6 +4137,7 @@ UpdateSlidePropertiesRequest <- function(
 UpdatePageElementsZOrderRequest <- function(
     pageElementObjectIds = NULL,
     operation = NULL) {
+  checkmate::assert_choice(operation, c("Z_ORDER_OPERATION_UNSPECIFIED", "BRING_TO_FRONT", "BRING_FORWARD", "SEND_BACKWARD", "SEND_TO_BACK"), null.ok = TRUE)
   structure(
     list(
       "pageElementObjectIds" = pageElementObjectIds,
@@ -4120,6 +4167,7 @@ UpdatePageElementsZOrderRequest <- function(
 UpdateLineCategoryRequest <- function(
     objectId = NULL,
     lineCategory = NULL) {
+  checkmate::assert_choice(lineCategory, c("LINE_CATEGORY_UNSPECIFIED", "STRAIGHT", "BENT", "CURVED"), null.ok = TRUE)
   structure(
     list(
       "objectId" = objectId,
