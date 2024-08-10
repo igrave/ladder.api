@@ -55,7 +55,9 @@
 
 <dl><dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
 <dd><p>(string)
-The type of the shadow. This property is read-only.</p></dd>
+The type of the shadow. This property is read-only.</p><ul><li><p><code>SHADOW_TYPE_UNSPECIFIED</code>: Unspecified shadow type.</p></li>
+<li><p><code>OUTER</code>: Outer shadow.</p></li>
+</ul></dd>
 
 
 <dt id="arg-transform">transform<a class="anchor" aria-label="anchor" href="#arg-transform"></a></dt>
@@ -65,7 +67,17 @@ Transform that encodes the translate, scale, and skew of the shadow, relative to
 
 <dt id="arg-alignment">alignment<a class="anchor" aria-label="anchor" href="#arg-alignment"></a></dt>
 <dd><p>(string)
-The alignment point of the shadow, that sets the origin for translate, scale and skew of the shadow. This property is read-only.</p></dd>
+The alignment point of the shadow, that sets the origin for translate, scale and skew of the shadow. This property is read-only.</p><ul><li><p><code>RECTANGLE_POSITION_UNSPECIFIED</code>: Unspecified.</p></li>
+<li><p><code>TOP_LEFT</code>: Top left.</p></li>
+<li><p><code>TOP_CENTER</code>: Top center.</p></li>
+<li><p><code>TOP_RIGHT</code>: Top right.</p></li>
+<li><p><code>LEFT_CENTER</code>: Left center.</p></li>
+<li><p><code>CENTER</code>: Center.</p></li>
+<li><p><code>RIGHT_CENTER</code>: Right center.</p></li>
+<li><p><code>BOTTOM_LEFT</code>: Bottom left.</p></li>
+<li><p><code>BOTTOM_CENTER</code>: Bottom center.</p></li>
+<li><p><code>BOTTOM_RIGHT</code>: Bottom right.</p></li>
+</ul></dd>
 
 
 <dt id="arg-blurradius">blurRadius<a class="anchor" aria-label="anchor" href="#arg-blurradius"></a></dt>
@@ -90,7 +102,10 @@ Whether the shadow should rotate with the shape. This property is read-only.</p>
 
 <dt id="arg-propertystate">propertyState<a class="anchor" aria-label="anchor" href="#arg-propertystate"></a></dt>
 <dd><p>(string)
-The shadow property state. Updating the shadow on a page element will implicitly update this field to <code>RENDERED</code>, unless another value is specified in the same request. To have no shadow on a page element, set this field to <code>NOT_RENDERED</code>. In this case, any other shadow fields set in the same request will be ignored.</p></dd>
+The shadow property state. Updating the shadow on a page element will implicitly update this field to <code>RENDERED</code>, unless another value is specified in the same request. To have no shadow on a page element, set this field to <code>NOT_RENDERED</code>. In this case, any other shadow fields set in the same request will be ignored.</p><ul><li><p><code>RENDERED</code>: If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value.</p></li>
+<li><p><code>NOT_RENDERED</code>: If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED.</p></li>
+<li><p><code>INHERIT</code>: If a property's state is INHERIT, then the property state uses the value of corresponding <code>property_state</code> field on the parent shape. Elements that do not inherit will never have an INHERIT property state.</p></li>
+</ul></dd>
 
 </dl></div>
     <div class="section level2">

@@ -46,7 +46,10 @@
 
 <dl><dt id="arg-propertystate">propertyState<a class="anchor" aria-label="anchor" href="#arg-propertystate"></a></dt>
 <dd><p>(string)
-The background fill property state. Updating the fill on a table cell will implicitly update this field to <code>RENDERED</code>, unless another value is specified in the same request. To have no fill on a table cell, set this field to <code>NOT_RENDERED</code>. In this case, any other fill fields set in the same request will be ignored.</p></dd>
+The background fill property state. Updating the fill on a table cell will implicitly update this field to <code>RENDERED</code>, unless another value is specified in the same request. To have no fill on a table cell, set this field to <code>NOT_RENDERED</code>. In this case, any other fill fields set in the same request will be ignored.</p><ul><li><p><code>RENDERED</code>: If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value.</p></li>
+<li><p><code>NOT_RENDERED</code>: If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED.</p></li>
+<li><p><code>INHERIT</code>: If a property's state is INHERIT, then the property state uses the value of corresponding <code>property_state</code> field on the parent shape. Elements that do not inherit will never have an INHERIT property state.</p></li>
+</ul></dd>
 
 
 <dt id="arg-solidfill">solidFill<a class="anchor" aria-label="anchor" href="#arg-solidfill"></a></dt>

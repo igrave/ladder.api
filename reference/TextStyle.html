@@ -98,7 +98,11 @@ The hyperlink destination of the text. If unset, there is no link. Links are not
 
 <dt id="arg-baselineoffset">baselineOffset<a class="anchor" aria-label="anchor" href="#arg-baselineoffset"></a></dt>
 <dd><p>(string)
-The text's vertical offset from its normal position. Text with <code>SUPERSCRIPT</code> or <code>SUBSCRIPT</code> baseline offsets is automatically rendered in a smaller font size, computed based on the <code>font_size</code> field. The <code>font_size</code> itself is not affected by changes in this field.</p></dd>
+The text's vertical offset from its normal position. Text with <code>SUPERSCRIPT</code> or <code>SUBSCRIPT</code> baseline offsets is automatically rendered in a smaller font size, computed based on the <code>font_size</code> field. The <code>font_size</code> itself is not affected by changes in this field.</p><ul><li><p><code>BASELINE_OFFSET_UNSPECIFIED</code>: The text's baseline offset is inherited from the parent.</p></li>
+<li><p><code>NONE</code>: The text is not vertically offset.</p></li>
+<li><p><code>SUPERSCRIPT</code>: The text is vertically offset upwards (superscript).</p></li>
+<li><p><code>SUBSCRIPT</code>: The text is vertically offset downwards (subscript).</p></li>
+</ul></dd>
 
 
 <dt id="arg-smallcaps">smallCaps<a class="anchor" aria-label="anchor" href="#arg-smallcaps"></a></dt>

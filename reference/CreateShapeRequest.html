@@ -56,7 +56,150 @@ The element properties for the shape.</p></dd>
 
 <dt id="arg-shapetype">shapeType<a class="anchor" aria-label="anchor" href="#arg-shapetype"></a></dt>
 <dd><p>(string)
-The shape type.</p></dd>
+The shape type.</p><ul><li><p><code>TYPE_UNSPECIFIED</code>: The shape type that is not predefined.</p></li>
+<li><p><code>TEXT_BOX</code>: Text box shape.</p></li>
+<li><p><code>RECTANGLE</code>: Rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'rect'.</p></li>
+<li><p><code>ROUND_RECTANGLE</code>: Round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'roundRect'</p></li>
+<li><p><code>ELLIPSE</code>: Ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'ellipse'</p></li>
+<li><p><code>ARC</code>: Curved arc shape. Corresponds to ECMA-376 ST_ShapeType 'arc'</p></li>
+<li><p><code>BENT_ARROW</code>: Bent arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentArrow'</p></li>
+<li><p><code>BENT_UP_ARROW</code>: Bent up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentUpArrow'</p></li>
+<li><p><code>BEVEL</code>: Bevel shape. Corresponds to ECMA-376 ST_ShapeType 'bevel'</p></li>
+<li><p><code>BLOCK_ARC</code>: Block arc shape. Corresponds to ECMA-376 ST_ShapeType 'blockArc'</p></li>
+<li><p><code>BRACE_PAIR</code>: Brace pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracePair'</p></li>
+<li><p><code>BRACKET_PAIR</code>: Bracket pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracketPair'</p></li>
+<li><p><code>CAN</code>: Can shape. Corresponds to ECMA-376 ST_ShapeType 'can'</p></li>
+<li><p><code>CHEVRON</code>: Chevron shape. Corresponds to ECMA-376 ST_ShapeType 'chevron'</p></li>
+<li><p><code>CHORD</code>: Chord shape. Corresponds to ECMA-376 ST_ShapeType 'chord'</p></li>
+<li><p><code>CLOUD</code>: Cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloud'</p></li>
+<li><p><code>CORNER</code>: Corner shape. Corresponds to ECMA-376 ST_ShapeType 'corner'</p></li>
+<li><p><code>CUBE</code>: Cube shape. Corresponds to ECMA-376 ST_ShapeType 'cube'</p></li>
+<li><p><code>CURVED_DOWN_ARROW</code>: Curved down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedDownArrow'</p></li>
+<li><p><code>CURVED_LEFT_ARROW</code>: Curved left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedLeftArrow'</p></li>
+<li><p><code>CURVED_RIGHT_ARROW</code>: Curved right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedRightArrow'</p></li>
+<li><p><code>CURVED_UP_ARROW</code>: Curved up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedUpArrow'</p></li>
+<li><p><code>DECAGON</code>: Decagon shape. Corresponds to ECMA-376 ST_ShapeType 'decagon'</p></li>
+<li><p><code>DIAGONAL_STRIPE</code>: Diagonal stripe shape. Corresponds to ECMA-376 ST_ShapeType 'diagStripe'</p></li>
+<li><p><code>DIAMOND</code>: Diamond shape. Corresponds to ECMA-376 ST_ShapeType 'diamond'</p></li>
+<li><p><code>DODECAGON</code>: Dodecagon shape. Corresponds to ECMA-376 ST_ShapeType 'dodecagon'</p></li>
+<li><p><code>DONUT</code>: Donut shape. Corresponds to ECMA-376 ST_ShapeType 'donut'</p></li>
+<li><p><code>DOUBLE_WAVE</code>: Double wave shape. Corresponds to ECMA-376 ST_ShapeType 'doubleWave'</p></li>
+<li><p><code>DOWN_ARROW</code>: Down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrow'</p></li>
+<li><p><code>DOWN_ARROW_CALLOUT</code>: Callout down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrowCallout'</p></li>
+<li><p><code>FOLDED_CORNER</code>: Folded corner shape. Corresponds to ECMA-376 ST_ShapeType 'foldedCorner'</p></li>
+<li><p><code>FRAME</code>: Frame shape. Corresponds to ECMA-376 ST_ShapeType 'frame'</p></li>
+<li><p><code>HALF_FRAME</code>: Half frame shape. Corresponds to ECMA-376 ST_ShapeType 'halfFrame'</p></li>
+<li><p><code>HEART</code>: Heart shape. Corresponds to ECMA-376 ST_ShapeType 'heart'</p></li>
+<li><p><code>HEPTAGON</code>: Heptagon shape. Corresponds to ECMA-376 ST_ShapeType 'heptagon'</p></li>
+<li><p><code>HEXAGON</code>: Hexagon shape. Corresponds to ECMA-376 ST_ShapeType 'hexagon'</p></li>
+<li><p><code>HOME_PLATE</code>: Home plate shape. Corresponds to ECMA-376 ST_ShapeType 'homePlate'</p></li>
+<li><p><code>HORIZONTAL_SCROLL</code>: Horizontal scroll shape. Corresponds to ECMA-376 ST_ShapeType 'horizontalScroll'</p></li>
+<li><p><code>IRREGULAR_SEAL_1</code>: Irregular seal 1 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal1'</p></li>
+<li><p><code>IRREGULAR_SEAL_2</code>: Irregular seal 2 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal2'</p></li>
+<li><p><code>LEFT_ARROW</code>: Left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrow'</p></li>
+<li><p><code>LEFT_ARROW_CALLOUT</code>: Callout left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrowCallout'</p></li>
+<li><p><code>LEFT_BRACE</code>: Left brace shape. Corresponds to ECMA-376 ST_ShapeType 'leftBrace'</p></li>
+<li><p><code>LEFT_BRACKET</code>: Left bracket shape. Corresponds to ECMA-376 ST_ShapeType 'leftBracket'</p></li>
+<li><p><code>LEFT_RIGHT_ARROW</code>: Left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrow'</p></li>
+<li><p><code>LEFT_RIGHT_ARROW_CALLOUT</code>: Callout left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrowCallout'</p></li>
+<li><p><code>LEFT_RIGHT_UP_ARROW</code>: Left right up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightUpArrow'</p></li>
+<li><p><code>LEFT_UP_ARROW</code>: Left up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftUpArrow'</p></li>
+<li><p><code>LIGHTNING_BOLT</code>: Lightning bolt shape. Corresponds to ECMA-376 ST_ShapeType 'lightningBolt'</p></li>
+<li><p><code>MATH_DIVIDE</code>: Divide math shape. Corresponds to ECMA-376 ST_ShapeType 'mathDivide'</p></li>
+<li><p><code>MATH_EQUAL</code>: Equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathEqual'</p></li>
+<li><p><code>MATH_MINUS</code>: Minus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMinus'</p></li>
+<li><p><code>MATH_MULTIPLY</code>: Multiply math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMultiply'</p></li>
+<li><p><code>MATH_NOT_EQUAL</code>: Not equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathNotEqual'</p></li>
+<li><p><code>MATH_PLUS</code>: Plus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathPlus'</p></li>
+<li><p><code>MOON</code>: Moon shape. Corresponds to ECMA-376 ST_ShapeType 'moon'</p></li>
+<li><p><code>NO_SMOKING</code>: No smoking shape. Corresponds to ECMA-376 ST_ShapeType 'noSmoking'</p></li>
+<li><p><code>NOTCHED_RIGHT_ARROW</code>: Notched right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'notchedRightArrow'</p></li>
+<li><p><code>OCTAGON</code>: Octagon shape. Corresponds to ECMA-376 ST_ShapeType 'octagon'</p></li>
+<li><p><code>PARALLELOGRAM</code>: Parallelogram shape. Corresponds to ECMA-376 ST_ShapeType 'parallelogram'</p></li>
+<li><p><code>PENTAGON</code>: Pentagon shape. Corresponds to ECMA-376 ST_ShapeType 'pentagon'</p></li>
+<li><p><code>PIE</code>: Pie shape. Corresponds to ECMA-376 ST_ShapeType 'pie'</p></li>
+<li><p><code>PLAQUE</code>: Plaque shape. Corresponds to ECMA-376 ST_ShapeType 'plaque'</p></li>
+<li><p><code>PLUS</code>: Plus shape. Corresponds to ECMA-376 ST_ShapeType 'plus'</p></li>
+<li><p><code>QUAD_ARROW</code>: Quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrow'</p></li>
+<li><p><code>QUAD_ARROW_CALLOUT</code>: Callout quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrowCallout'</p></li>
+<li><p><code>RIBBON</code>: Ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon'</p></li>
+<li><p><code>RIBBON_2</code>: Ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon2'</p></li>
+<li><p><code>RIGHT_ARROW</code>: Right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrow'</p></li>
+<li><p><code>RIGHT_ARROW_CALLOUT</code>: Callout right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrowCallout'</p></li>
+<li><p><code>RIGHT_BRACE</code>: Right brace shape. Corresponds to ECMA-376 ST_ShapeType 'rightBrace'</p></li>
+<li><p><code>RIGHT_BRACKET</code>: Right bracket shape. Corresponds to ECMA-376 ST_ShapeType 'rightBracket'</p></li>
+<li><p><code>ROUND_1_RECTANGLE</code>: One round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round1Rect'</p></li>
+<li><p><code>ROUND_2_DIAGONAL_RECTANGLE</code>: Two diagonal round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round2DiagRect'</p></li>
+<li><p><code>ROUND_2_SAME_RECTANGLE</code>: Two same-side round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round2SameRect'</p></li>
+<li><p><code>RIGHT_TRIANGLE</code>: Right triangle shape. Corresponds to ECMA-376 ST_ShapeType 'rtTriangle'</p></li>
+<li><p><code>SMILEY_FACE</code>: Smiley face shape. Corresponds to ECMA-376 ST_ShapeType 'smileyFace'</p></li>
+<li><p><code>SNIP_1_RECTANGLE</code>: One snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip1Rect'</p></li>
+<li><p><code>SNIP_2_DIAGONAL_RECTANGLE</code>: Two diagonal snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2DiagRect'</p></li>
+<li><p><code>SNIP_2_SAME_RECTANGLE</code>: Two same-side snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2SameRect'</p></li>
+<li><p><code>SNIP_ROUND_RECTANGLE</code>: One snip one round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snipRoundRect'</p></li>
+<li><p><code>STAR_10</code>: Ten pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star10'</p></li>
+<li><p><code>STAR_12</code>: Twelve pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star12'</p></li>
+<li><p><code>STAR_16</code>: Sixteen pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star16'</p></li>
+<li><p><code>STAR_24</code>: Twenty four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star24'</p></li>
+<li><p><code>STAR_32</code>: Thirty two pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star32'</p></li>
+<li><p><code>STAR_4</code>: Four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star4'</p></li>
+<li><p><code>STAR_5</code>: Five pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star5'</p></li>
+<li><p><code>STAR_6</code>: Six pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star6'</p></li>
+<li><p><code>STAR_7</code>: Seven pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star7'</p></li>
+<li><p><code>STAR_8</code>: Eight pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star8'</p></li>
+<li><p><code>STRIPED_RIGHT_ARROW</code>: Striped right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'stripedRightArrow'</p></li>
+<li><p><code>SUN</code>: Sun shape. Corresponds to ECMA-376 ST_ShapeType 'sun'</p></li>
+<li><p><code>TRAPEZOID</code>: Trapezoid shape. Corresponds to ECMA-376 ST_ShapeType 'trapezoid'</p></li>
+<li><p><code>TRIANGLE</code>: Triangle shape. Corresponds to ECMA-376 ST_ShapeType 'triangle'</p></li>
+<li><p><code>UP_ARROW</code>: Up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrow'</p></li>
+<li><p><code>UP_ARROW_CALLOUT</code>: Callout up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrowCallout'</p></li>
+<li><p><code>UP_DOWN_ARROW</code>: Up down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upDownArrow'</p></li>
+<li><p><code>UTURN_ARROW</code>: U-turn arrow shape. Corresponds to ECMA-376 ST_ShapeType 'uturnArrow'</p></li>
+<li><p><code>VERTICAL_SCROLL</code>: Vertical scroll shape. Corresponds to ECMA-376 ST_ShapeType 'verticalScroll'</p></li>
+<li><p><code>WAVE</code>: Wave shape. Corresponds to ECMA-376 ST_ShapeType 'wave'</p></li>
+<li><p><code>WEDGE_ELLIPSE_CALLOUT</code>: Callout wedge ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeEllipseCallout'</p></li>
+<li><p><code>WEDGE_RECTANGLE_CALLOUT</code>: Callout wedge rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRectCallout'</p></li>
+<li><p><code>WEDGE_ROUND_RECTANGLE_CALLOUT</code>: Callout wedge round rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRoundRectCallout'</p></li>
+<li><p><code>FLOW_CHART_ALTERNATE_PROCESS</code>: Alternate process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartAlternateProcess'</p></li>
+<li><p><code>FLOW_CHART_COLLATE</code>: Collate flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartCollate'</p></li>
+<li><p><code>FLOW_CHART_CONNECTOR</code>: Connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartConnector'</p></li>
+<li><p><code>FLOW_CHART_DECISION</code>: Decision flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDecision'</p></li>
+<li><p><code>FLOW_CHART_DELAY</code>: Delay flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDelay'</p></li>
+<li><p><code>FLOW_CHART_DISPLAY</code>: Display flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDisplay'</p></li>
+<li><p><code>FLOW_CHART_DOCUMENT</code>: Document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDocument'</p></li>
+<li><p><code>FLOW_CHART_EXTRACT</code>: Extract flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartExtract'</p></li>
+<li><p><code>FLOW_CHART_INPUT_OUTPUT</code>: Input output flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInputOutput'</p></li>
+<li><p><code>FLOW_CHART_INTERNAL_STORAGE</code>: Internal storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInternalStorage'</p></li>
+<li><p><code>FLOW_CHART_MAGNETIC_DISK</code>: Magnetic disk flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDisk'</p></li>
+<li><p><code>FLOW_CHART_MAGNETIC_DRUM</code>: Magnetic drum flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDrum'</p></li>
+<li><p><code>FLOW_CHART_MAGNETIC_TAPE</code>: Magnetic tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticTape'</p></li>
+<li><p><code>FLOW_CHART_MANUAL_INPUT</code>: Manual input flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualInput'</p></li>
+<li><p><code>FLOW_CHART_MANUAL_OPERATION</code>: Manual operation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualOperation'</p></li>
+<li><p><code>FLOW_CHART_MERGE</code>: Merge flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMerge'</p></li>
+<li><p><code>FLOW_CHART_MULTIDOCUMENT</code>: Multi-document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMultidocument'</p></li>
+<li><p><code>FLOW_CHART_OFFLINE_STORAGE</code>: Offline storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOfflineStorage'</p></li>
+<li><p><code>FLOW_CHART_OFFPAGE_CONNECTOR</code>: Off-page connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOffpageConnector'</p></li>
+<li><p><code>FLOW_CHART_ONLINE_STORAGE</code>: Online storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOnlineStorage'</p></li>
+<li><p><code>FLOW_CHART_OR</code>: Or flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOr'</p></li>
+<li><p><code>FLOW_CHART_PREDEFINED_PROCESS</code>: Predefined process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPredefinedProcess'</p></li>
+<li><p><code>FLOW_CHART_PREPARATION</code>: Preparation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPreparation'</p></li>
+<li><p><code>FLOW_CHART_PROCESS</code>: Process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartProcess'</p></li>
+<li><p><code>FLOW_CHART_PUNCHED_CARD</code>: Punched card flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedCard'</p></li>
+<li><p><code>FLOW_CHART_PUNCHED_TAPE</code>: Punched tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedTape'</p></li>
+<li><p><code>FLOW_CHART_SORT</code>: Sort flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSort'</p></li>
+<li><p><code>FLOW_CHART_SUMMING_JUNCTION</code>: Summing junction flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSummingJunction'</p></li>
+<li><p><code>FLOW_CHART_TERMINATOR</code>: Terminator flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartTerminator'</p></li>
+<li><p><code>ARROW_EAST</code>: East arrow shape.</p></li>
+<li><p><code>ARROW_NORTH_EAST</code>: Northeast arrow shape.</p></li>
+<li><p><code>ARROW_NORTH</code>: North arrow shape.</p></li>
+<li><p><code>SPEECH</code>: Speech shape.</p></li>
+<li><p><code>STARBURST</code>: Star burst shape.</p></li>
+<li><p><code>TEARDROP</code>: Teardrop shape. Corresponds to ECMA-376 ST_ShapeType 'teardrop'</p></li>
+<li><p><code>ELLIPSE_RIBBON</code>: Ellipse ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon'</p></li>
+<li><p><code>ELLIPSE_RIBBON_2</code>: Ellipse ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon2'</p></li>
+<li><p><code>CLOUD_CALLOUT</code>: Callout cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloudCallout'</p></li>
+<li><p><code>CUSTOM</code>: Custom shape.</p></li>
+</ul></dd>
 
 </dl></div>
     <div class="section level2">

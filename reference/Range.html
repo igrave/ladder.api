@@ -56,7 +56,11 @@ The optional zero-based index of the end of the collection. Required for <code>F
 
 <dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
 <dd><p>(string)
-The type of range.</p></dd>
+The type of range.</p><ul><li><p><code>RANGE_TYPE_UNSPECIFIED</code>: Unspecified range type. This value must not be used.</p></li>
+<li><p><code>FIXED_RANGE</code>: A fixed range. Both the <code>start_index</code> and <code>end_index</code> must be specified.</p></li>
+<li><p><code>FROM_START_INDEX</code>: Starts the range at <code>start_index</code> and continues until the end of the collection. The <code>end_index</code> must not be specified.</p></li>
+<li><p><code>ALL</code>: Sets the range to be the whole length of the collection. Both the <code>start_index</code> and the <code>end_index</code> must not be specified.</p></li>
+</ul></dd>
 
 </dl></div>
     <div class="section level2">

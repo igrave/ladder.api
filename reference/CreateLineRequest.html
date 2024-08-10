@@ -61,12 +61,19 @@ The element properties for the line.</p></dd>
 
 <dt id="arg-linecategory">lineCategory<a class="anchor" aria-label="anchor" href="#arg-linecategory"></a></dt>
 <dd><p>(string)
-The category of the line to be created. <em>Deprecated</em>: use <code>category</code> instead. The exact line type created is determined based on the category and how it's routed to connect to other page elements. If you specify both a <code>category</code> and a <code>line_category</code>, the <code>category</code> takes precedence.</p></dd>
+The category of the line to be created. <em>Deprecated</em>: use <code>category</code> instead. The exact line type created is determined based on the category and how it's routed to connect to other page elements. If you specify both a <code>category</code> and a <code>line_category</code>, the <code>category</code> takes precedence.</p><ul><li><p><code>STRAIGHT</code>: Straight connectors, including straight connector 1. The is the default category when one is not specified.</p></li>
+<li><p><code>BENT</code>: Bent connectors, including bent connector 2 to 5.</p></li>
+<li><p><code>CURVED</code>: Curved connectors, including curved connector 2 to 5.</p></li>
+</ul></dd>
 
 
 <dt id="arg-category">category<a class="anchor" aria-label="anchor" href="#arg-category"></a></dt>
 <dd><p>(string)
-The category of the line to be created. The exact line type created is determined based on the category and how it's routed to connect to other page elements. If you specify both a <code>category</code> and a <code>line_category</code>, the <code>category</code> takes precedence. If you do not specify a value for <code>category</code>, but specify a value for <code>line_category</code>, then the specified <code>line_category</code> value is used. If you do not specify either, then STRAIGHT is used.</p></dd>
+The category of the line to be created. The exact line type created is determined based on the category and how it's routed to connect to other page elements. If you specify both a <code>category</code> and a <code>line_category</code>, the <code>category</code> takes precedence. If you do not specify a value for <code>category</code>, but specify a value for <code>line_category</code>, then the specified <code>line_category</code> value is used. If you do not specify either, then STRAIGHT is used.</p><ul><li><p><code>LINE_CATEGORY_UNSPECIFIED</code>: Unspecified line category.</p></li>
+<li><p><code>STRAIGHT</code>: Straight connectors, including straight connector 1.</p></li>
+<li><p><code>BENT</code>: Bent connectors, including bent connector 2 to 5.</p></li>
+<li><p><code>CURVED</code>: Curved connectors, including curved connector 2 to 5.</p></li>
+</ul></dd>
 
 </dl></div>
     <div class="section level2">

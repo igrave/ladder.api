@@ -51,7 +51,12 @@ The object IDs of the page elements to update. All the page elements must be on 
 
 <dt id="arg-operation">operation<a class="anchor" aria-label="anchor" href="#arg-operation"></a></dt>
 <dd><p>(string)
-The Z-order operation to apply on the page elements. When applying the operation on multiple page elements, the relative Z-orders within these page elements before the operation is maintained.</p></dd>
+The Z-order operation to apply on the page elements. When applying the operation on multiple page elements, the relative Z-orders within these page elements before the operation is maintained.</p><ul><li><p><code>Z_ORDER_OPERATION_UNSPECIFIED</code>: Unspecified operation.</p></li>
+<li><p><code>BRING_TO_FRONT</code>: Brings the page elements to the front of the page.</p></li>
+<li><p><code>BRING_FORWARD</code>: Brings the page elements forward on the page by one element relative to the forwardmost one in the specified page elements.</p></li>
+<li><p><code>SEND_BACKWARD</code>: Sends the page elements backward on the page by one element relative to the furthest behind one in the specified page elements.</p></li>
+<li><p><code>SEND_TO_BACK</code>: Sends the page elements to the back of the page.</p></li>
+</ul></dd>
 
 </dl></div>
     <div class="section level2">

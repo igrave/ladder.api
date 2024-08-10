@@ -46,7 +46,11 @@
 
 <dl><dt id="arg-autofittype">autofitType<a class="anchor" aria-label="anchor" href="#arg-autofittype"></a></dt>
 <dd><p>(string)
-The autofit type of the shape. If the autofit type is AUTOFIT_TYPE_UNSPECIFIED, the autofit type is inherited from a parent placeholder if it exists. The field is automatically set to NONE if a request is made that might affect text fitting within its bounding text box. In this case the font_scale is applied to the font_size and the line_spacing_reduction is applied to the line_spacing. Both properties are also reset to default values.</p></dd>
+The autofit type of the shape. If the autofit type is AUTOFIT_TYPE_UNSPECIFIED, the autofit type is inherited from a parent placeholder if it exists. The field is automatically set to NONE if a request is made that might affect text fitting within its bounding text box. In this case the font_scale is applied to the font_size and the line_spacing_reduction is applied to the line_spacing. Both properties are also reset to default values.</p><ul><li><p><code>AUTOFIT_TYPE_UNSPECIFIED</code>: The autofit type is unspecified.</p></li>
+<li><p><code>NONE</code>: Do not autofit.</p></li>
+<li><p><code>TEXT_AUTOFIT</code>: Shrink text on overflow to fit the shape.</p></li>
+<li><p><code>SHAPE_AUTOFIT</code>: Resize the shape to fit the text.</p></li>
+</ul></dd>
 
 
 <dt id="arg-fontscale">fontScale<a class="anchor" aria-label="anchor" href="#arg-fontscale"></a></dt>

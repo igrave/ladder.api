@@ -51,7 +51,12 @@ The background fill of the table cell. The default fill matches the fill for new
 
 <dt id="arg-contentalignment">contentAlignment<a class="anchor" aria-label="anchor" href="#arg-contentalignment"></a></dt>
 <dd><p>(string)
-The alignment of the content in the table cell. The default alignment matches the alignment for newly created table cells in the Slides editor.</p></dd>
+The alignment of the content in the table cell. The default alignment matches the alignment for newly created table cells in the Slides editor.</p><ul><li><p><code>CONTENT_ALIGNMENT_UNSPECIFIED</code>: An unspecified content alignment. The content alignment is inherited from the parent if it exists.</p></li>
+<li><p><code>CONTENT_ALIGNMENT_UNSUPPORTED</code>: An unsupported content alignment.</p></li>
+<li><p><code>TOP</code>: An alignment that aligns the content to the top of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 't'.</p></li>
+<li><p><code>MIDDLE</code>: An alignment that aligns the content to the middle of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'ctr'.</p></li>
+<li><p><code>BOTTOM</code>: An alignment that aligns the content to the bottom of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'b'.</p></li>
+</ul></dd>
 
 </dl></div>
     <div class="section level2">

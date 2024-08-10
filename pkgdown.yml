@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.0
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-08-04T21:21Z
+last_built: 2024-08-10T20:09Z
 urls:
   reference: https://igrave.github.io/ladder.api/reference
   article: https://igrave.github.io/ladder.api/articles

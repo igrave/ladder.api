@@ -61,7 +61,12 @@ The amount of space between lines, as a percentage of normal, where normal is re
 
 <dt id="arg-alignment">alignment<a class="anchor" aria-label="anchor" href="#arg-alignment"></a></dt>
 <dd><p>(string)
-The text alignment for this paragraph.</p></dd>
+The text alignment for this paragraph.</p><ul><li><p><code>ALIGNMENT_UNSPECIFIED</code>: The paragraph alignment is inherited from the parent.</p></li>
+<li><p><code>START</code>: The paragraph is aligned to the start of the line. Left-aligned for LTR text, right-aligned otherwise.</p></li>
+<li><p><code>CENTER</code>: The paragraph is centered.</p></li>
+<li><p><code>END</code>: The paragraph is aligned to the end of the line. Right-aligned for LTR text, left-aligned otherwise.</p></li>
+<li><p><code>JUSTIFIED</code>: The paragraph is justified.</p></li>
+</ul></dd>
 
 
 <dt id="arg-indentstart">indentStart<a class="anchor" aria-label="anchor" href="#arg-indentstart"></a></dt>
@@ -91,12 +96,18 @@ The amount of indentation for the start of the first line of the paragraph. If u
 
 <dt id="arg-direction">direction<a class="anchor" aria-label="anchor" href="#arg-direction"></a></dt>
 <dd><p>(string)
-The text direction of this paragraph. If unset, the value defaults to LEFT_TO_RIGHT since text direction is not inherited.</p></dd>
+The text direction of this paragraph. If unset, the value defaults to LEFT_TO_RIGHT since text direction is not inherited.</p><ul><li><p><code>TEXT_DIRECTION_UNSPECIFIED</code>: The text direction is inherited from the parent.</p></li>
+<li><p><code>LEFT_TO_RIGHT</code>: The text goes from left to right.</p></li>
+<li><p><code>RIGHT_TO_LEFT</code>: The text goes from right to left.</p></li>
+</ul></dd>
 
 
 <dt id="arg-spacingmode">spacingMode<a class="anchor" aria-label="anchor" href="#arg-spacingmode"></a></dt>
 <dd><p>(string)
-The spacing mode for the paragraph.</p></dd>
+The spacing mode for the paragraph.</p><ul><li><p><code>SPACING_MODE_UNSPECIFIED</code>: The spacing mode is inherited from the parent.</p></li>
+<li><p><code>NEVER_COLLAPSE</code>: Paragraph spacing is always rendered.</p></li>
+<li><p><code>COLLAPSE_LISTS</code>: Paragraph spacing is skipped between list elements.</p></li>
+</ul></dd>
 
 </dl></div>
     <div class="section level2">

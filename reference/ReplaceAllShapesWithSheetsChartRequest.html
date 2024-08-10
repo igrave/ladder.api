@@ -67,7 +67,9 @@ The ID of the specific chart in the Google Sheets spreadsheet.</p></dd>
 
 <dt id="arg-linkingmode">linkingMode<a class="anchor" aria-label="anchor" href="#arg-linkingmode"></a></dt>
 <dd><p>(string)
-The mode with which the chart is linked to the source spreadsheet. When not specified, the chart will be an image that is not linked.</p></dd>
+The mode with which the chart is linked to the source spreadsheet. When not specified, the chart will be an image that is not linked.</p><ul><li><p><code>NOT_LINKED_IMAGE</code>: The chart is not associated with the source spreadsheet and cannot be updated. A chart that is not linked will be inserted as an image.</p></li>
+<li><p><code>LINKED</code>: Linking the chart allows it to be updated, and other collaborators will see a link to the spreadsheet.</p></li>
+</ul></dd>
 
 
 <dt id="arg-pageobjectids">pageObjectIds<a class="anchor" aria-label="anchor" href="#arg-pageobjectids"></a></dt>

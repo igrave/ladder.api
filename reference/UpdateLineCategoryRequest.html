@@ -51,7 +51,11 @@ The object ID of the line the update is applied to. Only a line with a category 
 
 <dt id="arg-linecategory">lineCategory<a class="anchor" aria-label="anchor" href="#arg-linecategory"></a></dt>
 <dd><p>(string)
-The line category to update to. The exact line type is determined based on the category to update to and how it's routed to connect to other page elements.</p></dd>
+The line category to update to. The exact line type is determined based on the category to update to and how it's routed to connect to other page elements.</p><ul><li><p><code>LINE_CATEGORY_UNSPECIFIED</code>: Unspecified line category.</p></li>
+<li><p><code>STRAIGHT</code>: Straight connectors, including straight connector 1.</p></li>
+<li><p><code>BENT</code>: Bent connectors, including bent connector 2 to 5.</p></li>
+<li><p><code>CURVED</code>: Curved connectors, including curved connector 2 to 5.</p></li>
+</ul></dd>
 
 </dl></div>
     <div class="section level2">

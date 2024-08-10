@@ -60,7 +60,10 @@ The input transform matrix used to update the page element.</p></dd>
 
 <dt id="arg-applymode">applyMode<a class="anchor" aria-label="anchor" href="#arg-applymode"></a></dt>
 <dd><p>(string)
-The apply mode of the transform update.</p></dd>
+The apply mode of the transform update.</p><ul><li><p><code>APPLY_MODE_UNSPECIFIED</code>: Unspecified mode.</p></li>
+<li><p><code>RELATIVE</code>: Applies the new AffineTransform matrix to the existing one, and replaces the existing one with the resulting concatenation.</p></li>
+<li><p><code>ABSOLUTE</code>: Replaces the existing AffineTransform matrix with the new one.</p></li>
+</ul></dd>
 
 </dl></div>
     <div class="section level2">

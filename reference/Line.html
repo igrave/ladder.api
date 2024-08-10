@@ -51,12 +51,27 @@ The properties of the line.</p></dd>
 
 <dt id="arg-linetype">lineType<a class="anchor" aria-label="anchor" href="#arg-linetype"></a></dt>
 <dd><p>(string)
-The type of the line.</p></dd>
+The type of the line.</p><ul><li><p><code>TYPE_UNSPECIFIED</code>: An unspecified line type.</p></li>
+<li><p><code>STRAIGHT_CONNECTOR_1</code>: Straight connector 1 form. Corresponds to ECMA-376 ST_ShapeType 'straightConnector1'.</p></li>
+<li><p><code>BENT_CONNECTOR_2</code>: Bent connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector2'.</p></li>
+<li><p><code>BENT_CONNECTOR_3</code>: Bent connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector3'.</p></li>
+<li><p><code>BENT_CONNECTOR_4</code>: Bent connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector4'.</p></li>
+<li><p><code>BENT_CONNECTOR_5</code>: Bent connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector5'.</p></li>
+<li><p><code>CURVED_CONNECTOR_2</code>: Curved connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector2'.</p></li>
+<li><p><code>CURVED_CONNECTOR_3</code>: Curved connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector3'.</p></li>
+<li><p><code>CURVED_CONNECTOR_4</code>: Curved connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector4'.</p></li>
+<li><p><code>CURVED_CONNECTOR_5</code>: Curved connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector5'.</p></li>
+<li><p><code>STRAIGHT_LINE</code>: Straight line. Corresponds to ECMA-376 ST_ShapeType 'line'. This line type is not a connector.</p></li>
+</ul></dd>
 
 
 <dt id="arg-linecategory">lineCategory<a class="anchor" aria-label="anchor" href="#arg-linecategory"></a></dt>
 <dd><p>(string)
-The category of the line. It matches the <code>category</code> specified in CreateLineRequest, and can be updated with UpdateLineCategoryRequest.</p></dd>
+The category of the line. It matches the <code>category</code> specified in CreateLineRequest, and can be updated with UpdateLineCategoryRequest.</p><ul><li><p><code>LINE_CATEGORY_UNSPECIFIED</code>: Unspecified line category.</p></li>
+<li><p><code>STRAIGHT</code>: Straight connectors, including straight connector 1.</p></li>
+<li><p><code>BENT</code>: Bent connectors, including bent connector 2 to 5.</p></li>
+<li><p><code>CURVED</code>: Curved connectors, including curved connector 2 to 5.</p></li>
+</ul></dd>
 
 </dl></div>
     <div class="section level2">
