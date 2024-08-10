@@ -14,7 +14,9 @@ Opens a webpage for a user to authenticate with Google and select a presentation
 This presentation is then authorised for use with ladder.
 }
 \examples{
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 \donttest{
   id <- choose_slides()
 }
+\dontshow{\}) # examplesIf}
 }

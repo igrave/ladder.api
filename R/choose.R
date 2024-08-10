@@ -7,7 +7,7 @@
 #'
 #' @export
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   id <- choose_slides()
 #' }
